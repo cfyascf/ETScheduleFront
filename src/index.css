@@ -1,0 +1,25 @@
+:root {
+	font-family: 'Roboto', sans-serif;
+	line-height: 1.5;
+	font-synthesis: none;
+	text-rendering: optimizeLegibility;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+
+	--red: #ED0007;
+	--purple: #9E2896;
+	--blue: #007BC0;
+	--green: #00884A;
+	--grey: #71767C;
+	--yellow: #FFCF00;
+}
+
+* {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+	box-sizing: border-box;
+}
