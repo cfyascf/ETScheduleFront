@@ -1,5 +1,5 @@
 :root {
-	font-family: 'Roboto', sans-serif;
+	font-family: 'BoschSans-Regular', sans-serif;
 	line-height: 1.5;
 	font-synthesis: none;
 	text-rendering: optimizeLegibility;
@@ -12,6 +12,14 @@
 	--green: #00884A;
 	--grey: #71767C;
 	--yellow: #FFCF00;
+}
+
+@font-face {
+	font-family: BoschSans-Regular;
+
+	/*Caso a fonte esteja na mesma pasta*/
+	src: url("BoschSans-Regular-v5_003.ttf");
+
 }
 
 * {

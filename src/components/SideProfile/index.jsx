@@ -1,4 +1,4 @@
-import { ProfileContainer, UserImg, UserInfo } from "./styles"
+import { BigTitle, ProfileContainer, UserImg, UserInfo } from "./styles"
 import user from "/user.png"
 
 const SideProfile = () => {
@@ -6,10 +6,10 @@ const SideProfile = () => {
         <>
             <ProfileContainer>
                 <UserInfo>
-                    <UserImg src={user}>
-
-                    </UserImg>
-                    Fulano
+                    <UserImg src={user}></UserImg>
+                    <BigTitle>
+                        Fulano
+                    </BigTitle>
                 </UserInfo>
             </ProfileContainer>
         </>
