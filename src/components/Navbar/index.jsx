@@ -1,13 +1,14 @@
 import { NavbarContainer, ColoredLine } from "./styles"
+import background from "/bosch_background.png"
 
 const Navbar = () => {
     return (
         <>
             <NavbarContainer>
-                <ColoredLine ></ColoredLine>
+                <ColoredLine src={background}></ColoredLine>
             </NavbarContainer>
         </>
     )
 }
 
-export default Navbar
+export default Navbar;
