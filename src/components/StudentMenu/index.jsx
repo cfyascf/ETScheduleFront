@@ -5,7 +5,7 @@ const StudentMenu = () => {
         <>
             <MenuContainer>
                 <MenuOptions>
-                    <a>CALENDÁRIO</a> | <a>MATÉRIAS</a> | <a>NOTIFICAÇÕES</a>
+                    <a>CALENDAR</a> | <a>COURSES</a> | <a>NOTIFICATIONS</a>
                 </MenuOptions>
             </MenuContainer>
         </>

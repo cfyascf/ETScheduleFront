@@ -8,14 +8,14 @@ const Form = () => {
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo"/> 
                     <FormGroup>
-                        <Label htmlFor="username">Usuário:</Label>
+                        <Label htmlFor="username">Username:</Label>
                         <Input id="username" type="text" name="user"></Input>
                     </FormGroup>
                     <FormGroup>
-                        <Label htmlFor="pwd">Senha:</Label>
+                        <Label htmlFor="pwd">Password:</Label>
                         <Input id="pwd" type="password" name="password"></Input>
                     </FormGroup>
-                    <Button type="submit">Entrar</Button>
+                    <Button type="submit">Login</Button>
                 </Forms>
             </FormContainer>
          </>

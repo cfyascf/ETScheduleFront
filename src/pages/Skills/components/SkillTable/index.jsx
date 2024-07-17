@@ -4,12 +4,12 @@ const SkillTable = () => {
     return (
         <>
             <TableContainer>
-                <TableTitle>COMPETÊNCIAS</TableTitle>
+                <TableTitle>SKILLS</TableTitle>
                 <Table>
                     <tr>
-                        <TableHeader>Peso</TableHeader>
-                        <TableHeader>Descrição</TableHeader>
-                        <TableHeader>Resultado</TableHeader>
+                        <TableHeader>Weight</TableHeader>
+                        <TableHeader>Description</TableHeader>
+                        <TableHeader>Result</TableHeader>
                     </tr>
                     <tr>
                         <TableDown>2</TableDown>
