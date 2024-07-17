@@ -1,14 +1,18 @@
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
-import SideProfile from "../../components/SideProfile"
-import {MainContainer} from "./styles"
+import SideProfileOpen from "../../components/SideProfileOpen"
+import StudentMenu from "../../components/StudentMenu"
+import { MainContainer, PageContent } from "./styles"
 
 const Home = () => {
     return (
         <>
             <MainContainer>
                 <Navbar />
-                <SideProfile />
+                <PageContent>
+                    <SideProfileOpen />
+                    <StudentMenu />
+                </PageContent>
                 <Footer />
             </MainContainer>
         </>
