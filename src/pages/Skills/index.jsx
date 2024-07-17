@@ -4,7 +4,9 @@ import Navbar from "../../components/Navbar"
 import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
-import { MainContainer, PageContent } from "./styles"
+import { MainContainer, PageContent, SkillsContent } from "./styles"
+import CourseName from './components/CourseName';
+import SkillTable from './components/SkillTable';
 
 const Skills = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
@@ -23,6 +25,10 @@ const Skills = () => {
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}
+                    <SkillsContent>
+                        <CourseName />
+                        <SkillTable />
+                    </SkillsContent>
                 </PageContent>
                 <Footer />
             </MainContainer>
