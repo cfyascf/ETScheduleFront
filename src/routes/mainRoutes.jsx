@@ -1,11 +1,11 @@
 import { createBrowserRouter } from "react-router-dom";
-import Navbar from "../components/Navbar";
+import Login from "../pages/Login";
 import Footer from "../components/Footer"
 import Home from "../pages/Home"
 
 const mainRoutes = createBrowserRouter([
     {
-        path: '/',
+        path: '/login',
         element: (
             <Home/>
         )
