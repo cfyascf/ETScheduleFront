@@ -1,10 +1,13 @@
 import styled from "styled-components";
 
-const Background = styled.img `
-    width: 100%;
+const Background = styled.div `
     height: inherit;
-    object-fit: cover;
-    overflow: hidden;
+    background-image: url("/bosch_background.png");
+    background-repeat: no-repeat;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 `;
 
 export { Background };

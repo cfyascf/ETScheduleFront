@@ -1,11 +1,14 @@
 // import Form from "./components/Form/form";
 import { Background } from "./styles";
-import background from "/bosch_background.png";
+import { FormContainer } from "./components/Form/styles";
+import Form from "./components/Form/form";
 
 const Login = () => {
     return (
         <>
-            <Background src={background}></Background>
+            <Background>
+                <Form/>
+            </Background>
         </>
     );
 }
