@@ -4,7 +4,7 @@ const StudentMenu = () => {
     return (
         <>
             <MenuOptions>
-                <a>CALENDÁRIO</a> | <a>MATÉRIAS</a> | <a>NOTIFICAÇÕES</a>
+                <a>CALENDÁRIO</a> | <a>MATÉRIAS</a> | <a>STATUS</a>
             </MenuOptions>
         </>
     )
