@@ -1,7 +1,7 @@
 import { ColoredText, MenuContainer, WelcomeText } from "../Welcome/styles"
 
 const Welcome = () => {
-    return (
+    return (                                                                                    
         <>
             <MenuContainer>
                 <WelcomeText>
