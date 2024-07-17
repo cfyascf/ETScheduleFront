@@ -1,10 +1,11 @@
-import { CardContainer, CardColor, CardP } from "./styles"
+import { CardContainer, CardColor, CardP, CardH5 } from "./styles"
 
-const Card = () => {
+const Card = (props) => {
     return (
         <CardContainer>
             <CardColor></CardColor>
-            <CardP>Donathan - Python</CardP>
+            <CardP>{props.course}</CardP>
+            <CardH5>{props.name}</CardH5>
         </CardContainer>
     );
 };

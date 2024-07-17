@@ -31,7 +31,12 @@ const CardColor = styled.div`
 const CardP = styled.p`
  	font-size: 18px;
  	line-height: 1.5;
+ 	margin-bottom: 7px;
+`
+
+const CardH5 = styled.h5`
+ 	font-size: 14px;
  	margin-bottom: 20px;
 `
 
-export { CardContainer, CardColor, CardP };
+export { CardContainer, CardColor, CardP, CardH5 };
