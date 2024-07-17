@@ -1,16 +1,28 @@
+import React, { useState } from 'react';
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
+import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
 import { MainContainer, PageContent } from "./styles"
 
 const Home = () => {
+    const [isProfileOpen, setProfileOpen] = useState(false);
+
+    const toggleProfile = () => {
+        setProfileOpen(prevState => !prevState);
+    };
+
     return (
         <>
             <MainContainer>
                 <Navbar />
                 <PageContent>
-                    <SideProfileOpen />
+                    {isProfileOpen ? (
+                        <SideProfileOpen toggleProfile={toggleProfile} />
+                    ) : (
+                        <SideProfileClose toggleProfile={toggleProfile} />
+                    )}
                     <StudentMenu />
                 </PageContent>
                 <Footer />
