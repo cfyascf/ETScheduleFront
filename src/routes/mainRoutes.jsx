@@ -1,14 +1,20 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
-import Footer from "../components/Footer";
-import Home from "../pages/Home";
-import Skills from "../pages/Skills";
+import Courses from "../pages/Courses";
+import Footer from "../components/Footer"
+import Home from "../pages/Home"
 
 const mainRoutes = createBrowserRouter([
     {
+        path: '/courses',
+        element: (
+            <Courses/>
+        )
+    },
+    {
         path: '/',
         element: (
-            <Home/>
+            <Login/>
         )
     }
 ])
