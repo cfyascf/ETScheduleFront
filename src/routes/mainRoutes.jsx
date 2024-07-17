@@ -8,7 +8,7 @@ const mainRoutes = createBrowserRouter([
     {
         path: '/',
         element: (
-            <Home/>
+            <Skills/>
         )
     }
 ])
