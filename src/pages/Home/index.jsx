@@ -1,6 +1,6 @@
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
-import SideProfile from "../../components/SideProfile"
+import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
 import { MainContainer, PageContent } from "./styles"
 
@@ -10,7 +10,7 @@ const Home = () => {
             <MainContainer>
                 <Navbar />
                 <PageContent>
-                    <SideProfile />
+                    <SideProfileOpen />
                     <StudentMenu />
                 </PageContent>
                 <Footer />

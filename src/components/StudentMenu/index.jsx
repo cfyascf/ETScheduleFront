@@ -1,9 +1,9 @@
 import { ColoredText, MenuContainer, MenuOptions, WelcomeText } from "./styles"
 
-const SideProfile = () => {
+const StudentMenu = () => {
     return (
         <>
-            <MenuContainer onClick={oncancel}>
+            <MenuContainer>
                 <WelcomeText>
                     Seja bem-vindo(a), <ColoredText> Fulano</ColoredText>!
                 </WelcomeText>
@@ -15,4 +15,4 @@ const SideProfile = () => {
     )
 }
 
-export default SideProfile
+export default StudentMenu
