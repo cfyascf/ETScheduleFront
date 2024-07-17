@@ -4,11 +4,9 @@ import Navbar from "../../components/Navbar"
 import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
-import { MainContainer, PageContent, TopContent } from "./styles"
-import Welcome from "../../components/Welcome"
+import { MainContainer, PageContent } from "./styles"
 
-
-const Home = () => {
+const Skills = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -25,10 +23,6 @@ const Home = () => {
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}
-                    <TopContent>
-                        <Welcome />
-                        <StudentMenu />
-                    </TopContent>
                 </PageContent>
                 <Footer />
             </MainContainer>
@@ -36,4 +30,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default Skills

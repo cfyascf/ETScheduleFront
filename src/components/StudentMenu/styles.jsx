@@ -7,20 +7,6 @@ const MenuContainer = styled.div`
     width: 100%;
 `
 
-const WelcomeText = styled.div`
-    font-size: 1.5rem;
-    display: flex;
-
-`
-
-const ColoredText = styled.div`
-    background: linear-gradient(to right, #ED0007, #9E2896, #513B84, #345299, #007BC0, #18837e, #00884A);
-    -webkit-background-clip: text;
-    background-clip: text;
-    color: transparent;
-    
-`
-
 const MenuOptions = styled.div`
     display: flex;
     font-size: 1.2rem;
@@ -29,4 +15,4 @@ const MenuOptions = styled.div`
     padding: 15px 25%;
 `
 
-export {WelcomeText, ColoredText, MenuOptions, MenuContainer}
+export {MenuOptions, MenuContainer}
