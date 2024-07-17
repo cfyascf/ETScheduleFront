@@ -1,16 +1,15 @@
 import { BigTitle, ProfileContainer, UserImg, UserInfo, IconImg, TopIcons } from "./styles"
 import user from "/user.png"
 import logout from "/icon_logout.png"
-import arrow from "/icon_arrow.png"
-import openCloseProfile from "../../scripts/openOrCloseProfile"
+import arrow from "/icon_arrow_left.png"
 
-const SideProfile = () => {
+const SideProfileOpen = ({ toggleProfile}) => {
     return (
         <>
             <ProfileContainer>
                 <TopIcons>
-                    <IconImg src={logout} onClick={openCloseProfile}></IconImg>
-                    <IconImg src={arrow} id="open-close"></IconImg>
+                    <IconImg src={logout}></IconImg>
+                    <IconImg src={arrow} onClick={toggleProfile}></IconImg>
                 </TopIcons>
                 <UserInfo>
                     <UserImg src={user}></UserImg>
@@ -23,4 +22,4 @@ const SideProfile = () => {
     )
 }
 
-export default SideProfile;
+export default SideProfileOpen;
