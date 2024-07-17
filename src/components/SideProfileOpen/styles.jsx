@@ -3,7 +3,7 @@ import styled from 'styled-components'
 const ProfileContainer = styled.div`
     width: 25%;
     background-color: #F0F0F0;
-    min-height: 89vh;
+    min-height: 92.5vh;
     padding: 15px 10px;
 `
 
