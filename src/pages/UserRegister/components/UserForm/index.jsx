@@ -1,4 +1,4 @@
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, CheckboxArea } from "./styles"
 
 const RegisterForm = () => {
     return (
@@ -10,6 +10,15 @@ const RegisterForm = () => {
                         <FormGroup>
                             <Label htmlFor="instructor">Username:</Label>
                             <Input id="instructor" type="text" name="instructorReg"></Input>
+                            <Label htmlFor="instructor">Role:</Label>
+                            <CheckboxArea>
+                                <Input id="instructor" type="checkbox" name="instructorReg"></Input>
+                                <Label htmlFor="instructor">Student</Label>
+                                <Input id="instructor" type="checkbox" name="instructorReg"></Input>
+                                <Label htmlFor="instructor">Instructor</Label>
+                                <Input id="instructor" type="checkbox" name="instructorReg"></Input>
+                                <Label htmlFor="instructor">Administrator</Label>
+                            </CheckboxArea>
                         </FormGroup>
                     </FormItems>
                     <Button type="submit">Submit</Button>

@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 710px;
-    height: 450px;
+    height: 470px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -28,7 +28,7 @@ const Forms = styled.form`
 const FormGroup = styled.p`
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    gap: 20px; 
     padding-bottom: 20px;
 `;
 
@@ -71,4 +71,11 @@ const ColoredText = styled.div`
     font-size: 20px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText };
+const CheckboxArea = styled.div`
+    display: flex;
+    flex-direction: row;
+    width: 500px;
+
+`
+
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, CheckboxArea };
