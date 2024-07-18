@@ -3,9 +3,11 @@ import { MenuContainer, MenuOptions} from "./styles"
 const StudentMenu = () => {
     return (
         <>
-            <MenuOptions>
-                <a>CALENDÁRIO</a> | <a>MATÉRIAS</a> | <a>STATUS</a>
-            </MenuOptions>
+            <MenuContainer>
+                <MenuOptions>
+                    <a>CALENDAR</a> | <a>COURSES</a> | <a>NOTIFICATIONS</a>
+                </MenuOptions>
+            </MenuContainer>
         </>
     )
 }
