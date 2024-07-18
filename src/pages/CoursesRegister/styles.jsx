@@ -25,4 +25,4 @@ const Imgs = styled.img`
     margin-bottom: 55px;
 `;
 
-export { MainContainer, PageContent, PageContentItems, Imgs, ColoredText };
+export { MainContainer, PageContent, PageContentItems, Imgs};
