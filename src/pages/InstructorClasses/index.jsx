@@ -5,7 +5,7 @@ import SideProfileOpen from "../../components/SideProfileOpen";
 import SideProfileClose from "../../components/SideProfileClose";
 import InstructorMenu from "../../components/InstructorMenu";
 import Footer from "../../components/Footer";
-import Card from "../../components/Card/cards";
+import ClassCard from "./components/ClassCard/cards";
 
 const classData = [
     { class: 'Soluções Digitais 1' },
@@ -39,9 +39,9 @@ const InstructorClasses = () => {
                         <PageContentItems>
                             <CardsContainer>
                                 {classData.map((classData, index) => (
-                                    <Card
+                                    <ClassCard
                                         key={index}
-                                        course={classData.class}
+                                        class={classData.class}
                                     />
                                 ))}
                             </CardsContainer>

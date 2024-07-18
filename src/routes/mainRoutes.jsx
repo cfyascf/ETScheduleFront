@@ -74,7 +74,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <RegisterLesson/>
         )
-    }
+    },
     {
         path: '/user-register',
         element: (
