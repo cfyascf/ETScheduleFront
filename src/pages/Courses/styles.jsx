@@ -14,6 +14,7 @@ const CardsContainer = styled.div`
     display: flex;
     gap: 20px;
     flex-wrap: wrap;
+    padding-bottom: 30px;
 `
 
 const PageContentItems = styled.div`
