@@ -21,8 +21,15 @@ const PageContentItems = styled.div`
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 100px;
-    padding-right: 100px;
-`;
+    padding-left: 80px;
+    padding-right: 80px;
+`
 
-export { MainContainer, PageContent, CardsContainer, PageContentItems };
+const TopContent = styled.div`
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    padding: 10px 20px;
+`
+
+export { MainContainer, PageContent, CardsContainer, PageContentItems, TopContent};
