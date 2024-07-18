@@ -50,7 +50,7 @@ const CalendarDate = () => {
             onEventDrop={changeDate}
             onEventResize={changeDate}
             onSelectEvent={handleEventClick}
-            style={{height: '89vh', width: '70vw' }}
+            style={{height: '70vh',width: "50vw", padding: '20px', display: "flex"}}
             />
 
         {eventSelect && (

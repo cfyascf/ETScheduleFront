@@ -13,5 +13,12 @@ const TopContent = styled.div`
     flex-direction: column;
     width: 100%;
 `
-
-export {MainContainer, PageContent, TopContent}
+const Information = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    width: 100%;
+`
+ 
+export {MainContainer, PageContent, TopContent, Information}

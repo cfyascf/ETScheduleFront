@@ -4,7 +4,7 @@ import Navbar from "../../components/Navbar"
 import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
-import { MainContainer, PageContent, TopContent } from "./styles"
+import { MainContainer, PageContent, TopContent, Information } from "./styles"
 import CalendarDate from "../../components/CalendarDate"
 
 
@@ -28,12 +28,15 @@ const Home = () => {
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}
-                    <TopContent>
-                        <Welcome />
-                        <StudentMenu />
-                    </TopContent>
+                    <Information>
+                        <TopContent>
+                            <Welcome />
+                            <StudentMenu />
+                        </TopContent>
+                        <CalendarDate/>
+                    </Information>
                 </PageContent>
-                <CalendarDate/>
+                
                 <Footer />
             </MainContainer>
         </>
