@@ -1,17 +1,17 @@
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
-import UserForm from "./components/UserForm"
+import SubjectForm from "./components/SubjectForm"
 import { Imgs, MainContainer, PageContent } from "./styles"
-import Person from "/female_working_on_computer_behind_purple.png"
+import Person from "/female_male_working_on_board_blue.png"
 
-const UserRegister = () => {
+const SubjectRegister = () => {
     return (
         <>
             <MainContainer>
                 <Navbar />
                 <PageContent>
                     <Imgs src={Person} alt="Bosch Logo" />
-                    <UserForm />
+                    <SubjectForm />
                 </PageContent>
                 <Footer />
             </MainContainer>
@@ -19,4 +19,4 @@ const UserRegister = () => {
     )
 }
 
-export default UserRegister
+export default SubjectRegister
