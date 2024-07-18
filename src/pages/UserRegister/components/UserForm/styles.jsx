@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
+    width: 32vw;
     height: 470px;
     display: flex;
     justify-content: center;
@@ -25,16 +25,17 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormGroup = styled.div `
     display: flex;
     flex-direction: column;
     gap: 20px; 
     padding-bottom: 20px;
+    width: 28vw;
 `;
 
 const Input = styled.input`
     padding: 11px;
-    width: 29vw;
+    width: 28vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -69,12 +70,13 @@ const ColoredText = styled.div`
     padding-bottom: 30px;
     font-weight: bold;
     font-size: 20px;
+    width: 28vw;
 `;
 
 const CheckboxArea = styled.div`
     display: flex;
     flex-direction: row;
-    width: 500px;
+    width: 28vw;
 
 `
 

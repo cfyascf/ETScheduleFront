@@ -10,6 +10,7 @@ const PageContent = styled.div`
     justify-content: space-between;
     padding: 0px 12%;
     height: 92.5vh;
+    gap: 100px;
 `
 
 const PageContentItems = styled.div`
@@ -22,7 +23,7 @@ const PageContentItems = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 550px;
+    width: 30vw;
     align-self: center;
     margin-bottom: 55px;
 `;

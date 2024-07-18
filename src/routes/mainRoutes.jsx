@@ -15,27 +15,27 @@ import InstructorClasses from "../pages/InstructorClasses";
 
 const mainRoutes = createBrowserRouter([
     {
-        path: '/courses',
-        element: (
-            <Courses/>
-        )
-    },
-    {
         path: '/',
         element: (
             <Login/>
         )
     },
     {
-        path: '/courses-register',
-        element: (
-            <CoursesReg/>
-        )
-    },
-    {
         path: '/home',
         element: (
             <Home/>
+        )
+    },
+    {
+        path: '/courses',
+        element: (
+            <Courses/>
+        )
+    },
+    {
+        path: '/courses-register',
+        element: (
+            <CoursesReg/>
         )
     },
     {
@@ -79,7 +79,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <RegisterLesson/>
         )
-    }
+    },
     {
         path: '/user-register',
         element: (
@@ -97,7 +97,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <InstructorClasses/>
         )
-    },
+    }
 ])
 
 export default mainRoutes

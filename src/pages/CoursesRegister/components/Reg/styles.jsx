@@ -85,4 +85,4 @@ const InputDiv = styled.div`
     border-radius: 10px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputColor, InputDiv };
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
