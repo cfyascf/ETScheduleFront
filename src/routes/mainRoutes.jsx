@@ -5,6 +5,7 @@ import CoursesReg from "../pages/CoursesRegister"
 import Home from "../pages/Home"
 import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
+import UserRegister from "../pages/UserRegister";
 
 const mainRoutes = createBrowserRouter([
     {
@@ -47,6 +48,12 @@ const mainRoutes = createBrowserRouter([
         path: '/instructor-home',
         element: (
             <InstructorHome/>
+        )
+    },
+    {
+        path: '/user-register',
+        element: (
+            <UserRegister/>
         )
     },
 ])
