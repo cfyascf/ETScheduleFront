@@ -15,4 +15,19 @@ const TopContent = styled.div`
     padding: 10px 20px;
 `
 
-export { MainContainer, PageContent, TopContent }
+const CardsContainer = styled.div`
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+`
+
+const PageContentItems = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-left: 80px;
+    padding-right: 80px;
+`;
+
+export { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems }

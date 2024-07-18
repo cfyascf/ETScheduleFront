@@ -51,12 +51,6 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/skills',
-        element: (
-            <Skills/>
-        )
-    },
-    {
         path: '/instructor-home',
         element: (
             <InstructorHome/>
@@ -68,6 +62,7 @@ const mainRoutes = createBrowserRouter([
             <RegisterClass/>
         )
     },
+
     {
         path: '/register-event',
         element: (
