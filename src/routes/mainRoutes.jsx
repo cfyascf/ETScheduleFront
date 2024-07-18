@@ -2,7 +2,6 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Courses from "../pages/Courses";
 import CoursesReg from "../pages/CoursesRegister"
-import CoursesReg from "../pages/";
 import Home from "../pages/Home"
 
 const mainRoutes = createBrowserRouter([
