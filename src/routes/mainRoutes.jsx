@@ -2,6 +2,8 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Courses from "../pages/Courses";
 import Home from "../pages/Home"
+import Skills from "../pages/Skills";
+import FistAcess from "../pages/FistAcess";
 
 const mainRoutes = createBrowserRouter([
     {
@@ -25,7 +27,13 @@ const mainRoutes = createBrowserRouter([
     {
         path: '/skills',
         element: (
-            <Home/>
+            <Skills/>
+        )
+    },
+    {
+        path: '/fistacess',
+        element: (
+            <FistAcess/>
         )
     }
 ])
