@@ -38,12 +38,6 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/home',
-        element: (
-            <Home/>
-        )
-    },
-    {
         path: '/skills',
         element: (
             <Skills/>
