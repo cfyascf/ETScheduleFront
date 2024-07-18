@@ -22,7 +22,7 @@ const PageContentItems = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 600px;
+    width: 30vw;
     align-self: center;
 `;
 

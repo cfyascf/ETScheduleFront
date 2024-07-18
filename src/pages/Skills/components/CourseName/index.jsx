@@ -7,7 +7,6 @@ const CourseName = () => {
         <>
             <ColoredTitle>
                 IoT - Queila Lima
-                <IconImg src={graph}></IconImg>
             </ColoredTitle>
             
         </>

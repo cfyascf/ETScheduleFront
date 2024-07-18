@@ -43,15 +43,13 @@ const InstructorHome = () => {
                         <InstructorMenu />
                         <PageContentItems>
                             <CardsContainer>
-                            {coursesData.map((courseData, index) => (
-                                <Card
-                                    key={index}
-                                    course={courseData.course}
-                                    name={courseData.name}
-                                    semester={courseData.semester}
-                                    color={courseData.color}
-                                />
-                            ))}
+                                {coursesData.map((courseData, index) => (
+                                    <Card
+                                        key={index}
+                                        course={courseData.course}
+                                        name={courseData.name}
+                                    />
+                                ))}
                             </CardsContainer>
                         </PageContentItems>
                     </TopContent>

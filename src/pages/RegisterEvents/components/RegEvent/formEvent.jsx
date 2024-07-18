@@ -1,7 +1,19 @@
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import React, { useState } from 'react';
+import Dropdown from 'react-dropdown';
+import 'react-dropdown/style.css';
+import './style.css';
 
-const Reg = () => {
-    return (
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+const options = ['DTA1', 'DTA2', 'TDS3'];
+
+
+const Reg = () => {  
+    const [selectedOption, setSelectedOption] = useState(options[0]);
+
+    const handleSelect = (option) => {
+        setSelectedOption(option);
+    };
+        return (
         <>
             <FormContainer>
                 <Forms>
@@ -13,7 +25,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="nameclass">Name Class:</Label>
-                            <Input id="nameclass" type="text" name="nameclass"></Input>
+                            <Dropdown className='Dropdown' options={options} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start Date:</Label>
@@ -33,6 +45,3 @@ const Reg = () => {
 
 export default Reg;
 
-// instrutor
-// materia
-// semestre

@@ -16,27 +16,27 @@ import Student from "../pages/Student";
 
 const mainRoutes = createBrowserRouter([
     {
-        path: '/courses',
-        element: (
-            <Courses/>
-        )
-    },
-    {
         path: '/',
         element: (
             <Login/>
         )
     },
     {
-        path: '/courses-register',
-        element: (
-            <CoursesReg/>
-        )
-    },
-    {
         path: '/home',
         element: (
             <Home/>
+        )
+    },
+    {
+        path: '/courses',
+        element: (
+            <Courses/>
+        )
+    },
+    {
+        path: '/courses-register',
+        element: (
+            <CoursesReg/>
         )
     },
     {
@@ -93,6 +93,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <InstructorClasses/>
         )
+<<<<<<< HEAD
     },
     {
         path: '/student',
@@ -100,6 +101,9 @@ const mainRoutes = createBrowserRouter([
             <Student/>
         )
     },
+=======
+    }
+>>>>>>> 15bca370a4169c0f4c9fddf9d5869d16908312bb
 ])
 
 export default mainRoutes
