@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
+    width: 600px;
     height: 70%;
     display: flex;
     justify-content: center;
@@ -20,21 +20,22 @@ const FormItems = styled.div`
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
+    justify-content: center;
+    align-items: center;
     gap: 20px; 
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
 `;
 
 const FormGroup = styled.p`
     display: flex;
     flex-direction: column;
     gap: 10px; 
-    padding-bottom: 20px;
+    width: 25vw;
 `;
 
 const Input = styled.input`
     padding: 11px;
-    width: 29vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -67,15 +68,16 @@ const ColoredText = styled.div`
     background-clip: text;
     color: transparent;
     padding-bottom: 30px;
+    padding-left: 2vw;
     font-weight: bold;
     font-size: 20px;
+    width: 28vw;
 `;
 
 const TextArea = styled.textarea`
     resize: none;
     height: 200px;
     padding: 11px;
-    width: 29vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `

@@ -7,10 +7,9 @@ const MainContainer = styled.main`
 const PageContent = styled.div`
     display: flex;
     align-items: center;
-    justify-content: space-between;
-    padding: 0px 12%;
     height: 92.5vh;
     gap: 100px;
+    justify-content: center;
 `
 
 const PageContentItems = styled.div`
@@ -23,9 +22,8 @@ const PageContentItems = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 30vw;
+    width: 750px;
     align-self: center;
-    margin-bottom: 55px;
 `;
 
 export { MainContainer, PageContent, PageContentItems, Imgs};

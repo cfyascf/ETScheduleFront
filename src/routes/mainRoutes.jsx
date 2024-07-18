@@ -6,18 +6,20 @@ import Home from "../pages/Home"
 import FistAcess from "../pages/FistAcess";
 import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
+import RegisterClass from "../pages/RegisterClass";
+import RegisterEvent from "../pages/RegisterEvents";
+import RegisterLesson from "../pages/RegisterLesson";
 import UserRegister from "../pages/UserRegister";
 import SubjectRegister from "../pages/SubjectRegister";
 import InstructorClasses from "../pages/InstructorClasses";
+<<<<<<< HEAD
 import Class from "../pages/ClassPage";
+=======
+import Profiles from "../pages/Profiles";
+import Student from "../pages/Student";
+>>>>>>> 61d9cbd566147eb4ca038c0507245752b615ffc7
 
 const mainRoutes = createBrowserRouter([
-    {
-        path: '/courses',
-        element: (
-            <Courses/>
-        )
-    },
     {
         path: '/',
         element: (
@@ -25,15 +27,21 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/courses-register',
-        element: (
-            <CoursesReg/>
-        )
-    },
-    {
         path: '/home',
         element: (
             <Home/>
+        )
+    },
+    {
+        path: '/courses',
+        element: (
+            <Courses/>
+        )
+    },
+    {
+        path: '/courses-register',
+        element: (
+            <CoursesReg/>
         )
     },
     {
@@ -49,15 +57,28 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/skills',
-        element: (
-            <Skills/>
-        )
-    },
-    {
         path: '/instructor-home',
         element: (
             <InstructorHome/>
+        )
+    },
+    {
+        path: '/register-class',
+        element: (
+            <RegisterClass/>
+        )
+    },
+
+    {
+        path: '/register-event',
+        element: (
+            <RegisterEvent/>
+        )
+    },
+    {
+        path: '/register-lesson',
+        element: (
+            <RegisterLesson/>
         )
     },
     {
@@ -77,6 +98,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <InstructorClasses/>
         )
+<<<<<<< HEAD
     }, 
     {
         path: '/class',
@@ -84,6 +106,9 @@ const mainRoutes = createBrowserRouter([
             <Class/>
         )
     }, 
+=======
+    }
+>>>>>>> 61d9cbd566147eb4ca038c0507245752b615ffc7
 ])
 
 export default mainRoutes

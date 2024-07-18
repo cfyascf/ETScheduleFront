@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 570px;
-    height: 650px;
+    width: 28vw;
+    height: 60vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,7 +12,7 @@ const FormContainer = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 220px;
+    width: 12vw;
     align-self: center;
     margin-bottom: 55px;
 `;
@@ -33,6 +33,7 @@ const FormGroup = styled.p`
 `;
 
 const Input = styled.input`
+    width: 20vw;
     padding: 11px;
     border: 1px solid #ccc;
     border-radius: 10px;

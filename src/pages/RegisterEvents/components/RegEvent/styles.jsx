@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
+    width: 30vw;
     height: 620px;
     display: flex;
     justify-content: center;
@@ -27,13 +27,14 @@ const Forms = styled.form`
 const FormGroup = styled.p`
     display: flex;
     flex-direction: column;
-    gap: 8px; 
+    gap: 10px; 
     padding-bottom: 20px;
 `;
 
 const Input = styled.input`
+    height: 42px;
     padding: 11px;
-    width: 28vw;
+    width: 25vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -44,7 +45,7 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-    margin-top: 3px;
+    margin-top: 20px;
     padding: 12px;
     width: 150px;
     background-color: #007bff;
@@ -65,24 +66,9 @@ const ColoredText = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     font-weight: bold;
     font-size: 20px;
 `;
 
-const InputColor = styled.input`
-    padding: 2px;
-    width: 50px;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-`;
-
-const InputDiv = styled.div`
-    padding: 4px;
-    width: 550px;
-    border: 1px solid #ccc;
-    border-radius: 10px;
-`;
-
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText };

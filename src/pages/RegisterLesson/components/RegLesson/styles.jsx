@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 710px;
-    height: 620px;
+    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -24,10 +24,10 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 8px; 
+    gap: 10px; 
     padding-bottom: 20px;
 `;
 
@@ -44,7 +44,7 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-    margin-top: 3px;
+    margin-top: 20px;
     padding: 12px;
     width: 150px;
     background-color: #007bff;
@@ -65,24 +65,17 @@ const ColoredText = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding-bottom: 20px;
+    padding-bottom: 30px;
     font-weight: bold;
     font-size: 20px;
 `;
 
-const InputColor = styled.input`
-    padding: 2px;
-    width: 50px;
-    height: 40px;
-    border: 1px solid #ccc;
-    border-radius: 2px;
-`;
-
-const InputDiv = styled.div`
-    padding: 4px;
-    width: 550px;
+const TextArea = styled.textarea `
+    padding: 11px;
+    width: 28vw;
     border: 1px solid #ccc;
     border-radius: 10px;
-`;
+    resize: none;
+`
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea};
