@@ -4,6 +4,8 @@ import Courses from "../pages/Courses";
 import CoursesReg from "../pages/CoursesRegister"
 import Home from "../pages/Home"
 import Skills from "../pages/Skills";
+import FistAcess from "../pages/FistAcess";
+import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
 
 const mainRoutes = createBrowserRouter([
@@ -34,7 +36,13 @@ const mainRoutes = createBrowserRouter([
     {
         path: '/skills',
         element: (
-            <Home/>
+            <Skills/>
+        )
+    },
+    {
+        path: '/fistacess',
+        element: (
+            <FistAcess/>
         )
     },
     {
