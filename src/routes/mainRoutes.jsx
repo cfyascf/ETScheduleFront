@@ -6,6 +6,9 @@ import Home from "../pages/Home"
 import FistAcess from "../pages/FistAcess";
 import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
+import UserRegister from "../pages/UserRegister";
+import SubjectRegister from "../pages/SubjectRegister";
+import InstructorClasses from "../pages/InstructorClasses";
 
 const mainRoutes = createBrowserRouter([
     {
@@ -54,6 +57,24 @@ const mainRoutes = createBrowserRouter([
         path: '/instructor-home',
         element: (
             <InstructorHome/>
+        )
+    },
+    {
+        path: '/user-register',
+        element: (
+            <UserRegister/>
+        )
+    },
+    {
+        path: '/subject-register',
+        element: (
+            <SubjectRegister/>
+        )
+    },
+    {
+        path: '/instructor-classes',
+        element: (
+            <InstructorClasses/>
         )
     },
 ])

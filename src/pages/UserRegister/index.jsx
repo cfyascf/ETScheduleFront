@@ -1,17 +1,17 @@
-import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
-import Reg from "./components/Reg/formReg";
-import { MainContainer, PageContent, Imgs } from "./styles";
-import Person from "/person.png"
+import Navbar from "../../components/Navbar"
+import UserForm from "./components/UserForm"
+import { Imgs, MainContainer, PageContent } from "./styles"
+import Person from "/female_working_on_computer_behind_purple.png"
 
-const CoursesReg = () => {
+const UserRegister = () => {
     return (
         <>
             <MainContainer>
                 <Navbar />
                 <PageContent>
                     <Imgs src={Person} alt="Bosch Logo" />
-                    <Reg />
+                    <UserForm />
                 </PageContent>
                 <Footer />
             </MainContainer>
@@ -19,4 +19,4 @@ const CoursesReg = () => {
     )
 }
 
-export default CoursesReg;
+export default UserRegister
