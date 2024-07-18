@@ -24,7 +24,7 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     gap: 10px; 

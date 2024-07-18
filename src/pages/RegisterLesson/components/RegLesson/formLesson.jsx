@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+import './style.css';
 
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea} from "./styles"
@@ -21,11 +22,11 @@ const Reg = () => {
                         <ColoredText>REGISTER A LESSON</ColoredText>
                         <FormGroup>
                             <Label htmlFor="nameevent">Name Discipline:</Label>
-                            <Dropdown style={{display: "table"}} options={options} onChange={handleSelect} placeholder="Select an option" />
+                            <Dropdown className='Dropdown' options={options} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="description">Description:</Label>
-                            <TextArea id="description" type="text" name="description"></TextArea>
+                            <TextArea id="description" name="description"></TextArea>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start Date:</Label>

@@ -1,0 +1,11 @@
+.Dropdown-menu {
+    display: table;
+}
+
+.Dropdown {
+    width: 28vw;
+}
+
+.Dropdown-control {
+    border-radius: 10px;
+}

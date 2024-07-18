@@ -2,7 +2,7 @@ import Navbar from "../../components/Navbar"
 import Footer from "../../components/Footer"
 import Reg from "./components/RegEvent/formEvent";
 import { MainContainer, PageContent, Imgs } from "./styles";
-import Person from "/group-coaching-turquoise.svg"
+import Person from "/robert-bosch-portrait-brille.svg"
 
 const RegisterEvent = () => {
     return(
