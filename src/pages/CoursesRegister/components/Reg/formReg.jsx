@@ -1,4 +1,4 @@
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 
 const Reg = () => {
     return (
@@ -18,6 +18,12 @@ const Reg = () => {
                         <FormGroup>
                             <Label htmlFor="semester">Semester:</Label>
                             <Input id="semester" type="text" name="semesterReg"></Input>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label for="color-picker">Color:</Label>
+                            <InputDiv>
+                                <InputColor type="color" value="#ff0000" id="color-picker"></InputColor>
+                            </InputDiv>
                         </FormGroup>
                     </FormItems>
                     <Button type="submit">Submit</Button>

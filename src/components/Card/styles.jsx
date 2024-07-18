@@ -22,7 +22,6 @@ const CardContainer = styled.div`
 const CardColor = styled.div`
  	width: 100%;
 	height: 80px;
-	background-color: blue;
 	border-top-right-radius: 8px;
 	border-top-left-radius: 8px;
 	margin-bottom: 20px;

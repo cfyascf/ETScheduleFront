@@ -6,6 +6,9 @@ import Home from "../pages/Home"
 import FistAcess from "../pages/FistAcess";
 import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
+import RegisterClass from "../pages/RegisterClass";
+import RegisterEvent from "../pages/RegisterEvents";
+import RegisterLesson from "../pages/RegisterLesson";
 import UserRegister from "../pages/UserRegister";
 import SubjectRegister from "../pages/SubjectRegister";
 import InstructorClasses from "../pages/InstructorClasses";
@@ -48,17 +51,30 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/skills',
-        element: (
-            <Skills/>
-        )
-    },
-    {
         path: '/instructor-home',
         element: (
             <InstructorHome/>
         )
     },
+    {
+        path: '/register-class',
+        element: (
+            <RegisterClass/>
+        )
+    },
+
+    {
+        path: '/register-event',
+        element: (
+            <RegisterEvent/>
+        )
+    },
+    {
+        path: '/register-lesson',
+        element: (
+            <RegisterLesson/>
+        )
+    }
     {
         path: '/user-register',
         element: (
