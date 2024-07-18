@@ -12,6 +12,7 @@ import RegisterLesson from "../pages/RegisterLesson";
 import UserRegister from "../pages/UserRegister";
 import SubjectRegister from "../pages/SubjectRegister";
 import InstructorClasses from "../pages/InstructorClasses";
+import Profiles from "../pages/Profiles";
 import Student from "../pages/Student";
 
 const mainRoutes = createBrowserRouter([
@@ -93,13 +94,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <InstructorClasses/>
         )
-    },
-    {
-        path: '/student',
-        element: (
-            <Student/>
-        )
-    },
+    }
 ])
 
 export default mainRoutes
