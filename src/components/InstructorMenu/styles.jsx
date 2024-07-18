@@ -6,7 +6,7 @@ const MenuOptions = styled.div`
     font-size: 1.2rem;
     align-items: center;
     justify-content: space-around;
-    padding: 15px 30%;
+    padding: 15px 40%;
 `
 
 export {MenuOptions}

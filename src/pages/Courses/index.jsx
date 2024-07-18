@@ -2,7 +2,7 @@ import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import SideProfileOpen from "../../components/SideProfileOpen";
 import StudentMenu from "../../components/StudentMenu";
-import Card from "./components/Card/cards";
+import Card from "../../components/Card/cards";
 import { MainContainer, PageContent, CardsContainer, PageContentItems } from "./styles";
 
 const coursesData = [
