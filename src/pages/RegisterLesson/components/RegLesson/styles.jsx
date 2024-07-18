@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 710px;
-    height: 570px;
+    height: 650px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -70,4 +70,12 @@ const ColoredText = styled.div`
     font-size: 20px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText };
+const TextArea = styled.textarea `
+    padding: 11px;
+    width: 28vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    resize: none;
+`
+
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea};
