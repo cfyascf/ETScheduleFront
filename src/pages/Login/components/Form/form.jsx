@@ -13,7 +13,6 @@ const Form = () => {
                     </FormGroup>
                     <FormGroup>
                         <Label htmlFor="pwd">Password:</Label>
-                        <Label htmlFor="pwd">Password:</Label>
                         <Input id="pwd" type="password" name="password"></Input>
                     </FormGroup>
                     <Button type="submit">Login</Button>
