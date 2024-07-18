@@ -1,6 +1,8 @@
+import React, { useState } from 'react';
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
-import SideProfileOpen from "../../components/SideProfileOpen";
+import SideProfileClose from "../../components/SideProfileClose"
+import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu";
 import Card from "./components/Card/cards";
 import { MainContainer, PageContent, CardsContainer, PageContentItems } from "./styles";
@@ -17,11 +19,21 @@ const coursesData = [
 ]
 
 const Courses = () => {
+    const [isProfileOpen, setProfileOpen] = useState(false);
+
+    const toggleProfile = () => {
+        setProfileOpen(prevState => !prevState);
+    };
+
     return (
         <>
             <Navbar />
             <PageContent>
-                <SideProfileOpen />
+                {isProfileOpen ? (
+                        <SideProfileOpen toggleProfile={toggleProfile} />
+                    ) : (
+                        <SideProfileClose toggleProfile={toggleProfile} />
+                    )}
                 <PageContentItems>
                     <StudentMenu />
                     <CardsContainer>
