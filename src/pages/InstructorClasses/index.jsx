@@ -25,7 +25,6 @@ const InstructorClasses = () => {
                     )}
                     <TopContent>
                         <InstructorMenu />
-
                     </TopContent>
                 </PageContent>
 
