@@ -5,6 +5,9 @@ import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
 import { MainContainer, PageContent, TopContent } from "./styles"
+import CalendarDate from "../../components/CalendarDate"
+
+
 import Welcome from "../../components/Welcome"
 
 
@@ -30,6 +33,7 @@ const Home = () => {
                         <StudentMenu />
                     </TopContent>
                 </PageContent>
+                <CalendarDate/>
                 <Footer />
             </MainContainer>
         </>
