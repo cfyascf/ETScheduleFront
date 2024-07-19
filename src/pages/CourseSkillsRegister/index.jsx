@@ -1,60 +1,100 @@
-import React, { useState } from 'react';
-import Footer from "../../components/Footer";
-import Navbar from "../../components/Navbar";
-import SideProfileClose from "../../components/SideProfileClose"
-import SideProfileOpen from "../../components/SideProfileOpen"
-import StudentMenu from "../../components/StudentMenu";
-import Card from "../../components/Card/cards";
-import { PageContent, CardsContainer, PageContentItems, TopContent } from "./styles";
+import Navbar from '../../components/Navbar';
+import Footer from '../../components/Footer';
+import { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle, ImgsIcon } from './styles';
+import Banner from './components/Banner';
+import CardStudents from './components/CardsStudents';
+import Table from './components/Table';
+import icon from '/plus_circle.svg'
 
-const coursesData = [
-    { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
-    { course: 'Power BI', name: 'Donathan Ramalho', semester: '2', color: '#6b03fc' },
-    { course: 'Java', name: 'Leonardo Trevisan', semester: '2', color: 'purple' },
-    { course: 'Java Avançado', name: 'Leonardo Trevisan', semester: '1', color: '#fc7303' },
-    { course: 'C#', name: 'Leonardo Trevisan', semester: '1', color: '#0384fc' },
-    { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
-    { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
-    { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
+const studentsData = [
+    { name: 'André Luis'},
+    { name: 'Andrey Koch'},
+    { name: 'Dayne Pacheco'},
+    { name: 'Gabriela Laureano'},
+    { name: 'Yasmim da Cunha'},
+    { name: 'Nilton Meira'},
+    { name: 'Jéssica Federal'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'}
+]
+
+const tableData = [
+    { description: 'Nome', value: 'João', color: 'green' },
+    { description: 'Nome', value: 'João', color: 'green' }
+
+  ];
+
+const bannerData = [
+    { name: 'Java Avançado', instructor: 'Leonardo Trevisan', color: 'orange' }
 ]
 
 const CourseSkillsRegister = () => {
-    const [isProfileOpen, setProfileOpen] = useState(false);
-
-    const toggleProfile = () => {
-        setProfileOpen(prevState => !prevState);
-    };
-
-    return (
+    return(
         <>
+        <MainContainer>
             <Navbar />
-            <PageContent>
-                {isProfileOpen ? (
-                    <SideProfileOpen toggleProfile={toggleProfile} />
-                ) : (
-                    <SideProfileClose toggleProfile={toggleProfile} />
-                )}
-                <TopContent>
-                    <StudentMenu />
-                    <PageContentItems>
+                <PageContent>
+                    {bannerData.map((bannerDt, indexBn) => (
+                        <Banner 
+                            key={indexBn}
+                            name={bannerDt.name}
+                            instructor={bannerDt.instructor}
+                            color={bannerDt.color}
+                        />    
+                    ))}
+                    
+                    <LineDiv>
+                        <div style={{
+                            display: 'flex',
+                            width: '100%',
+                            padding: '8px',
+                            paddingLeft: '120px',
+                            alignItems: 'center',
+                            gap: '10px',
+                            borderRadius: '10px'
+                        }}>
+                            <ImgsIcon src={icon}></ImgsIcon>
+                            <p style={{ fontWeight: '600', paddingTop: '1px' }}>Add Skill</p>
+                        </div>
+                        <Line/>
+                    </LineDiv>
+                    {bannerData.map((bannerDT, index) => (
+                        <Table
+                            key={index}
+                            color={bannerDT.color}
+                            data={tableData}
+                        />
+                    ))}
+                    <LineDiv>
+                        <SectionTitle>Students</SectionTitle>
+                        <Line/>
+                    </LineDiv>
+                    <CardsOutside>
                         <CardsContainer>
-                            {coursesData.map((courseData, index) => (
-                                <Card
+                            {studentsData.map((studentData, index) => (
+                                <CardStudents
                                     key={index}
-                                    course={courseData.course}
-                                    name={courseData.name}
-                                    semester={courseData.semester}
-                                    color={courseData.color}
+                                    name={studentData.name}
+                                    style={index % 5 === 0 ? { clear: 'both' } : {}}
                                 />
                             ))}
                         </CardsContainer>
-                    </PageContentItems>
-                </TopContent>
-            </PageContent>
+                    </CardsOutside>
+                    
+                </PageContent>
             <Footer />
+        </MainContainer>
         </>
-    );
-};
+    ) 
+}
 
 export default CourseSkillsRegister;
