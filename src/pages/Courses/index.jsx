@@ -6,6 +6,7 @@ import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu";
 import Card from "../../components/Card/cards";
 import { PageContent, CardsContainer, PageContentItems, TopContent } from "./styles";
+import { Link } from "react-router-dom";
 
 const coursesData = [
     { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
@@ -40,13 +41,19 @@ const Courses = () => {
                     <PageContentItems>
                         <CardsContainer>
                             {coursesData.map((courseData, index) => (
-                                <Card
-                                    key={index}
-                                    course={courseData.course}
-                                    name={courseData.name}
-                                    semester={courseData.semester}
-                                    color={courseData.color}
-                                />
+                                <Link style={{
+                                    textDecoration: "none",
+                                    color: "black"
+                                }}
+                                    to={"/skills"}>
+                                    <Card
+                                        key={index}
+                                        course={courseData.course}
+                                        name={courseData.name}
+                                        semester={courseData.semester}
+                                        color={courseData.color}
+                                    />
+                                </Link>
                             ))}
                         </CardsContainer>
                     </PageContentItems>

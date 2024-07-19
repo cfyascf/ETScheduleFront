@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import { BigTitle, ProfileContainer, UserImg, UserInfo, IconImg, TopIcons, UserTitle , LitleInfo, RootContainer, CreateContainer, IconCreate} from "./styles"
 import user from "/userProfile.png"
 import iconUser from "/user.png"
@@ -8,9 +9,8 @@ import arrow from "/icon_arrow_left.png"
 import event from "/calendar.png"
 import books from "/books.png"
 import lesson from "/teacher.png"
-import { Link } from "react-router-dom";
 
-const SideProfileOpenADM = ({ toggleProfileADM}) => {
+const SideProfileADMOpen = ({ toggleProfileADM}) => {
     return (
         <>
             <ProfileContainer>
@@ -28,9 +28,6 @@ const SideProfileOpenADM = ({ toggleProfileADM}) => {
                     <LitleInfo>
                         <UserTitle>
                             Date of Birth: 09/06/2003
-                        </UserTitle>
-                        <UserTitle>
-                            Class: DTA1
                         </UserTitle>
                     </LitleInfo>
                     <CreateContainer>
@@ -77,4 +74,4 @@ const SideProfileOpenADM = ({ toggleProfileADM}) => {
     )
 }
 
-export default SideProfileOpenADM;
+export default SideProfileADMOpen;

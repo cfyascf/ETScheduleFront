@@ -1,36 +1,56 @@
 import styled from "styled-components";
 
-const MainContainer = styled.main`
-    height: 100vh;
-    display: flex;
-    flex-direction: column; 
-`;
-
 const PageContent = styled.div`
-    display: flex;
-`;
-
-const CardsContainer = styled.div`
-    display: flex;
-    gap: 20px;
-    flex-wrap: wrap;
-    padding-bottom: 30px;
-`
-
-const PageContentItems = styled.div`
-    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding-left: 80px;
-    padding-right: 80px;
 `
 
-const TopContent = styled.div`
-    display: flex;
-    flex-direction: column;
+const MainContainer = styled.main`
+    height: 100vh;
+`
+
+const LineDiv = styled.div`
     width: 100%;
-    padding: 10px 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 50px;
+    padding-top: 30px;
 `
 
-export { MainContainer, PageContent, CardsContainer, PageContentItems, TopContent};
+const Line = styled.div`
+    width: 90%;
+    height: 1px;
+    background-color: #5a5a5a;
+`
+
+const CardsContainer = styled.div`
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-bottom: 30px;
+`
+
+const CardsOutside = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+`
+
+const SectionTitle = styled.p`
+    font-weight: 600;
+    font-size: 1.4rem;
+    align-self: flex-start;
+    padding-left: 120px;
+`
+
+const ImgsIcon = styled.img`
+    width: 1.5%;
+    object-fit: cover;
+`
+
+export { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle, ImgsIcon };

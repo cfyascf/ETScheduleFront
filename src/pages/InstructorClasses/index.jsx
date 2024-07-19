@@ -1,11 +1,12 @@
-import Navbar from "../../components/Navbar";
+import { Link } from "react-router-dom"; 
 import React, { useState } from 'react';
+import Navbar from "../../components/Navbar";
 import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from "./styles";
 import SideProfileOpenInstro from "../../components/SideProfileInstroOpen";
 import SideProfileClose from "../../components/SideProfileClose";
 import InstructorMenu from "../../components/InstructorMenu";
 import Footer from "../../components/Footer";
-import ClassCard from "./components/ClassCard/cards";
+import ClassCard from "../../components/ClassCard/cards";
 
 const classData = [
     { class: 'Soluções Digitais 1' },
@@ -39,10 +40,16 @@ const InstructorClasses = () => {
                         <PageContentItems>
                             <CardsContainer>
                                 {classData.map((classData, index) => (
-                                    <ClassCard
-                                        key={index}
-                                        class={classData.class}
-                                    />
+                                    <Link style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}
+                                        to={"/class"}>
+                                        <ClassCard
+                                            key={index}
+                                            class={classData.class}
+                                        />
+                                    </Link>
                                 ))}
                             </CardsContainer>
                         </PageContentItems>
