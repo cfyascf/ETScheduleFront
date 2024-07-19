@@ -18,12 +18,6 @@ import AdmSubjects from "../pages/AdmSubjects";
 import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
 
-<<<<<<< HEAD
-import Student from "../pages/Student";
-import CourseSkillsRegister from "../pages/CourseSkillsRegister";
-import PersonalReport from "../pages/PersonalReport";
-=======
->>>>>>> b5918832a01dc67277e954c4756504da5ba7f5ae
 
 const mainRoutes = createBrowserRouter([
     {
