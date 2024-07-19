@@ -8,15 +8,21 @@ const Reg = () => {
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+        console.log("aaa");
         try {
             const response = await api.post('/group', {
                 "name": nameClass,
                 "startAt": startDate,
                 "endDate": endDate
             });
-            console.log('Resposta da API:', response.data);
-            // Lógica adicional após o envio do formulário, se necessário
+
+            // if(!response.ok)
+            //     toast.error("Error posting data.")
+            // else
+            //     toast.success("Class created with sucess!")
+
         } catch (error) {
             console.error('Erro ao fazer requisição:', error);
             // Tratamento de erro
@@ -25,6 +31,7 @@ const Reg = () => {
 
     return (
         <>
+            {/* <ToastContainer /> */}
             <FormContainer>
                 <Forms>
                     <FormItems>
