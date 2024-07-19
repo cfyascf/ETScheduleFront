@@ -24,7 +24,7 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px; 
@@ -32,6 +32,13 @@ const FormGroup = styled.p`
 `;
 
 const Input = styled.input`
+    padding: 11px;
+    width: 28vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+`;
+
+const Select = styled.select`
     padding: 11px;
     width: 28vw;
     border: 1px solid #ccc;
@@ -85,4 +92,4 @@ const InputDiv = styled.div`
     border-radius: 10px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
+export { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};

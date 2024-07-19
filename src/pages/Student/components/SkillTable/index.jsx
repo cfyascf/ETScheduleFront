@@ -1,30 +1,18 @@
-import { TableContainer, TableTitle, Table, TableHeader, TableDown, Input } from "./styles"
+import { Table, TableDown, Input, Button } from "./styles"
 
-const SkillTable = () => {
+const SkillTable = (props) => {
     return (
         <>
-            <TableContainer>
-                <TableTitle>SKILLS</TableTitle>
-                <Table>
-                    <tr>
-                        <TableHeader>Weight</TableHeader>
-                        <TableHeader>Description</TableHeader>
-                        <TableHeader>Result</TableHeader>
-                    </tr>
-                    <tr>
-                        <TableDown>2</TableDown>
-                        <TableDown>Utilizar Esp32</TableDown>
-                        <TableDown><Input value="apto"></Input></TableDown>
-                    </tr>
-                    <tr>
-                        <TableDown>3</TableDown>
-                        <TableDown>Utilizar Sensores DHT</TableDown>
-                        <TableDown>Apto</TableDown>
-                    </tr>
-                </Table>
-            </TableContainer>
+            <Table>
+                <tr>
+                    <TableDown>{props.weight}</TableDown>
+                    <TableDown>{props.description}</TableDown>
+                    <TableDown><Input value={props.result}></Input><Button type="submit">Submit</Button></TableDown>
+                </tr>
+            </Table>
         </>
     )
 }
 
 export default SkillTable
+

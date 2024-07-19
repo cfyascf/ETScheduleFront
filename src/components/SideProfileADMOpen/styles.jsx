@@ -34,6 +34,7 @@ const UserTitle = styled.h3`
     font-weight: 400;
 `
 const LitleInfo = styled.div`
+    margin-top: 10px;
     display:flex;
     flex-direction: column;
     justify-content: center;
@@ -49,6 +50,21 @@ const TopIcons = styled.div`
 const IconImg = styled.img`
     width: 35px;
 `
+const CreateContainer = styled.div`
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    gap: 30px;
+`
 
+const RootContainer = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+`
+const IconCreate = styled.img`
+    width: 30px;
+    height: 30px;
+`
 
-export { ProfileContainer, UserInfo, UserImg, BigTitle, ProfileIcons, IconImg, TopIcons ,UserTitle,LitleInfo }
+export { ProfileContainer, UserInfo, UserImg, BigTitle, ProfileIcons, IconImg, TopIcons ,UserTitle,LitleInfo,RootContainer,CreateContainer, IconCreate}

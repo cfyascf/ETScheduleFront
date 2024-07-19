@@ -10,6 +10,17 @@ const MainContainer = styled.main`
     height: 100vh;
 `
 
+const LineDiv = styled.div`
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 6px;
+    padding-bottom: 30px;
+    padding-top: 30px;
+`
+
 const Line = styled.div`
     width: 90%;
     height: 1px;
@@ -22,8 +33,6 @@ const CardsContainer = styled.div`
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 30px;
-    padding-top: 20px;
-
 `
 
 const CardsOutside = styled.div`
@@ -32,4 +41,11 @@ const CardsOutside = styled.div`
     justify-content: center;
 `
 
-export { PageContent, MainContainer, Line, CardsContainer, CardsOutside };
+const SectionTitle = styled.p`
+    font-weight: 600;
+    font-size: 1.4rem;
+    align-self: flex-start;
+    padding-left: 120px;
+`
+
+export { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle };

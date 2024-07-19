@@ -1,30 +1,51 @@
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 import { useState } from 'react';
+import { useNavigate } from 'react-router-dom'
+// import { ToastContainer, toast } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
 import api from '../../../../services/api'
 
 const Reg = () => {
+
+    const navigate = useNavigate();
 
     const [nameClass, setNameClass] = useState('');
     const [startDate, setStartDate] = useState('');
     const [endDate, setEndDate] = useState('');
 
-    const handleSubmit = async () => {
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        const [yearS, monthS, dayS] = startDate.split('-')
+        const [yearE, monthE, dayE] = endDate.split('-')
+
+        const formattedStartDate = `${dayS}-${monthS}-${yearS}T00:00:00Z`;
+        const formattedEndDate = `${dayE}-${monthE}-${yearE}T00:00:00Z`;
+
+        console.log(formattedStartDate, formattedEndDate)
+
         try {
             const response = await api.post('/group', {
                 "name": nameClass,
-                "startAt": startDate,
-                "endDate": endDate
+                "beginsAt": formattedStartDate,
+                "endsAt": formattedEndDate
             });
-            console.log('Resposta da API:', response.data);
-            // Lógica adicional após o envio do formulário, se necessário
+
+            navigate('/instructor-home')
+
+            // if(!response.ok)
+            //     toast.error("Error posting data.")
+            // else
+            //     toast.success("Class created with sucess!")
+
         } catch (error) {
             console.error('Erro ao fazer requisição:', error);
-            // Tratamento de erro
         }
     };
 
     return (
         <>
+            {/* <ToastContainer /> */}
             <FormContainer>
                 <Forms>
                     <FormItems>
