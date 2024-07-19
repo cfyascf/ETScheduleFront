@@ -15,6 +15,7 @@ import InstructorClasses from "../pages/InstructorClasses";
 import Class from "../pages/ClassPage";
 import Student from "../pages/Student";
 import CourseSkillsRegister from "../pages/CourseSkillsRegister";
+import PersonalReport from "../pages/PersonalReport";
 
 const mainRoutes = createBrowserRouter([
     {
@@ -108,6 +109,12 @@ const mainRoutes = createBrowserRouter([
             <Student/>
         )
     },
+    {
+        path: '/personal-report',
+        element: (
+            <PersonalReport/>
+        )
+    }
 ])
 
 export default mainRoutes

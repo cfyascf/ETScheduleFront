@@ -12,7 +12,7 @@ const TopContent = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 10px 20px;
+    padding: 20px 20px;
 `
 
 const CardsContainer = styled.div`
