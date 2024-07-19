@@ -118,15 +118,16 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-<<<<<<< HEAD
         path: '/personal-report',
         element: (
             <PersonalReport/>
-=======
+        )
+    },
+    {
+
         path: '/profiles',
         element: (
             <Profiles/>
->>>>>>> b5918832a01dc67277e954c4756504da5ba7f5ae
         )
     },
     {
@@ -140,7 +141,7 @@ const mainRoutes = createBrowserRouter([
         element: (
             <AdmSubjects/>
         )
-    },
+    }
 ])
 
 export default mainRoutes
