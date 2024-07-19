@@ -1,10 +1,11 @@
 import { MenuContainer, MenuOptions} from "./styles"
+import { Link } from "react-router-dom";
 
 const StudentMenu = () => {
     return (
         <>
             <MenuOptions>
-                <a>CALENDÁRIO</a> | <a>MATÉRIAS</a> | <a>STATUS</a>
+                <Link to='/home'>CALENDÁRIO</Link> | <Link to='/courses'>MATÉRIAS</Link> | <Link to='/login'>STATUS</Link>
             </MenuOptions>
         </>
     )
