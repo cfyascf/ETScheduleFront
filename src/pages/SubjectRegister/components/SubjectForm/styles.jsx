@@ -56,7 +56,7 @@ const Button = styled.a`
     cursor: pointer;
     font-size: 16px;
     align-self: center;
-    text-decorations: none;
+    text-decoration: none;
     text-align: center;
 
     &:hover {
