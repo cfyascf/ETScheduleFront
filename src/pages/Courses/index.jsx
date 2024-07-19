@@ -16,15 +16,7 @@ const coursesData = [
     { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
     { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
     { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' },
-    { course: 'Python', name: 'Donathan Ramalho',semester: '1', color: '#fc7303'  },
-    { course: 'Power BI', name: 'Donathan Ramalho',semester: '3', color: 'aqua'  },
-    { course: 'Java', name: 'Leonardo Trevisan',semester: '2', color: 'brown' },
-    { course: 'Java Avançado', name: 'Leonardo Trevisan',semester: '1', color: '#fc7303' },
-    { course: 'C#', name: 'Leonardo Trevisan' , semester: '2', color: '#6b03fc'},
-    { course: 'IoT', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: '#fcba03' },
-    { course: 'Inglês', name: 'Queila Lima',semester: '2', color: 'brown' }
+    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 
 const Courses = () => {
