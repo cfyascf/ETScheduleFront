@@ -1,5 +1,5 @@
 import { BannerDiv, Imgs, Title, P } from "./style";
-import bannerImage from "/office.svg";
+import bannerImage from "/board-funnel.svg";
 
 const Banner = (props) => {
     return(
