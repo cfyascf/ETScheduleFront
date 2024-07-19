@@ -17,6 +17,8 @@ import AdmHome from "../pages/AdmHome";
 import AdmSubjects from "../pages/AdmSubjects";
 import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
+import AdmClasses from "../pages/AdmClasses";
+import Subjects from "../pages/Subjects";
 
 
 const mainRoutes = createBrowserRouter([
@@ -127,6 +129,18 @@ const mainRoutes = createBrowserRouter([
         path: '/adm-subjects',
         element: (
             <AdmSubjects/>
+        )
+    },
+    {
+        path: '/adm-classes',
+        element: (
+            <AdmClasses/>
+        )
+    },
+    {
+        path: '/subjects',
+        element: (
+            <Subjects/>
         )
     },
 ])
