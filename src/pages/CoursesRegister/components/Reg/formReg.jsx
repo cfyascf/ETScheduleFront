@@ -1,6 +1,8 @@
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 
+
+
 const Reg = () => {
     return (
         <>

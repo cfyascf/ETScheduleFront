@@ -19,7 +19,7 @@ const coursesData = [
     { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 
-const Courses = () => {
+const CourseSkillsRegister = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -57,4 +57,4 @@ const Courses = () => {
     );
 };
 
-export default Courses;
+export default CourseSkillsRegister;
