@@ -39,18 +39,46 @@ const Form = () => {
     const goHome = async (role) => {
 
         try {
-            const response = await api.post(`/api/v1/login`, {
+            const response = await api.post(`/login`, {
                 username: usernameValue,
                 password: passwordValue,
                 role: role
             })
             localStorage.setItem('@AUTH', response.data.token);
+            
+            const users = await api.get(`/user`);
+            let firstAccess = false;
+            const userInfo = parseJwt();
 
-            navigate('/home')
+            users.data.forEach((user) => {
+                if (user.id == userInfo.userId) {
+                    if (user.fullName === null) {
+                        firstAccess = true;
+                    }
+                }
+            });
+
+            if(firstAccess)
+                navigate('/fistacess');
+            else
+                navigate('/home');
+            
+            
         } catch (error) {
             // toast.error("Deu erro", {theme: "dark"})
         }
     }
+
+    function parseJwt () {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+    
+        return JSON.parse(jsonPayload);
+    }
+    
 
     return (
         <>
