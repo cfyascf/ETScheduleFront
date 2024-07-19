@@ -24,7 +24,7 @@ const SkillsHeader = styled.div`
 const Select = styled.select`
     width: 20%;
     border: 1px solid #d8d8d8;
-    border-radius: 10px;
+    border-radius: 5px;
     background-color: #d8d8d8;
     padding: 10px;
 `
@@ -35,4 +35,14 @@ const SelectContainer = styled.div`
     width: 95%;
 `
 
-export {PageContent, Line, SkillsHeader, Select, SelectContainer}
+const TableContainer = styled.div`
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 100px;
+
+`
+
+export {PageContent, Line, SkillsHeader, Select, SelectContainer, TableContainer}

@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
+    width: 852px;
     height: 620px;
     display: flex;
     justify-content: center;
@@ -24,7 +24,7 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px; 
@@ -38,12 +38,19 @@ const Input = styled.input`
     border-radius: 10px;
 `;
 
+const Select = styled.select`
+    padding: 11px;
+    width: 28vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+`;
+
 const Label = styled.label`
     font-size: 16px;
     color: #333;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
     margin-top: 3px;
     padding: 12px;
     width: 150px;
@@ -54,6 +61,8 @@ const Button = styled.button`
     cursor: pointer;
     font-size: 16px;
     align-self: center;
+    text-align: center;
+    text-decorations: none;
 
     &:hover {
         background-color: #0056b3;
@@ -85,4 +94,4 @@ const InputDiv = styled.div`
     border-radius: 10px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
+export { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};

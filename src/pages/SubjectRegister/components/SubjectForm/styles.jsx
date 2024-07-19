@@ -45,7 +45,7 @@ const Label = styled.label`
     color: #333;
 `;
 
-const Button = styled.button`
+const Button = styled.a`
     margin-top: 20px;
     padding: 12px;
     width: 150px;
@@ -56,6 +56,8 @@ const Button = styled.button`
     cursor: pointer;
     font-size: 16px;
     align-self: center;
+    text-decorations: none;
+    text-align: center;
 
     &:hover {
         background-color: #0056b3;

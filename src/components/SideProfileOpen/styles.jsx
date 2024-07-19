@@ -1,5 +1,6 @@
 import styled from 'styled-components'
 
+
 const ProfileContainer = styled.div`
     width: 25%;
     background-color: #F0F0F0;
@@ -28,16 +29,26 @@ const BigTitle = styled.h2`
     font-weight: 600;
     font-size: 2rem;
 `
+const UserTitle = styled.h3`
+    font-size: 1rem;
+    font-weight: 400;
+`
+const LitleInfo = styled.div`
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+`
 
 const TopIcons = styled.div`
     width: 100%;
     display: flex;
     justify-content: space-between;
-    
 `
 
 const IconImg = styled.img`
     width: 35px;
 `
 
-export { ProfileContainer, UserInfo, UserImg, BigTitle, ProfileIcons, IconImg, TopIcons }
+
+export { ProfileContainer, UserInfo, UserImg, BigTitle, ProfileIcons, IconImg, TopIcons ,UserTitle,LitleInfo }

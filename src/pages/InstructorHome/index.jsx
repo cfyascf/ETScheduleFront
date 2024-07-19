@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"; 
 import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from './styles';
 import SideProfileOpen from '../../components/SideProfileOpen';
 import Navbar from '../../components/Navbar';
@@ -7,7 +8,7 @@ import Welcome from '../../components/Welcome';
 import Footer from '../../components/Footer';
 import InstructorMenu from '../../components/InstructorMenu';
 import Card from '../../components/Card/cards';
-
+import SideProfileOpenInstro from '../../components/SideProfileInstroOpen';
 
 const coursesData = [
     { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
@@ -18,7 +19,7 @@ const coursesData = [
     { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
     { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
     { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' },
+    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 
 const InstructorHome = () => {
@@ -34,7 +35,7 @@ const InstructorHome = () => {
                 <Navbar />
                 <PageContent>
                     {isProfileOpen ? (
-                        <SideProfileOpen toggleProfile={toggleProfile} />
+                        <SideProfileOpenInstro toggleProfileInstro={toggleProfile} />
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}
@@ -44,11 +45,19 @@ const InstructorHome = () => {
                         <PageContentItems>
                             <CardsContainer>
                                 {coursesData.map((courseData, index) => (
-                                    <Card
-                                        key={index}
-                                        course={courseData.course}
-                                        name={courseData.name}
-                                    />
+                                    <Link style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}
+                                        to={"/"}>
+                                        <Card
+                                            key={index}
+                                            course={courseData.course}
+                                            name={courseData.name}
+                                            semester={courseData.semester}
+                                            color={courseData.color}
+                                        />
+                                    </Link>
                                 ))}
                             </CardsContainer>
                         </PageContentItems>
