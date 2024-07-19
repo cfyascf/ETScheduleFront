@@ -12,13 +12,13 @@ import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
 
 const subjectData = [
-    { subject: 'Soluções Digitais 1' },
-    { subject: 'Soluções Digitais 2' },
-    { subject: 'TDS 1' },
-    { subject: 'TDS 2' },
-    { subject: 'TDS 3' },
-    { subject: 'Análise de Dados' },
-    { subject: 'Cibersistemas' }
+    { class: 'Python' },
+    { class: 'Power BI' },
+    { class: 'IA' },
+    { class: 'IoT' },
+    { class: 'Web' },
+    { class: 'SQL' },
+    { class: 'Java' }
 ]
 
 const AdmSubject = () => {
@@ -40,7 +40,6 @@ const AdmSubject = () => {
                     )}
                     <Information>
                         <TopContent>
-                            <Welcome />
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
@@ -49,7 +48,7 @@ const AdmSubject = () => {
                                             textDecoration: "none",
                                             color: "black"
                                         }}
-                                            to={"/class"}>
+                                            to={"/subjects"}>
                                             <ClassCard
                                                 key={index}
                                                 class={subjectData.class}

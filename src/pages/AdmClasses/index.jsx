@@ -9,21 +9,19 @@ import Welcome from "../../components/Welcome";
 import { CardsContainer, Information, MainContainer, PageContent, PageContentItems, TopContent } from "./styles";
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
-import Card from "../../components/Card/cards";
+import ClassCard from "../../components/ClassCard/cards";
 
-const coursesData = [
-    { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
-    { course: 'Power BI', name: 'Donathan Ramalho', semester: '2', color: '#6b03fc' },
-    { course: 'Java', name: 'Leonardo Trevisan', semester: '2', color: 'purple' },
-    { course: 'Java Avançado', name: 'Leonardo Trevisan', semester: '1', color: '#fc7303' },
-    { course: 'C#', name: 'Leonardo Trevisan', semester: '1', color: '#0384fc' },
-    { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
-    { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
-    { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
+const classData = [
+    { class: 'Soluções Digitais 1' },
+    { class: 'Soluções Digitais 2' },
+    { class: 'TDS 1' },
+    { class: 'TDS 2' },
+    { class: 'TDS 3' },
+    { class: 'Análise de Dados' },
+    { class: 'Cibersistemas' }
 ]
 
-const AdmHome = () => {
+const AdmClasses = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -42,22 +40,18 @@ const AdmHome = () => {
                     )}
                     <Information>
                         <TopContent>
-                            <Welcome />
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
-                                    {coursesData.map((courseData, index) => (
+                                    {classData.map((classData, index) => (
                                         <Link style={{
                                             textDecoration: "none",
                                             color: "black"
                                         }}
-                                            to={"/course-skills-register"}>
-                                            <Card
+                                            to={"/class"}>
+                                            <ClassCard
                                                 key={index}
-                                                course={courseData.course}
-                                                name={courseData.name}
-                                                semester={courseData.semester}
-                                                color={courseData.color}
+                                                class={classData.class}
                                             />
                                         </Link>
                                     ))}
@@ -74,4 +68,4 @@ const AdmHome = () => {
     )
 }
 
-export default AdmHome
+export default AdmClasses
