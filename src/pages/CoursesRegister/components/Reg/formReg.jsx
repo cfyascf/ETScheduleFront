@@ -42,8 +42,8 @@ const Reg = () => {
             setGroupId(groups[0].id);
     }
 
-    const postDiscipline = () => {
-        const response = createCourse({
+    const postDiscipline = async() => {
+        const response = await createDiscipline({
             groupId: groupId,
             instructorId: instructorId,
             courseId: courseId,
@@ -67,7 +67,7 @@ const Reg = () => {
                         <ColoredText>REGISTER A COURSE</ColoredText>
                         <FormGroup>
                             <Label htmlFor="instructor">Instructor:</Label>
-                            <Select onChange={e => setInstructorId(e.target.value)}>
+                            <Select value={instructorId} onChange={e => setInstructorId(e.target.value)}>
                                 {
                                     instructors.map((i, index) => <option key={index} value={i.profileId}>{i.name}</option>)
                                 }
@@ -75,7 +75,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="course">Course:</Label>
-                            <Select onChange={e => setCourseId(e.target.value)}>
+                            <Select value={courseId} onChange={e => setCourseId(e.target.value)}>
                                 {
                                     courses.map((c, index) => <option key={index} value={c.id}>{c.name}</option>)
                                 }
@@ -83,7 +83,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="group">Group:</Label>
-                            <Select onChange={e => setGroupId(e.target.value)}>
+                            <Select value={groupId} onChange={e => setGroupId(e.target.value)}>
                                 {
                                     groups.map((g, index) => <option key={index} value={g.id}>{g.name}</option>)
                                 }
@@ -100,7 +100,7 @@ const Reg = () => {
                             </InputDiv>
                         </FormGroup>
                     </FormItems>
-                    <Button type="submit" onSubmit={postDiscipline}>Submit</Button>
+                    <Button onClick={postDiscipline}>Submit</Button>
                 </Forms>
             </FormContainer>
         </>

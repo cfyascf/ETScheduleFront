@@ -12,7 +12,13 @@ const TopContent = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
-    padding: 20px 20px;
+`
+const Information = styled.div `
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5vh;
+    width: 100%;
 `
 
 const CardsContainer = styled.div`
@@ -29,5 +35,5 @@ const PageContentItems = styled.div`
     padding-left: 80px;
     padding-right: 80px;
 `;
-
-export {MainContainer, PageContent, TopContent, CardsContainer, PageContentItems}
+ 
+export {MainContainer, PageContent, TopContent, Information, CardsContainer, PageContentItems}
