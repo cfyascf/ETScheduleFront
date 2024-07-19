@@ -17,14 +17,11 @@ import AdmHome from "../pages/AdmHome";
 import AdmSubjects from "../pages/AdmSubjects";
 import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
-<<<<<<< HEAD
 import CourseSkillsRegister from "../pages/CourseSkillsRegister";
 import PersonalReport from "../pages/PersonalReport";
-=======
 import AdmClasses from "../pages/AdmClasses";
 import Subjects from "../pages/Subjects";
 
->>>>>>> f9454c56fa3e16780b592dce505872aab86379f7
 
 const mainRoutes = createBrowserRouter([
     {
@@ -142,9 +139,6 @@ const mainRoutes = createBrowserRouter([
         element: (
             <AdmSubjects/>
         )
-<<<<<<< HEAD
-    }
-=======
     },
     {
         path: '/adm-classes',
@@ -158,7 +152,6 @@ const mainRoutes = createBrowserRouter([
             <Subjects/>
         )
     },
->>>>>>> f9454c56fa3e16780b592dce505872aab86379f7
 ])
 
 export default mainRoutes
