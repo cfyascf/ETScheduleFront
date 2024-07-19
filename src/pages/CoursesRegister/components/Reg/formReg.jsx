@@ -21,16 +21,25 @@ const Reg = () => {
     const getInstructorsAsync = async() => {
         const response = await getAllInstructors();
         setInstructors(response.data);
+
+        if (instructors.length != 0)
+            setInstructorId(instructors[0].profileId);
     };
 
     const getCoursesAsync = async() => {
         const response = await getAllCourses();
         setCourses(response.data);
+
+        if (courses.length != 0)
+            setCourseId(courses[0].id);
     };
 
     const getGroupsAsync = async() => {
         const response = await getAllGroups();
         setGroups(response.data);
+
+        if (groups.length != 0)
+            setGroupId(groups[0].id);
     }
 
     const postDiscipline = () => {
@@ -58,25 +67,25 @@ const Reg = () => {
                         <ColoredText>REGISTER A COURSE</ColoredText>
                         <FormGroup>
                             <Label htmlFor="instructor">Instructor:</Label>
-                            <Select value={instructorId} onChange={e => setInstructorId(e.target.value)}>
+                            <Select onChange={e => setInstructorId(e.target.value)}>
                                 {
-                                    instructors.map(i => <option value={i.profileId}>{i.name}</option>)
+                                    instructors.map((i, index) => <option key={index} value={i.profileId}>{i.name}</option>)
                                 }
                             </Select>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="course">Course:</Label>
-                            <Select value={courseId} onChange={e => setCourseId(e.target.value)}>
+                            <Select onChange={e => setCourseId(e.target.value)}>
                                 {
-                                    courses.map(c => <option value={c.id}>{c.name}</option>)
+                                    courses.map((c, index) => <option key={index} value={c.id}>{c.name}</option>)
                                 }
                             </Select>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="group">Group:</Label>
-                            <Select value={groupId} onChange={e => setGroupId(e.target.value)}>
+                            <Select onChange={e => setGroupId(e.target.value)}>
                                 {
-                                    groups.map(g => <option value={g.id}>{g.name}</option>)
+                                    groups.map((g, index) => <option key={index} value={g.id}>{g.name}</option>)
                                 }
                             </Select>
                         </FormGroup>
