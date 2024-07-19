@@ -5,6 +5,7 @@ import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu";
 import Card from "../../components/Card/cards";
+import Welcome from '../../components/Welcome';
 import { PageContent, CardsContainer, PageContentItems, TopContent } from "./styles";
 import { Link } from "react-router-dom";
 
@@ -37,6 +38,7 @@ const Courses = () => {
                     <SideProfileClose toggleProfile={toggleProfile} />
                 )}
                 <TopContent>
+                    <Welcome/>
                     <StudentMenu />
                     <PageContentItems>
                         <CardsContainer>
