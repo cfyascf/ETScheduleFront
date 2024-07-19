@@ -15,6 +15,9 @@ import InstructorClasses from "../pages/InstructorClasses";
 import Class from "../pages/ClassPage";
 import Student from "../pages/Student";
 import CourseSkillsRegister from "../pages/CourseSkillsRegister";
+import AdmHome from "../pages/AdmHome";
+import AdmSubjects from "../pages/AdmSubjects";
+
 
 const mainRoutes = createBrowserRouter([
     {
@@ -106,6 +109,18 @@ const mainRoutes = createBrowserRouter([
         path: '/student',
         element: (
             <Student/>
+        )
+    },
+    {
+        path: '/adm-home',
+        element: (
+            <AdmHome/>
+        )
+    },
+    {
+        path: '/adm-subjects',
+        element: (
+            <AdmSubjects/>
         )
     },
 ])

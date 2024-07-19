@@ -6,7 +6,7 @@ import SideProfileOpenInstro from "../../components/SideProfileInstroOpen";
 import SideProfileClose from "../../components/SideProfileClose";
 import InstructorMenu from "../../components/InstructorMenu";
 import Footer from "../../components/Footer";
-import ClassCard from "./components/ClassCard/cards";
+import ClassCard from "../../components/ClassCard/cards";
 
 const classData = [
     { class: 'Soluções Digitais 1' },
