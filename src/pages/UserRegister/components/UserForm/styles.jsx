@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 32vw;
-    height: 470px;
+    height: 570px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -15,6 +15,7 @@ const FormItems = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 30px;
+  
 `;
 
 const Forms = styled.form`
@@ -71,6 +72,7 @@ const ColoredText = styled.div`
     font-weight: bold;
     font-size: 20px;
     width: 28vw;
+    text-align: center;
 `;
 
 const CheckboxArea = styled.div`
@@ -79,5 +81,6 @@ const CheckboxArea = styled.div`
     width: 28vw;
 
 `
+
 
 export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, CheckboxArea };
