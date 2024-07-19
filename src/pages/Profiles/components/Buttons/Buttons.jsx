@@ -40,7 +40,7 @@ const Buttons = ( ) => {
 
     const selectRole = async (role) => {
         try {
-            const response = await api.post(`/api/v1/login`, {
+            const response = await api.post(`/login`, {
                 username: userData['username'],
                 password: userData['password'],
                 role: role
