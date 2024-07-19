@@ -13,6 +13,7 @@ import UserRegister from "../pages/UserRegister";
 import SubjectRegister from "../pages/SubjectRegister";
 import InstructorClasses from "../pages/InstructorClasses";
 import Class from "../pages/ClassPage";
+import Student from "../pages/Student";
 
 const mainRoutes = createBrowserRouter([
     {
@@ -98,6 +99,12 @@ const mainRoutes = createBrowserRouter([
         path: '/class',
         element: (
             <Class/>
+        )
+    }, 
+    {
+        path: '/student',
+        element: (
+            <Student/>
         )
     }, 
 ])
