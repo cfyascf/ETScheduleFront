@@ -12,6 +12,7 @@ const TopContent = styled.div`
     display: flex;
     flex-direction: column;
     width: 100%;
+    padding: 20px 20px;
 `
 const Information = styled.div `
     display: flex;
@@ -20,5 +21,17 @@ const Information = styled.div `
     gap: 5vh;
     width: 100%;
 `
+const AllGraphics = styled.div`
+    display:flex;
+    flex-direction: column;
+    gap: 50px;
+    justify-content: center;
+    align-items: center;
+`
  
-export {MainContainer, PageContent, TopContent, Information}
+const RadarContainer = styled.div`
+    display:flex;
+    flex-direction: row;
+`
+
+export {MainContainer, PageContent, TopContent, Information,AllGraphics,RadarContainer}

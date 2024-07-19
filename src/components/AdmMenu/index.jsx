@@ -11,10 +11,10 @@ const AdmMenu = () => {
                 }}to='/adm-home'>COURSES</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/courses'>SUBJECTS</Link> | <Link style={{
+                }}to='/adm-subjects'>SUBJECTS</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/login'>CLASSES</Link>
+                }}to='/adm-classes'>CLASSES</Link>
             </MenuOptions>
         </>
     )

@@ -8,13 +8,13 @@ const StudentMenu = () => {
                 <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/home'>CALENDÁRIO</Link> | <Link style={{
+                }}to='/home'>CALENDAR</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/courses'>MATÉRIAS</Link> | <Link style={{
+                }}to='/courses'>COURSERS</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/login'>PERSONAL REPORT</Link>
+                }}to='/personal-report'>PERSONAL REPORT</Link>
             </MenuOptions>
         </>
     )
