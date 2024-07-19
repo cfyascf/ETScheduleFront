@@ -6,16 +6,16 @@ import { MainContainer, PageContent, Imgs } from "./styles";
 import Person from "/person.png"
 
 const CoursesReg = () => {
-    return(
-        <> 
-        <MainContainer>
-            <Navbar/>
+    return (
+        <>
+            <MainContainer>
+                <Navbar />
                 <PageContent>
-                    <Imgs src={Person} alt="Bosch Logo"/> 
-                    <Reg/>
+                    <Imgs src={Person} alt="Bosch Logo" />
+                    <Reg />
                 </PageContent>
-            <Footer/>
-        </MainContainer>
+                <Footer />
+            </MainContainer>
         </>
     )
 }

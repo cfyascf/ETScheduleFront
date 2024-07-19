@@ -1,3 +1,4 @@
+
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 
 const Reg = () => {
@@ -22,7 +23,7 @@ const Reg = () => {
                         <FormGroup>
                             <Label for="color-picker">Color:</Label>
                             <InputDiv>
-                                <InputColor type="color" value="#ff0000" id="color-picker"></InputColor>
+                                <InputColor type="color" id="color-picker"></InputColor>
                             </InputDiv>
                         </FormGroup>
                     </FormItems>

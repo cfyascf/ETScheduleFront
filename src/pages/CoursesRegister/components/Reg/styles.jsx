@@ -33,7 +33,7 @@ const FormGroup = styled.p`
 
 const Input = styled.input`
     padding: 11px;
-    width: 550px;
+    width: 28vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -85,4 +85,4 @@ const InputDiv = styled.div`
     border-radius: 10px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputColor, InputDiv };
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};

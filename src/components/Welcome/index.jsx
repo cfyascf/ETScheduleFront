@@ -5,7 +5,7 @@ const Welcome = () => {
         <>
             <MenuContainer>
                 <WelcomeText>
-                    Seja bem-vindo(a), <ColoredText> Fulano</ColoredText>!
+                    Welcome, <ColoredText> Fulano</ColoredText>!
                 </WelcomeText>
             </MenuContainer>
         </>
