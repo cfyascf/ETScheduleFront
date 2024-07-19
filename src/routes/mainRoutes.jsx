@@ -17,6 +17,7 @@ import AdmHome from "../pages/AdmHome";
 import AdmSubjects from "../pages/AdmSubjects";
 import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
+import CourseSkillsRegister from "../pages/CourseSkillsRegister";
 
 
 const mainRoutes = createBrowserRouter([
@@ -129,6 +130,12 @@ const mainRoutes = createBrowserRouter([
             <AdmSubjects/>
         )
     },
+    {
+        path: '/course-skills-register',
+        element: (
+            <CourseSkillsRegister/>
+        )
+    }
 ])
 
 export default mainRoutes
