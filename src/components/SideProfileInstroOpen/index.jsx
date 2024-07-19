@@ -32,19 +32,19 @@ const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
                     </LitleInfo>
                     <CreateContainer>
                         <RootContainer>
-                            <Link to="/register-event" style={{textDecoration:"none", color: "black" }}>
+                            <Link to="/register-event" style={{textDecoration:"none", color: "black" , display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={event} />
                                 <UserTitle>Create Event</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/courses-register" style={{textDecoration:"none", color: "black"}}>
+                            <Link to="/courses-register" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={books} />
                                 <UserTitle>Create Courses</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/register-lesson" style={{textDecoration:"none", color: "black"}}>
+                            <Link to="/register-lesson" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={lesson} />
                                 <UserTitle>Create Lesson</UserTitle>
                             </Link>

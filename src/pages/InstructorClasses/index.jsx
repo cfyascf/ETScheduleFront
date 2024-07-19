@@ -1,7 +1,7 @@
 import Navbar from "../../components/Navbar";
 import React, { useState } from 'react';
 import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from "./styles";
-import SideProfileOpen from "../../components/SideProfileOpen";
+import SideProfileOpenInstro from "../../components/SideProfileInstroOpen";
 import SideProfileClose from "../../components/SideProfileClose";
 import InstructorMenu from "../../components/InstructorMenu";
 import Footer from "../../components/Footer";
@@ -30,7 +30,7 @@ const InstructorClasses = () => {
                 <Navbar />
                 <PageContent>
                     {isProfileOpen ? (
-                        <SideProfileOpen toggleProfile={toggleProfile} />
+                        <SideProfileOpenInstro toggleProfileInstro={toggleProfile} />
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}

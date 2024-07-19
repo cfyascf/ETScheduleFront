@@ -35,37 +35,37 @@ const SideProfileOpenADM = ({ toggleProfileADM}) => {
                     </LitleInfo>
                     <CreateContainer>
                         <RootContainer>
-                            <Link to="/user-register" style={{textDecoration:"none", color: "black" }}>
+                            <Link to="/user-register" style={{textDecoration:"none", color: "black" , display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={iconUser} />
                                 <UserTitle>Create User</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/subject-register" style={{textDecoration:"none", color: "black" }}>
+                            <Link to="/subject-register" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px' }}>
                                 <IconCreate src={books} />
                                 <UserTitle>Create Subject</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/register-class" style={{textDecoration:"none", color: "black" }}>
+                            <Link to="/register-class" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px' }}>
                                 <IconCreate src={teachings} />
                                 <UserTitle>Create Class</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/courses-register" style={{textDecoration:"none", color: "black"}}>
+                            <Link to="/courses-register" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={courses} />
                                 <UserTitle>Create Courses</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/register-event" style={{textDecoration:"none", color: "black" }}>
+                            <Link to="/register-event" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px' }}>
                                 <IconCreate src={event} />
                                 <UserTitle>Create Event</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
-                            <Link to="/register-lesson" style={{textDecoration:"none", color: "black"}}>
+                            <Link to="/register-lesson" style={{textDecoration:"none", color: "black", display: "flex", flexDirection: "row", gap: '10px'}}>
                                 <IconCreate src={lesson} />
                                 <UserTitle>Create Lesson</UserTitle>
                             </Link>
@@ -77,4 +77,4 @@ const SideProfileOpenADM = ({ toggleProfileADM}) => {
     )
 }
 
-export default SideProfileOpenInstro;
+export default SideProfileOpenADM;
