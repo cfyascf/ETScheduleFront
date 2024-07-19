@@ -22,6 +22,8 @@ const Form = () => {
 
             const response = await api.post(`/login/confirm`, formData)
 
+            console.log('>>>>>>>>>>>', response)
+
             if (response.data['canLogin'] == true) {
                 // toast.success("Login realizado com sucesso", {theme: "dark"})
                 if (response.data.profiles.length == 1)
