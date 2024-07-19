@@ -4,14 +4,14 @@ import Navbar from "../../components/Navbar"
 import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
-import { MainContainer, PageContent, TopContent, Information } from "./styles"
-import CalendarDate from "../../components/CalendarDate"
+import GraphicBar from "../../components/GraphicBar/GraphicBar"
+import { MainContainer, PageContent, TopContent, Information,AllGraphics, RadarContainer } from "./styles"
+import GraphicRadarSoft from '../../components/GraphicRadarSoft/GraphicRadarSoft';
+import GraphicRadarHard from '../../components/GraphicRadarHard/GraphicRadarHard';
 
 
-import Welcome from "../../components/Welcome"
 
-
-const Home = () => {
+const PersonalReport = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -30,10 +30,15 @@ const Home = () => {
                     )}
                     <Information>
                         <TopContent>
-                            <Welcome />
                             <StudentMenu />
                         </TopContent>
-                        
+                        <AllGraphics>
+                            <RadarContainer>
+                                <GraphicRadarSoft/>
+                                <GraphicRadarHard/>
+                            </RadarContainer>
+                            <GraphicBar/>
+                        </AllGraphics>
                     </Information>
                 </PageContent>
                 
@@ -43,4 +48,4 @@ const Home = () => {
     )
 }
 
-export default Home
+export default PersonalReport

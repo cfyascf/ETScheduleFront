@@ -19,6 +19,18 @@ const coursesData = [
     { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
     { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
     { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
+    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' },
+    { course: 'Java Avançado', name: 'Leonardo Trevisan', semester: '1', color: '#fc7303' },
+    { course: 'C#', name: 'Leonardo Trevisan', semester: '1', color: '#0384fc' },
+    { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
+    { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
+    { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
+    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' },
+    { course: 'Java Avançado', name: 'Leonardo Trevisan', semester: '1', color: '#fc7303' },
+    { course: 'C#', name: 'Leonardo Trevisan', semester: '1', color: '#0384fc' },
+    { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
+    { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
+    { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
     { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 

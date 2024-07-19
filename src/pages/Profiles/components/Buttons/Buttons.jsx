@@ -1,9 +1,4 @@
 import { OptionsContainer,Path, PathContainer, Imgs} from "./styles";
-import studant from "/laptop-checklist-education.svg";
-import teacher from "/presentation-speaker.svg";
-import boss from "/wholesaler.svg";
-
-
 
 
 const Buttons = ( ) => {
