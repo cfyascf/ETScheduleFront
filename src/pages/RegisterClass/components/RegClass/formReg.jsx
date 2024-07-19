@@ -1,6 +1,6 @@
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 import { useState } from 'react';
-import { api } from '../../../../services/api'
+import api from '../../../../services/api'
 
 const Reg = () => {
 

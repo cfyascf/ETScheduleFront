@@ -1,30 +1,37 @@
 import {FormContainer, Imgs, Forms, FormGroup, Input, Label, Button} from "./styles"
 import logo from "/Bosch_symbol_logo_black_red_1.svg";
 import { useEffect, useState } from "react"
+import { useNavigate } from 'react-router-dom'
+import api from "../../../../services/api"
+// import { ToastContainer, toast } from 'react-toastify';
 
 
 const Form = () => {
 
     const [usernameValue, setUsername] = useState('')
     const [passwordValue, setPassword] = useState('')
+    const navigate = useNavigate()
 
 
     const doLogin = async () => {
         try {
-            const response = await api.post(`http://localhost:8080/api/v1/login/confirm`, {
+            const response = await api.post(`/api/v1/login/confirm`, {
                 username: usernameValue,
                 password: passwordValue
             })
-            console.log(response);
+            // toast.success("Login realizado com sucesso", {theme: "dark"})
+            navigate("/profiles")
 
         } catch (error) {
             console.log(error);
+            // toast.error("Deu erro", {theme: "dark"})
         }
     }
 
 
     return(
          <>
+            {/* <ToastContainer /> */}
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo"/> 
