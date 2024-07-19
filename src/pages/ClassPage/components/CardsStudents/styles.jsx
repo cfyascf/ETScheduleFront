@@ -4,7 +4,7 @@ const CardContainer = styled.div`
     border-radius: 8px;
     background-color: #f2f2f2;
  	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.158);
- 	margin: 20px;
+ 	margin: 12px;
 	width: 16%;
  	display: flex;
  	align-items: center;
