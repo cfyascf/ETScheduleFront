@@ -19,7 +19,7 @@ const coursesData = [
     { course: 'IoT', name: 'Queila Lima', semester: '1', color: '#8cc8d1' },
     { course: 'Comunicação', name: 'Queila Lima', semester: '2', color: 'green' },
     { course: 'Inglês', name: 'Queila Lima', semester: '2', color: 'brown' },
-    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' },
+    { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 
 const InstructorHome = () => {
@@ -44,13 +44,15 @@ const InstructorHome = () => {
                         <InstructorMenu />
                         <PageContentItems>
                             <CardsContainer>
-                                {coursesData.map((courseData, index) => (
-                                    <Card
-                                        key={index}
-                                        course={courseData.course}
-                                        name={courseData.name}
-                                    />
-                                ))}
+                            {coursesData.map((courseData, index) => (
+                                <Card
+                                    key={index}
+                                    course={courseData.course}
+                                    name={courseData.name}
+                                    semester={courseData.semester}
+                                    color={courseData.color}
+                                />
+                            ))}
                             </CardsContainer>
                         </PageContentItems>
                     </TopContent>

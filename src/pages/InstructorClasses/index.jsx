@@ -36,6 +36,16 @@ const InstructorClasses = () => {
                     )}
                     <TopContent>
                         <InstructorMenu />
+                        <PageContentItems>
+                            <CardsContainer>
+                                {classData.map((classData, index) => (
+                                    <ClassCard
+                                        key={index}
+                                        class={classData.class}
+                                    />
+                                ))}
+                            </CardsContainer>
+                        </PageContentItems>
                     </TopContent>
                 </PageContent>
 
