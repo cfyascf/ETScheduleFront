@@ -16,11 +16,8 @@ const Reg = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        const [yearS, monthS, dayS] = startDate.split('-')
-        const [yearE, monthE, dayE] = endDate.split('-')
-
-        const formattedStartDate = `${dayS}-${monthS}-${yearS}T00:00:00Z`;
-        const formattedEndDate = `${dayE}-${monthE}-${yearE}T00:00:00Z`;
+        const formattedStartDate = `${startDate}T00:00:00Z`;
+        const formattedEndDate = `${endDate}T00:00:00Z`;
 
         console.log(formattedStartDate, formattedEndDate)
 

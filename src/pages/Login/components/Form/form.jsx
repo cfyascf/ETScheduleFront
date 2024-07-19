@@ -39,7 +39,7 @@ const Form = () => {
     const goHome = async (role) => {
 
         try {
-            const response = await api.post(`/api/v1/login`, {
+            const response = await api.post(`/login`, {
                 username: usernameValue,
                 password: passwordValue,
                 role: role
