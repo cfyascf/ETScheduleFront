@@ -25,20 +25,19 @@ import { getAllCourses } from "../../services/courseService";
 const AdmSubject = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
     const [courses, setCourses] = useState([]);
-    const [name, setName] = useState("");
 
     useEffect(() => {
         async function fetchCourses() {
             try {
                 const response = await getAllCourses();
-                setCourses(response.data); // Assuming your API returns an array of courses
+                setCourses(response.data); 
             } catch (error) {
                 console.error("Error fetching courses:", error);
             }
         }
 
         fetchCourses();
-    }, []); // Empty dependency array ensures useEffect runs only once
+    }, []); 
 
     const toggleProfile = () => {
         setProfileOpen(prevState => !prevState);
@@ -64,7 +63,7 @@ const AdmSubject = () => {
                                             <ClassCard
                                                 key={course.id}
                                                 name={course.name}
-                                                onChange={e => setName(e.target.value)} // Not sure if you need this onChange here
+                                                
                                             />
                                         </Link>
                                     ))}
