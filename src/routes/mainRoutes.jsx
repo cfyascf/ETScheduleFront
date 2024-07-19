@@ -102,6 +102,12 @@ const mainRoutes = createBrowserRouter([
             <Class/>
         )
     }, 
+    {
+        path: '/student',
+        element: (
+            <Student/>
+        )
+    },
 ])
 
 export default mainRoutes
