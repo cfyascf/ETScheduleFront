@@ -17,7 +17,8 @@ import AdmHome from "../pages/AdmHome";
 import AdmSubjects from "../pages/AdmSubjects";
 import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
-
+import CourseSkillsRegister from "../pages/CourseSkillsRegister";
+import PersonalReport from "../pages/PersonalReport";
 
 const mainRoutes = createBrowserRouter([
     {

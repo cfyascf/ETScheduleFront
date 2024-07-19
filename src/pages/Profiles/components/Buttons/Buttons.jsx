@@ -1,12 +1,9 @@
 import { OptionsContainer,Path, PathContainer, Imgs} from "./styles";
-<<<<<<< HEAD
-=======
 import studant from "/laptop-checklist-education.svg";
 import teacher from "/presentation-speaker.svg";
 import boss from "/wholesaler.svg";
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from "../../../../services/api"
->>>>>>> b5918832a01dc67277e954c4756504da5ba7f5ae
 
 
 const Buttons = ( ) => {
