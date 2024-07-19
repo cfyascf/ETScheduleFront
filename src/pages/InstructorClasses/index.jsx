@@ -36,19 +36,6 @@ const InstructorClasses = () => {
                     )}
                     <TopContent>
                         <InstructorMenu />
-<<<<<<< HEAD
-=======
-                        <PageContentItems>
-                            <CardsContainer>
-                                {classData.map((classData, index) => (
-                                    <ClassCard
-                                        key={index}
-                                        class={classData.class}
-                                    />
-                                ))}
-                            </CardsContainer>
-                        </PageContentItems>
->>>>>>> 61d9cbd566147eb4ca038c0507245752b615ffc7
                     </TopContent>
                 </PageContent>
 
