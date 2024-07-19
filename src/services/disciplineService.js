@@ -1,9 +1,14 @@
+import { getHeaders } from "./headers";
 import api from "./api";
 
 const createDiscipline = async(body) => {
-    const response = api.post(
+    const headers = getHeaders();
+    const response = await api.post(
         "/discipline",
-        body
+        {
+            headers: headers,
+            body: body
+        }
     );
 
     return response;

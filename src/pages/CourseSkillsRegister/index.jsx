@@ -1,10 +1,13 @@
+import React, { useState } from 'react';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle, ImgsIcon } from './styles';
 import Banner from './components/Banner';
 import CardStudents from './components/CardsStudents';
-import Table from './components/Table';
+import EventModal from './components/Modal/index';
 import icon from '/plus_circle.svg'
+import SkillTableHeader from "./components/SkillTableHeader"
+import SkillTable from "./components/SkillTable"
 
 const studentsData = [
     { name: 'André Luis'},
@@ -27,17 +30,32 @@ const studentsData = [
     { name: 'Maria Carolina B.'}
 ]
 
-const tableData = [
-    { description: 'Nome', value: 'João', color: 'green' },
-    { description: 'Nome', value: 'João', color: 'green' }
-
-  ];
-
 const bannerData = [
     { name: 'Java Avançado', instructor: 'Leonardo Trevisan', color: 'orange' }
 ]
 
 const CourseSkillsRegister = () => {
+    const [showModal, setShowModal] = useState(false);
+    const [skills, setSkills] = useState([]);
+    
+    const openModal = () => {
+        setShowModal(true);
+    };
+
+    const closeModal = () => {
+        setShowModal(false);
+    };
+
+    const addSkill = (newSkill) => {
+        setSkills([...skills, newSkill]);
+    };
+
+    const deleteSkill = (index) => {
+        const updatedSkills = [...skills];
+        updatedSkills.splice(index, 1);
+        setSkills(updatedSkills);
+    };
+
     return(
         <>
         <MainContainer>
@@ -60,20 +78,29 @@ const CourseSkillsRegister = () => {
                             paddingLeft: '120px',
                             alignItems: 'center',
                             gap: '10px',
-                            borderRadius: '10px'
-                        }}>
+                            borderRadius: '10px',
+                            cursor: 'pointer'
+                        }}
+                        onClick={openModal}
+                        >
                             <ImgsIcon src={icon}></ImgsIcon>
                             <p style={{ fontWeight: '600', paddingTop: '1px' }}>Add Skill</p>
                         </div>
                         <Line/>
                     </LineDiv>
-                    {bannerData.map((bannerDT, index) => (
-                        <Table
+
+                    {showModal && <EventModal event={{ title: 'Add a Skill', desc: 'Skill successfully added!', start: new Date(), end: new Date() }} onClose={closeModal} onAddSkill={addSkill}/>}
+                    <SkillTableHeader />
+                    {skills.map((skill, index) => (
+                        <SkillTable
                             key={index}
-                            color={bannerDT.color}
-                            data={tableData}
+                            index={index}
+                            description={skill.description}
+                            weight={skill.weight}
+                            onDelete={deleteSkill}
                         />
                     ))}
+                    
                     <LineDiv>
                         <SectionTitle>Students</SectionTitle>
                         <Line/>

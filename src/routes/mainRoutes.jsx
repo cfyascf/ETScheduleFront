@@ -152,6 +152,12 @@ const mainRoutes = createBrowserRouter([
             <Subjects/>
         )
     },
+    {
+        path: '/course-skills-register',
+        element: (
+            <CourseSkillsRegister/>
+        )
+    }
 ])
 
 export default mainRoutes
