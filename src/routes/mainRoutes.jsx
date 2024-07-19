@@ -19,6 +19,9 @@ import Student from "../pages/Student";
 import Profiles from "../pages/Profiles";
 import CourseSkillsRegister from "../pages/CourseSkillsRegister";
 import PersonalReport from "../pages/PersonalReport";
+import AdmClasses from "../pages/AdmClasses";
+import Subjects from "../pages/Subjects";
+
 
 const mainRoutes = createBrowserRouter([
     {
@@ -136,7 +139,19 @@ const mainRoutes = createBrowserRouter([
         element: (
             <AdmSubjects/>
         )
-    }
+    },
+    {
+        path: '/adm-classes',
+        element: (
+            <AdmClasses/>
+        )
+    },
+    {
+        path: '/subjects',
+        element: (
+            <Subjects/>
+        )
+    },
 ])
 
 export default mainRoutes
