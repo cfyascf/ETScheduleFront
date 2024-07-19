@@ -1,7 +1,7 @@
+import { Imgs, MainContainer, PageContent } from "./styles"
 import Footer from "../../components/Footer"
 import Navbar from "../../components/Navbar"
 import SubjectForm from "./components/SubjectForm"
-import { Imgs, MainContainer, PageContent } from "./styles"
 import Person from "/female_male_working_on_board_blue.png"
 
 const SubjectRegister = () => {

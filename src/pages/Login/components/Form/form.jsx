@@ -20,7 +20,7 @@ const Form = () => {
                 password: passwordValue
             }
 
-            const response = await api.post(`/api/v1/login/confirm`, formData)
+            const response = await api.post(`/login/confirm`, formData)
 
             if (response.data['canLogin'] == true) {
                 // toast.success("Login realizado com sucesso", {theme: "dark"})
