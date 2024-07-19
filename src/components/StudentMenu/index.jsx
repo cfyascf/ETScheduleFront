@@ -5,7 +5,16 @@ const StudentMenu = () => {
     return (
         <>
             <MenuOptions>
-                <Link to='/home'>CALENDÁRIO</Link> | <Link to='/courses'>MATÉRIAS</Link> | <Link to='/login'>STATUS</Link>
+                <Link style={{
+                    textDecoration: "none",
+                    color: "black"
+                }}to='/home'>CALENDÁRIO</Link> | <Link style={{
+                    textDecoration: "none",
+                    color: "black"
+                }}to='/courses'>MATÉRIAS</Link> | <Link style={{
+                    textDecoration: "none",
+                    color: "black"
+                }}to='/login'>STATUS</Link>
             </MenuOptions>
         </>
     )

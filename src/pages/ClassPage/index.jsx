@@ -1,18 +1,29 @@
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
-import { PageContent, MainContainer, Line, CardsContainer } from './styles';
+import { PageContent, MainContainer, Line, CardsContainer, CardsOutside } from './styles';
 import Banner from './components/Banner';
 import CalendarDate from "../../components/CalendarDate"
 import CardStudents from './components/CardsStudents';
 
 const studentsData = [
-    { name: 'Donathan Ramalho'},
-    { name: 'Queila Lima'},
-    { name: 'Leonardo Trevisan'},
-    { name: 'Luis Hamilton'},
-    { name: 'Alisson Ferro'},
-    { name: 'Melissa Moll'},
-    { name: 'Marcos Belizario'}
+    { name: 'André Luis'},
+    { name: 'Andrey Koch'},
+    { name: 'Dayne Pacheco'},
+    { name: 'Gabriela Laureano'},
+    { name: 'Yasmim da Cunha'},
+    { name: 'Nilton Meira'},
+    { name: 'Jéssica Federal'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'},
+    { name: 'Maria Carolina B.'}
 ]
 
 const Class = () => {
@@ -22,16 +33,20 @@ const Class = () => {
             <Navbar />
                 <PageContent>
                     <Banner />
-                    <CalendarDate />
+                    <CalendarDate/>
                     <Line/>
-                    <CardsContainer>
-                        {studentsData.map((studentData, index) => (
-                            <CardStudents
-                                key={index}
-                                name={studentData.name}
-                            />
-                        ))}
-                    </CardsContainer>
+                    <CardsOutside>
+                        <CardsContainer>
+                            {studentsData.map((studentData, index) => (
+                                <CardStudents
+                                    key={index}
+                                    name={studentData.name}
+                                    style={index % 5 === 0 ? { clear: 'both' } : {}}
+                                />
+                            ))}
+                        </CardsContainer>
+                    </CardsOutside>
+                    
                 </PageContent>
             <Footer />
         </MainContainer>

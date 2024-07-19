@@ -15,13 +15,21 @@ const Line = styled.div`
     height: 1px;
     background-color: #5a5a5a;
 `
+
 const CardsContainer = styled.div`
     display: flex;
-    width: 92%;
-    gap: 20px;
+    width: 100%;
     flex-wrap: wrap;
+    justify-content: center;
     padding-bottom: 30px;
+    padding-top: 20px;
+
 `
 
+const CardsOutside = styled.div`
+    display: flex;
+    width: 100%;
+    justify-content: center;
+`
 
-export {PageContent, MainContainer, Line, CardsContainer};
+export { PageContent, MainContainer, Line, CardsContainer, CardsOutside };
