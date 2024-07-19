@@ -3,7 +3,9 @@ import bannerImage from "/office.svg";
 
 const Banner = (props) => {
     return(
-        <BannerDiv style={{backgroundColor: props.color}}>
+        <BannerDiv style={{
+            backgroundColor: props.color
+        }}>
             <div>
                 <Title>{props.name}</Title>
                 <P>{props.instructor}</P>
