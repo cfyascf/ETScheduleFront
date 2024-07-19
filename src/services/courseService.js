@@ -2,11 +2,22 @@ import api from "./api";
 
 const createCourse = async(body) => {
     const response = api.post(
-        "/api/v1/course",
+        "/course",
         body
     );
 
     return response;
 }
 
-export { createCourse };
+const getAllCourses = async() => {
+    const response = api.get(
+        "/course"
+    );
+
+    return response;
+}
+
+export {
+    createCourse,
+    getAllCourses
+};

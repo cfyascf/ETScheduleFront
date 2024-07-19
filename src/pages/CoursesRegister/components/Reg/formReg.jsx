@@ -2,33 +2,36 @@
 import { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 import { useEffect, useState } from "react";
 
-import api from "../../../../services/api";
-import { createCourse } from "../../../../services/courseService";
+import { getAllCourses } from "../../../../services/courseService";
+import { getAllInstructors } from "../../../../services/instructorService";
+import { getAllGroups } from "../../../../services/groupService";
+import { createDiscipline } from "../../../../services/disciplineService";
 
 const Reg = () => {
     const [instructors, setInstructors] = useState([]);
     const [courses, setCourses] = useState([]);
+    const [groups, setGroups] = useState([]);
 
     const [instructorId, setInstructorId] = useState(null);
     const [courseId, setCourseId] = useState(null);
+    const [groupId, setGroupId] = useState(null);
     const [semester, setSemester] = useState("");
     const [colorPick, setColorPick] = useState("");
 
     const getInstructorsAsync = async() => {
-        const response = await api.get(
-            "/api/v1/instructor"
-        );
-
+        const response = await getAllInstructors();
         setInstructors(response.data);
     };
 
     const getCoursesAsync = async() => {
-        const response = await api.get(
-            "api/v1/course"
-        );
-
+        const response = await getAllCourses();
         setCourses(response.data);
     };
+
+    const getGroupsAsync = async() => {
+        const response = await getAllGroups();
+        setGroups(response.data);
+    }
 
     const postDiscipline = () => {
         const response = createCourse({
@@ -44,6 +47,7 @@ const Reg = () => {
     useEffect(() => {
         getInstructorsAsync();
         getCoursesAsync();
+        getGroupsAsync();
     }, []);
 
     return (
@@ -65,6 +69,14 @@ const Reg = () => {
                             <Select value={courseId} onChange={e => setCourseId(e.target.value)}>
                                 {
                                     courses.map(c => <option value={c.id}>{c.name}</option>)
+                                }
+                            </Select>
+                        </FormGroup>
+                        <FormGroup>
+                            <Label htmlFor="group">Group:</Label>
+                            <Select value={groupId} onChange={e => setGroupId(e.target.value)}>
+                                {
+                                    groups.map(g => <option value={g.id}>{g.name}</option>)
                                 }
                             </Select>
                         </FormGroup>
