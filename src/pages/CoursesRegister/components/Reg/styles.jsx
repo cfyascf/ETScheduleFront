@@ -38,6 +38,13 @@ const Input = styled.input`
     border-radius: 10px;
 `;
 
+const Select = styled.select`
+    padding: 11px;
+    width: 28vw;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+`;
+
 const Label = styled.label`
     font-size: 16px;
     color: #333;
@@ -85,4 +92,4 @@ const InputDiv = styled.div`
     border-radius: 10px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
+export { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputDiv ,InputColor};
