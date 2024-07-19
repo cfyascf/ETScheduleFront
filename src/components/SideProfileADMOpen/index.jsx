@@ -1,5 +1,8 @@
 import { BigTitle, ProfileContainer, UserImg, UserInfo, IconImg, TopIcons, UserTitle , LitleInfo, RootContainer, CreateContainer, IconCreate} from "./styles"
 import user from "/userProfile.png"
+import iconUser from "/user.png"
+import teachings from "/teachings.png"
+import courses from "/online-learning.png"
 import logout from "/icon_logout.png"
 import arrow from "/icon_arrow_left.png"
 import event from "/calendar.png"
@@ -7,7 +10,7 @@ import books from "/books.png"
 import lesson from "/teacher.png"
 import { Link } from "react-router-dom";
 
-const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
+const SideProfileOpenADM = ({ toggleProfileADM}) => {
     return (
         <>
             <ProfileContainer>
@@ -15,7 +18,7 @@ const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
                     <Link to="/">
                         <IconImg src={logout}></IconImg>
                     </Link>
-                    <IconImg src={arrow} onClick={toggleProfileInstro}></IconImg>
+                    <IconImg src={arrow} onClick={toggleProfileADM}></IconImg>
                 </TopIcons>
                 <UserInfo>
                     <UserImg src={user}></UserImg>
@@ -32,15 +35,33 @@ const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
                     </LitleInfo>
                     <CreateContainer>
                         <RootContainer>
-                            <Link to="/register-event" style={{textDecoration:"none", color: "black" }}>
-                                <IconCreate src={event} />
-                                <UserTitle>Create Event</UserTitle>
+                            <Link to="/user-register" style={{textDecoration:"none", color: "black" }}>
+                                <IconCreate src={iconUser} />
+                                <UserTitle>Create User</UserTitle>
+                            </Link>
+                        </RootContainer>
+                        <RootContainer>
+                            <Link to="/subject-register" style={{textDecoration:"none", color: "black" }}>
+                                <IconCreate src={books} />
+                                <UserTitle>Create Subject</UserTitle>
+                            </Link>
+                        </RootContainer>
+                        <RootContainer>
+                            <Link to="/register-class" style={{textDecoration:"none", color: "black" }}>
+                                <IconCreate src={teachings} />
+                                <UserTitle>Create Class</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>
                             <Link to="/courses-register" style={{textDecoration:"none", color: "black"}}>
-                                <IconCreate src={books} />
+                                <IconCreate src={courses} />
                                 <UserTitle>Create Courses</UserTitle>
+                            </Link>
+                        </RootContainer>
+                        <RootContainer>
+                            <Link to="/register-event" style={{textDecoration:"none", color: "black" }}>
+                                <IconCreate src={event} />
+                                <UserTitle>Create Event</UserTitle>
                             </Link>
                         </RootContainer>
                         <RootContainer>

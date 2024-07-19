@@ -1,5 +1,5 @@
 import { BigTitle, ProfileContainer, UserImg, UserInfo, IconImg, TopIcons, UserTitle , LitleInfo} from "./styles"
-import user from "/user.png"
+import user from "/userProfile.png"
 import logout from "/icon_logout.png"
 import arrow from "/icon_arrow_left.png"
 import { Link } from "react-router-dom";
