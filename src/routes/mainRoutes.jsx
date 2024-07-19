@@ -13,9 +13,12 @@ import UserRegister from "../pages/UserRegister";
 import SubjectRegister from "../pages/SubjectRegister";
 import InstructorClasses from "../pages/InstructorClasses";
 import Class from "../pages/ClassPage";
+<<<<<<< HEAD
 import Student from "../pages/Student";
 import CourseSkillsRegister from "../pages/CourseSkillsRegister";
 import PersonalReport from "../pages/PersonalReport";
+=======
+>>>>>>> b5918832a01dc67277e954c4756504da5ba7f5ae
 
 const mainRoutes = createBrowserRouter([
     {
@@ -110,9 +113,15 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
+<<<<<<< HEAD
         path: '/personal-report',
         element: (
             <PersonalReport/>
+=======
+        path: '/profiles',
+        element: (
+            <Profiles/>
+>>>>>>> b5918832a01dc67277e954c4756504da5ba7f5ae
         )
     }
 ])
