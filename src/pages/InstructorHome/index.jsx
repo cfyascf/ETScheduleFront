@@ -7,6 +7,7 @@ import Welcome from '../../components/Welcome';
 import Footer from '../../components/Footer';
 import InstructorMenu from '../../components/InstructorMenu';
 import Card from '../../components/Card/cards';
+import SideProfileOpenInstro from '../../components/SideProfileInstroOpen';
 
 
 const coursesData = [
@@ -34,7 +35,7 @@ const InstructorHome = () => {
                 <Navbar />
                 <PageContent>
                     {isProfileOpen ? (
-                        <SideProfileOpen toggleProfile={toggleProfile} />
+                        <SideProfileOpenInstro toggleProfileInstro={toggleProfile} />
                     ) : (
                         <SideProfileClose toggleProfile={toggleProfile} />
                     )}

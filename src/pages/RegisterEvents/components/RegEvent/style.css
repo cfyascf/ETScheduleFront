@@ -1,11 +1,16 @@
 .Dropdown-menu {
     display: table;
+    width: 25vw;
 }
 
 .Dropdown {
     width: 25vw;
 }
+.Dropdown-root{
+    width: 25vw;
+}
 
 .Dropdown-control {
     border-radius: 10px;
+    width: 25vw;
 }
