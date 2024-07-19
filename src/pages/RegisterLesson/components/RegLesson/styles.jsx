@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
+    width: 620px;
     height: 650px;
     display: flex;
     justify-content: center;
@@ -33,7 +33,7 @@ const FormGroup = styled.div`
 
 const Input = styled.input`
     padding: 11px;
-    width: 28vw;
+    width: 25vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -72,7 +72,7 @@ const ColoredText = styled.div`
 
 const TextArea = styled.textarea `
     padding: 11px;
-    width: 28vw;
+    width: 25vw;
     border: 1px solid #ccc;
     border-radius: 10px;
     resize: none;

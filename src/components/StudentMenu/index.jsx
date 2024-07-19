@@ -14,7 +14,7 @@ const StudentMenu = () => {
                 }}to='/courses'>MATÉRIAS</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/login'>STATUS</Link>
+                }}to='/login'>PERSONAL REPORT</Link>
             </MenuOptions>
         </>
     )

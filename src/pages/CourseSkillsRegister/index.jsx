@@ -1,14 +1,11 @@
 import React, { useState } from 'react';
-import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from './styles';
-import SideProfileOpen from '../../components/SideProfileOpen';
-import Navbar from '../../components/Navbar';
-import SideProfileClose from '../../components/SideProfileClose';
-import Welcome from '../../components/Welcome';
-import Footer from '../../components/Footer';
-import InstructorMenu from '../../components/InstructorMenu';
-import Card from '../../components/Card/cards';
-import SideProfileOpenInstro from '../../components/SideProfileInstroOpen';
-
+import Footer from "../../components/Footer";
+import Navbar from "../../components/Navbar";
+import SideProfileClose from "../../components/SideProfileClose"
+import SideProfileOpen from "../../components/SideProfileOpen"
+import StudentMenu from "../../components/StudentMenu";
+import Card from "../../components/Card/cards";
+import { PageContent, CardsContainer, PageContentItems, TopContent } from "./styles";
 
 const coursesData = [
     { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
@@ -22,7 +19,7 @@ const coursesData = [
     { course: 'IA', name: 'Leonardo Trevisan', semester: '3', color: 'aqua' }
 ]
 
-const InstructorHome = () => {
+const CourseSkillsRegister = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -31,19 +28,17 @@ const InstructorHome = () => {
 
     return (
         <>
-            <MainContainer>
-                <Navbar />
-                <PageContent>
-                    {isProfileOpen ? (
-                        <SideProfileOpenInstro toggleProfileInstro={toggleProfile} />
-                    ) : (
-                        <SideProfileClose toggleProfile={toggleProfile} />
-                    )}
-                    <TopContent>
-                        <Welcome />
-                        <InstructorMenu />
-                        <PageContentItems>
-                            <CardsContainer>
+            <Navbar />
+            <PageContent>
+                {isProfileOpen ? (
+                    <SideProfileOpen toggleProfile={toggleProfile} />
+                ) : (
+                    <SideProfileClose toggleProfile={toggleProfile} />
+                )}
+                <TopContent>
+                    <StudentMenu />
+                    <PageContentItems>
+                        <CardsContainer>
                             {coursesData.map((courseData, index) => (
                                 <Card
                                     key={index}
@@ -53,15 +48,13 @@ const InstructorHome = () => {
                                     color={courseData.color}
                                 />
                             ))}
-                            </CardsContainer>
-                        </PageContentItems>
-                    </TopContent>
-                </PageContent>
-
-                <Footer />
-            </MainContainer>
+                        </CardsContainer>
+                    </PageContentItems>
+                </TopContent>
+            </PageContent>
+            <Footer />
         </>
-    )
-}
+    );
+};
 
-export default InstructorHome
+export default CourseSkillsRegister;
