@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from "react-router-dom"; 
 import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from './styles';
 import SideProfileOpen from '../../components/SideProfileOpen';
 import Navbar from '../../components/Navbar';
@@ -8,7 +9,6 @@ import Footer from '../../components/Footer';
 import InstructorMenu from '../../components/InstructorMenu';
 import Card from '../../components/Card/cards';
 import SideProfileOpenInstro from '../../components/SideProfileInstroOpen';
-
 
 const coursesData = [
     { course: 'Python', name: 'Donathan Ramalho', semester: '2', color: '#fcba03' },
@@ -44,15 +44,21 @@ const InstructorHome = () => {
                         <InstructorMenu />
                         <PageContentItems>
                             <CardsContainer>
-                            {coursesData.map((courseData, index) => (
-                                <Card
-                                    key={index}
-                                    course={courseData.course}
-                                    name={courseData.name}
-                                    semester={courseData.semester}
-                                    color={courseData.color}
-                                />
-                            ))}
+                                {coursesData.map((courseData, index) => (
+                                    <Link style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}
+                                        to={"/"}>
+                                        <Card
+                                            key={index}
+                                            course={courseData.course}
+                                            name={courseData.name}
+                                            semester={courseData.semester}
+                                            color={courseData.color}
+                                        />
+                                    </Link>
+                                ))}
                             </CardsContainer>
                         </PageContentItems>
                     </TopContent>

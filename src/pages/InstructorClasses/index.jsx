@@ -1,5 +1,6 @@
-import Navbar from "../../components/Navbar";
+import { Link } from "react-router-dom"; 
 import React, { useState } from 'react';
+import Navbar from "../../components/Navbar";
 import { MainContainer, PageContent, TopContent, CardsContainer, PageContentItems } from "./styles";
 import SideProfileOpenInstro from "../../components/SideProfileInstroOpen";
 import SideProfileClose from "../../components/SideProfileClose";
@@ -39,10 +40,16 @@ const InstructorClasses = () => {
                         <PageContentItems>
                             <CardsContainer>
                                 {classData.map((classData, index) => (
-                                    <ClassCard
-                                        key={index}
-                                        class={classData.class}
-                                    />
+                                    <Link style={{
+                                        textDecoration: "none",
+                                        color: "black"
+                                    }}
+                                        to={"/class"}>
+                                        <ClassCard
+                                            key={index}
+                                            class={classData.class}
+                                        />
+                                    </Link>
                                 ))}
                             </CardsContainer>
                         </PageContentItems>
