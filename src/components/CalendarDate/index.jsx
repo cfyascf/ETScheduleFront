@@ -5,47 +5,24 @@ import withDragAndDrop from 'react-big-calendar/lib/addons/dragAndDrop'
 import 'react-big-calendar/lib/css/react-big-calendar.css'
 import 'react-big-calendar/lib/addons/dragAndDrop/styles.css'
 import EventModal from "../CalendarModal";
-import api from '../../services/api'
+
+import { fetchEvents } from "../../services/eventService";
 
 const DragAndDropCalendarComponent = withDragAndDrop(Calendar);
 const localizer = momentLocalizer(moment);
 
 const CalendarDate = () => {
-
-    const [eventosPadrao, setEventosPadrao] = useState([]);
+    const [events, setEvents] = useState([]);
     const [eventSelect, setEventSelect] = useState(null);
 
-    useEffect(() => {
-        const fetchEvents = async () => {
-            try {
-                const response = await api.get('/event');
-                const events = response.data.map(event => ({
-                    id: event.id,
-                    title: event.eventName,
-                    start: new Date(event.startsAt),
-                    end: new Date(event.endsAt),
-                    desc: event.description,
-                    color: 'green',
-                    tipo: 'atividade'
-                }));
-
-                console.log(events)
-                setEventosPadrao(events);
-            } catch (error) {
-                console.error('Failed to fetch events:', error);
-                // Tratar erro conforme necessário
-            }
-        }
-
-        fetchEvents();
-    }, []); // Executa somente uma vez ao montar o componente
-
-    const [events, setEvents] = useState([]);
+    const doFetchEvents = async() => {
+        const eventsFetched = await fetchEvents();
+        setEvents(eventsFetched);
+    }
 
     useEffect(() => {
-        // Atualiza o estado 'events' com os 'eventosPadrao' assim que eles forem carregados
-        setEvents(eventosPadrao);
-    }, [eventosPadrao]);
+        doFetchEvents();
+    }, []);
 
     const changeDate = (data) => {
         const { start, end } = data;
@@ -63,10 +40,12 @@ const CalendarDate = () => {
     }
 
     const handleEventClick = (event) => {
+        console.log(event);
         setEventSelect(event);
     }
 
     const handleEventClose = () => {
+        console.log("handleEventClose");
         setEventSelect(null);
     }
 
@@ -79,7 +58,7 @@ const CalendarDate = () => {
                 localizer={localizer}
                 onEventDrop={changeDate}
                 onEventResize={changeDate}
-                onSelectEvent={handleEventClick}
+                onSelectEvent={e => handleEventClick(e)}
                 style={{ height: '70vh', width: "50vw", padding: '20px', display: "flex", gap: "10px" }}
             />
 

@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
@@ -7,14 +7,38 @@ import Banner from './components/Banner';
 import CalendarDate from "../../components/CalendarDate"
 import CardStudents from './components/CardsStudents';
 
+import api from '../../services/api';
+import { getHeaders } from '../../services/headers';
+import { useParams } from 'react-router-dom';
+
+const studentsData = []
+
 const Class = () => {
-    [group, setGroup] = useEffect({});
+    // const [group, setGroup] = useState(null);
+    // const [studentsData, setStudents] = useState([]);
 
-    [studentsData, setStudents] = useEffect([]);
+    // const fetchAllCourses = async() => {
+    //     const headers = getHeaders();
+    //     const id = useParams().id;
+    
+    //     console.log(id);
+    
+    //     const response = await api.get(
+    //         `/group/${id}`,
+    //         {
+    //             headers: headers
+    //         }
+    //     );
 
-    useEffect(() => {
-        
-    }, [])
+    //     console.log(response);
+    //     return response;
+    // }
+    
+    // useEffect(() => {
+    //     const groupResponse = fetchAllCourses();
+    //     setGroup(groupResponse.data);
+    //     setStudents(groupResponse.data.students);
+    // }, [])
 
     return (
         <>
