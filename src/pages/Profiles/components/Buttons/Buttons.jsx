@@ -56,11 +56,15 @@ const Buttons = ( ) => {
                 }
             );
 
+            var currentUser;
+
             let firstAccess = false;
             const userInfo = parseJwt();
             
             users.data.forEach((user) => {
                 if (user.id == userInfo.userId) {
+                    currentUser = user;
+
                     if (user.fullName === null) {
                         firstAccess = true;
                     }
@@ -72,7 +76,7 @@ const Buttons = ( ) => {
             else
                 switch(role) {
                     case "admin":
-                        navigate("/adm-home")
+                        navigate("/adm-home", { state: { user: currentUser } })
                         break
                     case "instructor":
                         navigate("/instructor-home")
