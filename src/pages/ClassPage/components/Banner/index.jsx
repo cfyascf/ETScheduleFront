@@ -1,10 +1,10 @@
 import { BannerDiv, Imgs, Title } from "./style";
 import bannerImage from "/office.svg";
 
-const Banner = () => {
+const Banner = (props) => {
     return(
         <BannerDiv>
-            <Title>Soluções Digitais 1</Title>
+            <Title>Turminha{props.className}</Title>
             <Imgs src={bannerImage}/>
         </BannerDiv>
     )

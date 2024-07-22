@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import SideProfileClose from "../../components/SideProfileClose";
@@ -10,19 +10,37 @@ import { CardsContainer, Information, MainContainer, PageContent, PageContentIte
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
-
-const classData = [
-    { class: 'Soluções Digitais 1' },
-    { class: 'Soluções Digitais 2' },
-    { class: 'TDS 1' },
-    { class: 'TDS 2' },
-    { class: 'TDS 3' },
-    { class: 'Análise de Dados' },
-    { class: 'Cibersistemas' }
-]
+import { getHeaders } from "../../services/headers";
+import api from "../../services/api";
 
 const AdmClasses = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
+    const [classes, setClasses] = useState([]);
+
+    const getAllGroups = async () => {
+        const headers = getHeaders();
+        const response = await api.get(
+            "/group",
+            {
+                headers: headers
+            }
+        );
+    
+        return response;
+    }
+
+    useEffect(() => {
+        async function fetchGroups() {
+            try {
+                const response = await getAllGroups();
+                setClasses(response.data);
+            } catch (error) {
+                console.error("Error fetching courses:", error);
+            }
+        }
+
+        fetchGroups();
+    }, []);
 
     const toggleProfile = () => {
         setProfileOpen(prevState => !prevState);
@@ -43,15 +61,16 @@ const AdmClasses = () => {
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
-                                    {classData.map((classData, index) => (
-                                        <Link style={{
-                                            textDecoration: "none",
-                                            color: "black"
-                                        }}
-                                            to={"/class"}>
+                                    {classes.map(classData  => (
+                                        <Link
+                                            key={classData.id}
+                                            to={`/classes/${classData.id}`} 
+                                            style={{ textDecoration: "none", color: "black" }}
+                                        >
                                             <ClassCard
-                                                key={index}
-                                                class={classData.class}
+                                                key={classData.id}
+                                                name={classData.name}
+
                                             />
                                         </Link>
                                     ))}

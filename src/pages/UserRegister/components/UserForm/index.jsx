@@ -5,6 +5,8 @@ import './style.css';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
 
+import { getHeaders } from '../../../../services/headers';
+
 
 const RegisterForm = () => {
 
@@ -26,7 +28,13 @@ const RegisterForm = () => {
 
     const fetchOptions = async () => {
         try {
-            const response = await api.get('/group')
+            const headers = getHeaders();
+            const response = await api.get(
+                '/group',
+                {
+                    headers: headers
+                }
+            )
 
             const groups = response.data.map(group => ({
                 label: group.name
@@ -78,16 +86,19 @@ const RegisterForm = () => {
         }
 
         try {
-            console.log("aqui")
+            const roles = [
+                isStudentChecked ? "student" : undefined,
+                isAdminChecked ? "administrator" : undefined,
+                isInstruChecked ? "instructor": undefined
+            ]
 
+            const headers = getHeaders();
             const response = await api.post('/user', {
                 "groupId": groupsId[selectedIndex] ? groupsId[selectedIndex].value : undefined,
-                "roles": [
-                    isStudentChecked ? "student" : undefined,
-                    isAdminChecked ? "administrator" : undefined,
-                    isInstruChecked ? "instructor": undefined
-                ],
-                "username": userName,
+                "roles": roles.filter(r => r != undefined),
+                "username": userName, 
+            }, {
+                headers: headers,
             });
 
             console.log(response);
@@ -103,6 +114,10 @@ const RegisterForm = () => {
             console.error('Erro ao fazer requisição:', error);
         }
     };
+
+    console.log(isStudentChecked);
+            console.log(isInstruChecked);
+            console.log(isAdminChecked);
 
     return (
         <>

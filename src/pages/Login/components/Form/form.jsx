@@ -20,6 +20,7 @@ const Form = () => {
                 password: passwordValue
             }
 
+            console.log(usernameValue, passwordValue)
             const response = await api.post(`/login/confirm`, formData)
 
             console.log('>>>>>>>>>>>', response)
@@ -63,7 +64,17 @@ const Form = () => {
             if(firstAccess)
                 navigate('/fistacess');
             else
-                navigate('/home');
+                switch(role) {
+                    case "admin":
+                        navigate("/adm-home")
+                        break
+                    case "instructor":
+                        navigate("/instructor-home")
+                        break
+                    case "student":
+                        navigate("/student-home")
+                        break
+                }
             
             
         } catch (error) {

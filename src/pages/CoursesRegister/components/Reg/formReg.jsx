@@ -1,12 +1,59 @@
 
 import { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 import { useEffect, useState } from "react";
+import { getHeaders } from "../../../../services/headers";
+import api from "../../../../services/api";
 
-import { getAllCourses } from "../../../../services/courseService";
-import { getAllInstructors } from "../../../../services/instructorService";
-import { getAllGroups } from "../../../../services/groupService";
-import { createDiscipline } from "../../../../services/disciplineService";
-import { Navigate } from "react-router-dom";
+const getAllGroups = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/group",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
+
+const getAllCourses = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/course",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
+
+const createDiscipline = async(body) => {
+    const headers = getHeaders();
+    const response = await api.post(
+        "/discipline",
+        {
+            headers: headers,
+            body: body
+        }
+    );
+
+    return response;
+};
+
+const getAllInstructors = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/instructor",
+        {
+            headers: headers
+        }
+    );
+
+    console.log(response);
+
+    return response;
+}
 
 const Reg = () => {
     const [instructors, setInstructors] = useState([]);
