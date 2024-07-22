@@ -35,7 +35,7 @@ const AdmClasses = () => {
                 const response = await getAllGroups();
                 setClasses(response.data);
             } catch (error) {
-                console.error("Error fetching courses:", error);
+                console.error("Error fetching classes:", error);
             }
         }
 
@@ -66,7 +66,6 @@ const AdmClasses = () => {
                                             <ClassCard
                                                 key={classes.id}
                                                 name={classes.name}
-
                                             />
                                         </Link>
                                     ))}
