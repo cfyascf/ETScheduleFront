@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
-import Courses from "../pages/Courses";
+import StudentCourses from "../pages/StudentCourses";
 import CoursesReg from "../pages/CoursesRegister"
 import StudentHome from "../pages/StudentHome"
 import FistAcess from "../pages/FistAcess";
@@ -36,9 +36,9 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/courses',
+        path: '/student-courses',
         element: (
-            <Courses/>
+            <StudentCourses/>
         )
     },
     {

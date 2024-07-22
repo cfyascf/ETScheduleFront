@@ -4,8 +4,12 @@ import Dropdown from 'react-dropdown';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { getHeaders } from '../../../../services/headers';
+
+
 
 
 const RegisterForm = () => {
@@ -79,9 +83,49 @@ const RegisterForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (userName === "") {
+            toast.error("Username is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if (!(isAdminChecked || isInstruChecked || isStudentChecked)) {
+            toast.error("At least one role must be selected", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if (isStudentChecked && groupsId.length === 0) {
+            toast.error("Student class must be selected", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
 
         if (!selectedOption && isStudentChecked) {
-            console.error('Nenhuma opção selecionada.');
             return;
         }
 
@@ -89,19 +133,32 @@ const RegisterForm = () => {
             const roles = [
                 isStudentChecked ? "student" : undefined,
                 isAdminChecked ? "administrator" : undefined,
-                isInstruChecked ? "instructor": undefined
+                isInstruChecked ? "instructor" : undefined
             ]
 
             const headers = getHeaders();
             const response = await api.post('/user', {
                 "groupId": groupsId[selectedIndex] ? groupsId[selectedIndex].value : undefined,
                 "roles": roles.filter(r => r != undefined),
-                "username": userName, 
+                "username": userName,
             }, {
                 headers: headers,
             });
 
             console.log(response);
+            
+            toast.success("user created successfully", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+
+
 
             navigate('/instructor-home');
 
@@ -115,12 +172,9 @@ const RegisterForm = () => {
         }
     };
 
-    console.log(isStudentChecked);
-            console.log(isInstruChecked);
-            console.log(isAdminChecked);
-
     return (
         <>
+            <ToastContainer/>
             <FormContainer>
                 <Forms>
                     <FormItems>

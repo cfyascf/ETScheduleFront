@@ -32,7 +32,7 @@ const InstructorClasses = () => {
                 const response = await getAllGroups();
                 setClasses(response.data);
             } catch (error) {
-                console.error("Error fetching courses:", error);
+                console.error("Error fetching classes:", error);
             }
         }
 
@@ -58,7 +58,7 @@ const InstructorClasses = () => {
                         <PageContentItems>
                             <CardsContainer>
                                 {classes.map(classes => (
-                                    <Link key={classes.id} to={`/subjects/${classes.id}`} style={{ textDecoration: "none", color: "black" }}>
+                                    <Link key={classes.id} to={`/class/${classes.id}`} style={{ textDecoration: "none", color: "black" }}>
                                         <ClassCard
                                             key={classes.id}
                                             name={classes.name}

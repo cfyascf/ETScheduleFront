@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea } from "./styles"
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
+import { useNavigate } from "react-router-dom";
 
 const createCourse = async(body) => {
     const headers = getHeaders();

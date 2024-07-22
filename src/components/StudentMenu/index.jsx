@@ -11,7 +11,7 @@ const StudentMenu = () => {
                 }}to='/student-home'>CALENDAR</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/courses'>COURSES</Link> | <Link style={{
+                }}to='/student-courses'>COURSES</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
                 }}to='/personal-report'>PERSONAL REPORT</Link>

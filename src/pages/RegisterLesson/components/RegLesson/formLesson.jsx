@@ -7,79 +7,80 @@ import api from '../../../../services/api'
 import { useNavigate } from 'react-router-dom';
 
 const Reg = () => {  
-    const navigate = useNavigate()
-    
-    const [selectedOption, setSelectedOption] = useState('')
-    const [selectedIndex, setSelectedIndex] = useState('')
-    const [options, setOptions] = useState([])
-    const [disciplinesId, setDisciplinesId] = useState([])
+    const navigate = useNavigate();
 
-    const [description, setDescription] = useState('')
+    // dropdown population
+    const [options, setOptions] = useState([]);
+    const [selectedOption, setSelectedOption] = useState(null);
+
+    // data to send via post
+    const [disciplinesId, setDisciplinesId] = useState([]);
+    const [selectedIndex, setSelectedIndex] = useState(-1);
+
+    // input data
+    const [disciplineName, setDisciplineName] = useState('')
     const [startDate, setStartDate] = useState('')
     const [endDate, setEndDate] = useState('')
-
-    const fetchOptions = async () => {
-        try {
-            const response = await api.get('/discipline')
-            
-            const disciplines = response.data.map(discipline => ({
-                label: discipline.name
-            }))
-
-            const disciplinesId = response.data.map(discipline => ({
-                value: discipline.id
-            }))
-
-            setOptions(disciplines)
-            setDisciplinesId(disciplinesId)
-
-        } catch (error) {
-            console.error('Erro ao fazer requisição:', error)
-        }
-    }
+    const [description, setDescription] = useState('')
 
     useEffect(() => {
         fetchOptions(); // Função para buscar as opções da API ao montar o componente
     }, []);
 
+    const fetchOptions = async () => {
+        try {
+            const response = await api.get('/discipline');
+            
+            const options = response.data.map(discipline => ({
+                value: discipline.id,
+                label: discipline.name
+            }));
+    
+            setOptions(options);
+    
+            // Não é necessário mais preencher disciplinesId aqui, já que estamos usando options corretamente
+    
+        } catch (error) {
+            console.error('Erro ao fazer requisição:', error);
+        }
+    };
+    
     const handleSelect = (option) => {
         setSelectedOption(option);
-
+    
         const index = options.findIndex(item => item.label === option.label);
         setSelectedIndex(index);
     };
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
+    
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+    
+        const formattedStartDate = `${startDate}:00Z`;
+        const formattedEndDate = `${endDate}:00Z`;
+    
+        if (selectedIndex === -1) {
+            console.error('Nenhuma opção selecionada.');
+            return;
+        }
+    
         try {
-            console.log("aqui")
-
-            const formattedStartDate = `${startDate}:00Z`;
-            const formattedEndDate = `${endDate}:00Z`;
-
-            console.log(disciplinesId[selectedIndex].value, selectedIndex, formattedStartDate, description)
-
             const response = await api.post('/event', {
-                "disciplineId": disciplinesId[selectedIndex].value,
+                "name": disciplineName,
+                "disciplineId": options[selectedIndex].value,
                 "startsAt": formattedStartDate,
                 "endsAt": formattedEndDate,
                 "description": description
             });
-
+    
             console.log(response);
-
+    
             navigate('/instructor-home');
-
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Event registered successfully!");
-
+    
         } catch (error) {
             console.error('Erro ao fazer requisição:', error);
         }
-    }
+    };
+    
 
     return (
         <>
@@ -88,8 +89,16 @@ const Reg = () => {
                     <FormItems>
                         <ColoredText>REGISTER A LESSON</ColoredText>
                         <FormGroup>
+                            <Label htmlFor="startdate">Lesson name:</Label>
+                            <Input id="startdate" type="text" value={disciplineName} onChange={(e) => { setDisciplineName(e.target.value)}}></Input>
+                        </FormGroup>
+                        {/* <FormGroup>
                             <Label htmlFor="nameevent">Discipline:</Label>
                             <Dropdown className='Dropdown' options={options} onChange={handleSelect} value={selectedOption} placeholder="Select an option"/>
+                        </FormGroup> */}
+                        <FormGroup>
+                            <Label htmlFor="namediscipline">Discipline:</Label>
+                            <Dropdown className='Dropdown' options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="description">Description:</Label>

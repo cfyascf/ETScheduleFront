@@ -3,6 +3,9 @@ import { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItem
 import { useEffect, useState } from "react";
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const getAllGroups = async() => {
     const headers = getHeaders();
@@ -63,59 +66,125 @@ const Reg = () => {
     const [instructorId, setInstructorId] = useState(null);
     const [courseId, setCourseId] = useState(null);
     const [groupId, setGroupId] = useState(null);
-    const [semester, setSemester] = useState("");
+    const [semester, setSemester] = useState(null);
     const [colorPick, setColorPick] = useState("");
 
     const getInstructorsAsync = async() => {
         const response = await getAllInstructors();
         setInstructors(response.data);
-
-        if (instructors.length != 0)
-            setInstructorId(instructors[0].profileId);
     };
 
     const getCoursesAsync = async() => {
         const response = await getAllCourses();
         setCourses(response.data);
-
-        if (courses.length != 0)
-            setCourseId(courses[0].id);
     };
 
     const getGroupsAsync = async() => {
         const response = await getAllGroups();
         setGroups(response.data);
-
-        if (groups.length != 0)
-            setGroupId(groups[0].id);
     }
 
     const postDiscipline = async() => {
+
+        if(instructorId == null){
+            toast.error("Instructor is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(courseId == null){
+            toast.error("Course is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(groupId == null){
+            toast.error("Group is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(semester == null){
+            toast.error("Semester is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
         const response = await createDiscipline({
-            groupId: groupId,
-            instructorId: instructorId,
-            courseId: courseId,
-            semester: semester,
-            color: colorPick
+            "groupId": Number(groupId),
+            "instructorId": Number(instructorId),
+            "courseId": Number(courseId),
+            "semester": Number(semester),
+            "colorCode": colorPick
         });
-        console.log(response);
+
+        if (response.status == 201) {
+            Navigate("/home");
+        }
     };
 
     useEffect(() => {
         getInstructorsAsync();
         getCoursesAsync();
         getGroupsAsync();
+
+        setColorPick("#000000");
     }, []);
+    
+    useEffect(() => {
+        if (instructors.length > 0)
+            setInstructorId(instructors[0].profileId);
+    }, [instructors]);
+    
+    useEffect(() => {
+        if (courses.length > 0)
+            setCourseId(courses[0].id);
+    }, [courses])
+    
+    useEffect(() => {
+        if (groups.length > 0)
+            setGroupId(groups[0].id);
+    }, [groups])
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>
                         <ColoredText>REGISTER A COURSE</ColoredText>
                         <FormGroup>
                             <Label htmlFor="instructor">Instructor:</Label>
-                            <Select value={instructorId} onChange={e => setInstructorId(e.target.value)}>
+                            <Select onChange={e => setInstructorId(e.target.value)}>
                                 {
                                     instructors.map((i, index) => <option key={index} value={i.profileId}>{i.name}</option>)
                                 }
@@ -123,7 +192,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="course">Course:</Label>
-                            <Select value={courseId} onChange={e => setCourseId(e.target.value)}>
+                            <Select onChange={e => setCourseId(e.target.value)}>
                                 {
                                     courses.map((c, index) => <option key={index} value={c.id}>{c.name}</option>)
                                 }
@@ -131,7 +200,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="group">Group:</Label>
-                            <Select value={groupId} onChange={e => setGroupId(e.target.value)}>
+                            <Select onChange={e => setGroupId(e.target.value)}>
                                 {
                                     groups.map((g, index) => <option key={index} value={g.id}>{g.name}</option>)
                                 }
