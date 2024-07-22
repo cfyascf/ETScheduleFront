@@ -1,6 +1,6 @@
 import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
-import Courses from "../pages/Courses";
+import StudentCourses from "../pages/StudentCourses";
 import CoursesReg from "../pages/CoursesRegister"
 import StudentHome from "../pages/StudentHome"
 import FistAcess from "../pages/FistAcess";
@@ -22,7 +22,6 @@ import PersonalReport from "../pages/PersonalReport";
 import AdmClasses from "../pages/AdmClasses";
 import Subjects from "../pages/Subjects";
 
-
 const mainRoutes = createBrowserRouter([
     {
         path: '/',
@@ -37,9 +36,9 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/courses',
+        path: '/student-courses',
         element: (
-            <Courses/>
+            <StudentCourses/>
         )
     },
     {
@@ -49,7 +48,7 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/skills',
+        path: '/skills/:id',
         element: (
             <Skills/>
         )
@@ -146,13 +145,13 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/subjects',
+        path: '/subjects/:id',
         element: (
             <Subjects/>
         )
     },
     {
-        path: '/course-skills-register',
+        path: '/course-skills-register/:id',
         element: (
             <CourseSkillsRegister/>
         )

@@ -3,8 +3,8 @@ import logo from "/Bosch_symbol_logo_black_red_1.svg";
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import api from "../../../../services/api"
-// import { ToastContainer, toast } from 'react-toastify';
-
+import {ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
 
@@ -14,6 +14,35 @@ const Form = () => {
     const navigate = useNavigate()
 
     const doLogin = async () => {
+
+        console.log('doLogin called');
+        if (usernameValue == "") {
+            toast.error("Username is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if (passwordValue == "" ) {
+            toast.error("Password is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
         try {
             const formData = {
                 username: usernameValue,
@@ -26,14 +55,44 @@ const Form = () => {
             console.log('>>>>>>>>>>>', response)
 
             if (response.data['canLogin'] == true) {
-                // toast.success("Login realizado com sucesso", {theme: "dark"})
-                if (response.data.profiles.length == 1)
-                    goHome(response.data.profiles[0].role)
-                else
-                    navigate("/profiles", { state: { serverData: response.data, userData: formData } });
+                toast.success("Sucess login", { 
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"});
+                setTimeout(() => {
+                    if (response.data.profiles.length == 1)
+                        goHome(response.data.profiles[0].role)
+                    else
+                        navigate("/profiles", { state: { serverData: response.data, userData: formData } });
+                }, 2000);
+            }
+            else{
+                toast.error("You can't log in", { 
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"})
             }
             // toast.error("Deu erro", {theme: "dark"})
         } catch (error) {
+            toast.error("Username or Password don't match", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"})
             // console.log(error);
             // toast.error("Deu erro", {theme: "dark"})
         }
@@ -95,7 +154,7 @@ const Form = () => {
 
     return (
         <>
-            {/* <ToastContainer /> */}
+            <ToastContainer/>
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo" />

@@ -4,8 +4,8 @@ const Card = (props) => {
     return (
         <CardContainer>
             <CardColor style={{ backgroundColor: props.color }}></CardColor>
-            <CardP>{props.course}</CardP>
-            <CardH5>{props.name}</CardH5>  
+            <CardP>{props.name}</CardP>
+            <CardH5>{props.instructor}</CardH5>  
             <CardH5>Semestre: {props.semester}°</CardH5>  
         </CardContainer>
     );

@@ -13,21 +13,22 @@ import { CardsContainer, Information, MainContainer, PageContent, PageContentIte
 import { getHeaders } from "../../services/headers";
 import api from "../../services/api";
 
+
+const getAllGroups = async () => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/group",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
+
 const AdmClasses = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
     const [classes, setClasses] = useState([]);
-
-    const getAllGroups = async () => {
-        const headers = getHeaders();
-        const response = await api.get(
-            "/group",
-            {
-                headers: headers
-            }
-        );
-    
-        return response;
-    }
 
     useEffect(() => {
         async function fetchGroups() {
@@ -35,7 +36,7 @@ const AdmClasses = () => {
                 const response = await getAllGroups();
                 setClasses(response.data);
             } catch (error) {
-                console.error("Error fetching courses:", error);
+                console.error("Error fetching classes:", error);
             }
         }
 
@@ -61,15 +62,11 @@ const AdmClasses = () => {
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
-                                    {classes.map(classData  => (
-                                        <Link
-                                            key={classData.id}
-                                            to={`/classes/${classData.id}`} 
-                                            style={{ textDecoration: "none", color: "black" }}
-                                        >
+                                    {classes.map(classes => (
+                                        <Link key={classes.id} to={`/class/${classes.id}`} style={{ textDecoration: "none", color: "black" }}>
                                             <ClassCard
-                                                key={classData.id}
-                                                name={classData.name}
+                                                key={classes.id}
+                                                name={classes.name}
 
                                             />
                                         </Link>

@@ -4,8 +4,12 @@ import Dropdown from 'react-dropdown';
 import './style.css';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
+import { ToastContainer, toast } from 'react-toastify';
 
+import 'react-toastify/dist/ReactToastify.css';
 import { getHeaders } from '../../../../services/headers';
+
+
 
 
 const RegisterForm = () => {
@@ -79,9 +83,49 @@ const RegisterForm = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if (userName === "") {
+            toast.error("Username is required", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if (!(isAdminChecked || isInstruChecked || isStudentChecked)) {
+            toast.error("At least one role must be selected", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if (isStudentChecked && groupsId.length === 0) {
+            toast.error("Student class must be selected", {
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
 
         if (!selectedOption && isStudentChecked) {
-            console.error('Nenhuma opção selecionada.');
             return;
         }
 
@@ -89,38 +133,82 @@ const RegisterForm = () => {
             const roles = [
                 isStudentChecked ? "student" : undefined,
                 isAdminChecked ? "administrator" : undefined,
-                isInstruChecked ? "instructor": undefined
+                isInstruChecked ? "instructor" : undefined
             ]
 
             const headers = getHeaders();
             const response = await api.post('/user', {
                 "groupId": groupsId[selectedIndex] ? groupsId[selectedIndex].value : undefined,
                 "roles": roles.filter(r => r != undefined),
-                "username": userName, 
+                "username": userName,
             }, {
                 headers: headers,
             });
 
-            console.log(response);
-
-            navigate('/instructor-home');
-
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Event registered successfully!");
+            const userInfo = parseJwt();
+            if (response.status == 201) {
+                toast.success("User created with sucess!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+                setTimeout(() => {
+                    switch (userInfo['role']) {
+                        case "admin":
+                            navigate("/adm-home")
+                            break
+                        case "instructor":
+                            navigate("/instructor-home")
+                            break
+                    }
+                }, 2000);
+            }
+            else {
+                toast.error("Error posting data.", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            }
 
         } catch (error) {
-            console.error('Erro ao fazer requisição:', error);
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
         }
     };
 
-    console.log(isStudentChecked);
-            console.log(isInstruChecked);
-            console.log(isAdminChecked);
+    function parseJwt() {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>
