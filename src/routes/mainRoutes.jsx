@@ -22,7 +22,6 @@ import PersonalReport from "../pages/PersonalReport";
 import AdmClasses from "../pages/AdmClasses";
 import Subjects from "../pages/Subjects";
 
-
 const mainRoutes = createBrowserRouter([
     {
         path: '/',

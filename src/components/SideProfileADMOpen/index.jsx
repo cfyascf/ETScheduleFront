@@ -9,8 +9,11 @@ import arrow from "/icon_arrow_left.png"
 import event from "/calendar.png"
 import books from "/books.png"
 import lesson from "/teacher.png"
+import { useLocation } from 'react-router-dom';
 
 const SideProfileADMOpen = ({ toggleProfileADM}) => {
+    const location = useLocation();
+
     return (
         <>
             <ProfileContainer>
@@ -23,11 +26,11 @@ const SideProfileADMOpen = ({ toggleProfileADM}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        Fulano
+                        Andre Luis
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>
-                            Date of Birth: 09/06/2003
+                        Date of Birth: 09/06/2003
                         </UserTitle>
                     </LitleInfo>
                     <CreateContainer>

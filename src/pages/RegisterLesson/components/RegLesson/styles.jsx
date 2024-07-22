@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 620px;
-    height: 650px;
+    height: 750px;
     display: flex;
     justify-content: center;
     align-items: center;

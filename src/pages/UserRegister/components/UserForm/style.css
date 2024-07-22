@@ -4,14 +4,14 @@
 }
 
 .Dropdown {
-    width: 28vw;
+    width: 25vw;
 }
 .Dropdown-root{
-    width: 28vw;
+    width: 25vw;
 }
 
 .Dropdown-control {
     border-radius: 10px;
-    width: 28vw;
+    width: 25vw;
     padding: 11px;
 }
