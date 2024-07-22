@@ -1,3 +1,4 @@
+import React, { useContext } from 'react';
 import { OptionsContainer,Path, PathContainer, Imgs} from "./styles";
 import studant from "/laptop-checklist-education.svg";
 import teacher from "/presentation-speaker.svg";
@@ -5,6 +6,7 @@ import boss from "/wholesaler.svg";
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from "../../../../services/api"
 import { getHeaders } from "../../../../services/headers";
+import { UserContext } from '../../../../services/userContext';
 
 
 const Buttons = ( ) => {
@@ -13,6 +15,7 @@ const Buttons = ( ) => {
     const { serverData, userData } = location.state;
     const profiles = serverData['profiles']
     const navigate = useNavigate()
+    const { setCurrentUser } = useContext(UserContext);
 
     const renderTitle = (role) => {
         switch (role) {
@@ -56,14 +59,14 @@ const Buttons = ( ) => {
                 }
             );
 
-            var currentUser;
-
             let firstAccess = false;
             const userInfo = parseJwt();
             
             users.data.forEach((user) => {
                 if (user.id == userInfo.userId) {
-                    currentUser = user;
+                    setCurrentUser(user);
+                    console.log("user setado");
+                    console.log(user.username, user.fullname)
 
                     if (user.fullName === null) {
                         firstAccess = true;
@@ -76,7 +79,7 @@ const Buttons = ( ) => {
             else
                 switch(role) {
                     case "admin":
-                        navigate("/adm-home", { state: { user: currentUser } })
+                        navigate("/adm-home")
                         break
                     case "instructor":
                         navigate("/instructor-home")

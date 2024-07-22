@@ -17,7 +17,7 @@ const SideProfileOpen = ({ toggleProfile}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        Fulano
+                        Andre Luis
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>

@@ -13,7 +13,6 @@ import { useLocation } from 'react-router-dom';
 
 const SideProfileADMOpen = ({ toggleProfileADM}) => {
     const location = useLocation();
-    const currentUser = location.state.user;
 
     return (
         <>
@@ -27,11 +26,11 @@ const SideProfileADMOpen = ({ toggleProfileADM}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        { currentUser.username }
+                        Andre Luis
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>
-                            Date of Birth: { currentUser.birthDate }
+                        Date of Birth: 09/06/2003
                         </UserTitle>
                     </LitleInfo>
                     <CreateContainer>
