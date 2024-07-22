@@ -48,7 +48,7 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/skills',
+        path: '/skills/:id',
         element: (
             <Skills/>
         )
@@ -103,7 +103,7 @@ const mainRoutes = createBrowserRouter([
         )
     }, 
     {
-        path: '/class',
+        path: '/class/:id',
         element: (
             <Class/>
         )
@@ -145,13 +145,13 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/subjects',
+        path: '/subjects/:id',
         element: (
             <Subjects/>
         )
     },
     {
-        path: '/course-skills-register',
+        path: '/course-skills-register/:id',
         element: (
             <CourseSkillsRegister/>
         )
