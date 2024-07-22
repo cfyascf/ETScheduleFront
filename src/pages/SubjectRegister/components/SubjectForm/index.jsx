@@ -3,7 +3,8 @@ import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, Color
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
 import { useNavigate } from "react-router-dom";
-import { toast } from "react-toastify";
+import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 
 const createCourse = async (body) => {
@@ -103,7 +104,17 @@ const SubjectForm = () => {
             }
 
         } catch (error) {
-            console.error('Erro ao fazer requisição:', error);
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
         }
     };
 
@@ -119,6 +130,7 @@ const SubjectForm = () => {
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>

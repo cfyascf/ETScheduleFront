@@ -4,7 +4,8 @@ import 'react-dropdown/style.css';
 import './style.css';
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea } from "./styles"
 import api from '../../../../services/api'
-import { toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
+
 import 'react-toastify/dist/ReactToastify.css';
 import { useNavigate } from 'react-router-dom';
 
@@ -216,6 +217,7 @@ const Reg = () => {
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>

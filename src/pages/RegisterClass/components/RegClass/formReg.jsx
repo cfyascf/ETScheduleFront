@@ -1,9 +1,11 @@
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from '../../../../services/api'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Reg = () => {
 
@@ -107,7 +109,17 @@ const Reg = () => {
             }
 
         } catch (error) {
-            console.error('Erro ao fazer requisição:', error);
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
         }
     };
 
@@ -123,7 +135,7 @@ const Reg = () => {
 
     return (
         <>
-            {/* <ToastContainer /> */}
+            <ToastContainer /> 
             <FormContainer>
                 <Forms>
                     <FormItems>

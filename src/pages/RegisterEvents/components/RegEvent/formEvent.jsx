@@ -2,10 +2,11 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
-import { toast } from 'react-toastify';
-import 'react-toastify/dist/ReactToastify.css';
 import 'react-dropdown/style.css';
 import './style.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 
@@ -210,7 +211,6 @@ const Reg = () => {
                 theme: "light"
             });
             return;
-            console.error('Erro ao fazer requisição:', error);
         }
     };
 
@@ -226,6 +226,7 @@ const Reg = () => {
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>
