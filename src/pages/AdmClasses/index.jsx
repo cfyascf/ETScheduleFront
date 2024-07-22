@@ -10,18 +10,20 @@ import { CardsContainer, Information, MainContainer, PageContent, PageContentIte
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
-import { getAllGroups} from "../../services/groupService";
+import { getHeaders } from "../../services/headers";
+import api from "../../services/api";
 
+const getAllGroups = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/group",
+        {
+            headers: headers
+        }
+    );
 
-// const classData = [
-//     { class: 'Soluções Digitais 1' },
-//     { class: 'Soluções Digitais 2' },
-//     { class: 'TDS 1' },
-//     { class: 'TDS 2' },
-//     { class: 'TDS 3' },
-//     { class: 'Análise de Dados' },
-//     { class: 'Cibersistemas' }
-// ]
+    return response;
+}
 
 const AdmClasses = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
