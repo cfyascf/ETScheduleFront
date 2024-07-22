@@ -66,7 +66,6 @@ const AdmSubject = () => {
                                             <ClassCard
                                                 key={course.id}
                                                 name={course.name}
-                                                
                                             />
                                         </Link>
                                     ))}
