@@ -62,6 +62,15 @@ const Form = () => {
                 if (response.data.profiles.length == 1)
                     goHome(response.data.profiles[0].role)
                 else{
+                    toast.success("Sucess login", { 
+                        position: "top-center",
+                        autoClose: 2000,
+                        hideProgressBar: false,
+                        closeOnClick: true,
+                        pauseOnHover: true,
+                        draggable: true,
+                        progress: undefined,
+                        theme: "light"})
                     setTimeout(() => {
                         navigate("/profiles", { state: { serverData: response.data, userData: formData } });
                     }, 2000);
@@ -81,7 +90,7 @@ const Form = () => {
             }
             // toast.error("Deu erro", {theme: "dark"})
         } catch (error) {
-            toast.error("Login or Password don't match", { 
+            toast.error("Username or Password don't match", { 
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
