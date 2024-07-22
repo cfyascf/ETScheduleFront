@@ -6,6 +6,9 @@ import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-dropdown/style.css';
 import './style.css';
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 
@@ -226,6 +229,7 @@ const Reg = () => {
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>

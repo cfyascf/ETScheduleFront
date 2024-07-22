@@ -1,9 +1,11 @@
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import api from '../../../../services/api'
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const Reg = () => {
 
@@ -123,7 +125,7 @@ const Reg = () => {
 
     return (
         <>
-            {/* <ToastContainer /> */}
+            <ToastContainer /> 
             <FormContainer>
                 <Forms>
                     <FormItems>
