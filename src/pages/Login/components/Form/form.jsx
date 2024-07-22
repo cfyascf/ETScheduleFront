@@ -1,9 +1,9 @@
-import { FormContainer, Imgs, Forms, FormGroup, Input, Label, Button } from "./styles"
+import { FormContainer, Imgs, Forms, FormGroup, Input, Label, Button, FormInput } from "./styles"
 import logo from "/Bosch_symbol_logo_black_red_1.svg";
 import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import api from "../../../../services/api"
-import {ToastContainer, toast } from 'react-toastify';
+import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const Form = () => {
@@ -17,7 +17,7 @@ const Form = () => {
 
         console.log('doLogin called');
         if (usernameValue == "") {
-            toast.error("Username is required", { 
+            toast.error("Username is required", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -29,8 +29,8 @@ const Form = () => {
             });
             return;
         }
-        if (passwordValue == "" ) {
-            toast.error("Password is required", { 
+        if (passwordValue == "") {
+            toast.error("Password is required", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -55,7 +55,7 @@ const Form = () => {
             console.log('>>>>>>>>>>>', response)
 
             if (response.data['canLogin'] == true) {
-                toast.success("Sucess login", { 
+                toast.success("Sucess login", {
                     position: "top-center",
                     autoClose: 2000,
                     hideProgressBar: false,
@@ -63,7 +63,8 @@ const Form = () => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    theme: "light"});
+                    theme: "light"
+                });
                 setTimeout(() => {
                     if (response.data.profiles.length == 1)
                         goHome(response.data.profiles[0].role)
@@ -71,8 +72,8 @@ const Form = () => {
                         navigate("/profiles", { state: { serverData: response.data, userData: formData } });
                 }, 2000);
             }
-            else{
-                toast.error("You can't log in", { 
+            else {
+                toast.error("You can't log in", {
                     position: "top-center",
                     autoClose: 5000,
                     hideProgressBar: false,
@@ -80,11 +81,12 @@ const Form = () => {
                     pauseOnHover: true,
                     draggable: true,
                     progress: undefined,
-                    theme: "light"})
+                    theme: "light"
+                })
             }
             // toast.error("Deu erro", {theme: "dark"})
         } catch (error) {
-            toast.error("Username or Password don't match", { 
+            toast.error("Username or Password don't match", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -92,7 +94,8 @@ const Form = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light"})
+                theme: "light"
+            })
             // console.log(error);
             // toast.error("Deu erro", {theme: "dark"})
         }
@@ -107,7 +110,7 @@ const Form = () => {
                 role: role
             })
             localStorage.setItem('@AUTH', response.data.token);
-            
+
             const users = await api.get(`/user`);
             let firstAccess = false;
             const userInfo = parseJwt();
@@ -120,10 +123,10 @@ const Form = () => {
                 }
             });
 
-            if(firstAccess)
+            if (firstAccess)
                 navigate('/fistacess');
             else
-                switch(role) {
+                switch (role) {
                     case "admin":
                         navigate("/adm-home")
                         break
@@ -134,37 +137,39 @@ const Form = () => {
                         navigate("/student-home")
                         break
                 }
-            
-            
+
+
         } catch (error) {
             // toast.error("Deu erro", {theme: "dark"})
         }
     }
 
-    function parseJwt () {
+    function parseJwt() {
         var base64Url = localStorage.getItem('@AUTH').split('.')[1];
         var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
-        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function(c) {
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
             return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
         }).join(''));
-    
+
         return JSON.parse(jsonPayload);
     }
-    
+
 
     return (
         <>
-            <ToastContainer/>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo" />
                     <FormGroup>
-                        <Label htmlFor="username">Username:</Label>
-                        <Input id="username" type="text" value={usernameValue} onChange={(e) => { setUsername(e.target.value) }} name="user"></Input>
-                    </FormGroup>
-                    <FormGroup>
-                        <Label htmlFor="pwd">Password:</Label>
-                        <Input id="pwd" type="password" value={passwordValue} onChange={(e) => { setPassword(e.target.value) }} name="password"></Input>
+                        <FormInput>
+                            <Label htmlFor="username">Username:</Label>
+                            <Input id="username" type="text" value={usernameValue} onChange={(e) => { setUsername(e.target.value) }} name="user"></Input>
+                        </FormInput>
+                        <FormInput>
+                            <Label htmlFor="pwd">Password:</Label>
+                            <Input id="pwd" type="password" value={passwordValue} onChange={(e) => { setPassword(e.target.value) }} name="password"></Input>
+                        </FormInput>
                     </FormGroup>
                     <Button type="button" onClick={doLogin} >Login</Button>
                 </Forms>

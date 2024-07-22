@@ -25,10 +25,18 @@ const Forms = styled.form`
     max-width: 400px;
 `;
 
-const FormGroup = styled.p`
+const FormInput = styled.div`
     display: flex;
     flex-direction: column;
-    gap: 10px; 
+    padding-bottom: 20px;
+`
+
+const FormGroup = styled.div`
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    gap: 2vh; 
     padding-bottom: 20px;
 `;
 
@@ -61,4 +69,4 @@ const Button = styled.button`
     }
 `;
 
-export { FormContainer, Imgs, Forms, FormGroup, Input, Label, Button };
+export { FormContainer, Imgs, Forms, FormGroup, Input, Label, Button,FormInput };
