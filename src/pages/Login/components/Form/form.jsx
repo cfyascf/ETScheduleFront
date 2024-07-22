@@ -4,10 +4,7 @@ import { useState } from "react"
 import { useNavigate } from 'react-router-dom'
 import api from "../../../../services/api"
 import {ToastContainer, toast } from 'react-toastify';
-
 import 'react-toastify/dist/ReactToastify.css';
-
-
 
 const Form = () => {
 
@@ -58,24 +55,21 @@ const Form = () => {
             console.log('>>>>>>>>>>>', response)
 
             if (response.data['canLogin'] == true) {
-                // toast.success("Login realizado com sucesso", {theme: "dark"})
-                if (response.data.profiles.length == 1)
-                    goHome(response.data.profiles[0].role)
-                else{
-                    toast.success("Sucess login", { 
-                        position: "top-center",
-                        autoClose: 2000,
-                        hideProgressBar: false,
-                        closeOnClick: true,
-                        pauseOnHover: true,
-                        draggable: true,
-                        progress: undefined,
-                        theme: "light"})
-                    setTimeout(() => {
+                toast.success("Sucess login", { 
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"});
+                setTimeout(() => {
+                    if (response.data.profiles.length == 1)
+                        goHome(response.data.profiles[0].role)
+                    else
                         navigate("/profiles", { state: { serverData: response.data, userData: formData } });
-                    }, 2000);
-
-                }
+                }, 2000);
             }
             else{
                 toast.error("You can't log in", { 
