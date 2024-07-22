@@ -13,6 +13,7 @@ import ClassCard from "../../components/ClassCard/cards";
 import { getHeaders } from "../../services/headers";
 import api from "../../services/api";
 
+
 const getAllGroups = async () => {
     const headers = getHeaders();
     const response = await api.get(
@@ -28,7 +29,6 @@ const getAllGroups = async () => {
 const AdmClasses = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
     const [classes, setClasses] = useState([]);
-
 
     useEffect(() => {
         async function fetchGroups() {
@@ -62,15 +62,12 @@ const AdmClasses = () => {
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
-                                    {classes.map(classData  => (
-                                        <Link
-                                            key={classData.id}
-                                            to={`/classes/${classData.id}`} 
-                                            style={{ textDecoration: "none", color: "black" }}
-                                        >
+                                    {classes.map(classes => (
+                                        <Link key={classes.id} to={`/class/${classes.id}`} style={{ textDecoration: "none", color: "black" }}>
                                             <ClassCard
                                                 key={classes.id}
                                                 name={classes.name}
+
                                             />
                                         </Link>
                                     ))}

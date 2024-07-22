@@ -2,13 +2,15 @@ import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import 'react-dropdown/style.css';
 import './style.css';
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 
 const Reg = () => {
-    
+
     const navigate = useNavigate();
 
     // dropdown population
@@ -32,7 +34,7 @@ const Reg = () => {
     const fetchOptions = async () => {
         try {
             const response = await api.get('/group')
-            
+
             const groups = response.data.map(group => ({
                 label: group.name
             }))
@@ -161,14 +163,41 @@ const Reg = () => {
                 "description": eventDescription
             });
 
-            console.log(response);
+            if (!response.ok)
+                toast.error("Error posting data.", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            else
+                toast.success("Event registered successfully!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
 
-            navigate('/instructor-home');
+            const userInfo = parseJwt();
 
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Event registered successfully!");
+            setTimeout(() => {
+                switch (userInfo['role']) {
+                    case "admin":
+                        navigate("/adm-home")
+                        break
+                    case "instructor":
+                        navigate("/instructor-home")
+                        break
+                }
+            }, 2000);
 
         } catch (error) {
             toast.error("Error when registering", { 
@@ -186,6 +215,16 @@ const Reg = () => {
         }
     };
 
+    function parseJwt() {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
+
     return (
         <>
             <FormContainer>
@@ -202,7 +241,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start date and time:</Label>
-                            <Input type="datetime-local" value={startDate} onChange={(e) => { setStartDate(e.target.value)}}></Input>
+                            <Input type="datetime-local" value={startDate} onChange={(e) => { setStartDate(e.target.value) }}></Input>
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="enddate">End date and time:</Label>

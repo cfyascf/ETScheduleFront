@@ -1,8 +1,8 @@
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom'
-// import { ToastContainer, toast } from 'react-toastify';
-// import 'react-toastify/dist/ReactToastify.css';
+import { toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import api from '../../../../services/api'
 
 const Reg = () => {
@@ -72,25 +72,56 @@ const Reg = () => {
 
             navigate('/instructor-home')
 
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Class created with sucess!")
+            if (!response.ok)
+                toast.error("Error posting data.", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            else
+                toast.success("Class created with sucess!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+
+            const userInfo = parseJwt();
+
+            setTimeout(() => {
+                switch (userInfo['role']) {
+                    case "admin":
+                        navigate("/adm-home")
+                        break
+                    case "instructor":
+                        navigate("/instructor-home")
+                        break
+                }
+            }, 2000);
 
         } catch (error) {
-            toast.error("Error when registering", { 
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light"
-            });
-            return;
+            console.error('Erro ao fazer requisição:', error);
         }
     };
+
+    function parseJwt() {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
 
     return (
         <>
