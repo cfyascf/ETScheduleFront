@@ -3,9 +3,8 @@ import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
 import 'react-dropdown/style.css';
-import './style.css';
 
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText} from "./styles"
 
 const Reg = () => {
     
@@ -109,7 +108,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="nameclass">Group name:</Label>
-                            <Dropdown className='Dropdown' options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
+                            <Dropdown options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start date and time:</Label>

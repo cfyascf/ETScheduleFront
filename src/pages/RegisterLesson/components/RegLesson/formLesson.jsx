@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
-import './style.css';
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea} from "./styles"
 import api from '../../../../services/api'
 import { useNavigate } from 'react-router-dom';

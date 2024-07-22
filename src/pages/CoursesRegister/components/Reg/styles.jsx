@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 852px;
-    height: 620px;
+    width: 36%;
+    height: 78%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,34 +13,36 @@ const FormContainer = styled.div`
 const FormItems = styled.div`
     display: flex;
     align-items: center;
+    width: 85%;
     flex-direction: column;
 `;
 
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px; 
     width: 100%;
-    max-width: 400px;
+    align-items: center;
 `;
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
+    width: 90%;
+    align-items: center;
     gap: 8px; 
     padding-bottom: 20px;
 `;
 
 const Input = styled.input`
     padding: 11px;
-    width: 28vw;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
 
 const Select = styled.select`
     padding: 11px;
-    width: 28vw;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -48,6 +50,7 @@ const Select = styled.select`
 const Label = styled.label`
     font-size: 16px;
     color: #333;
+    align-self: flex-start;
 `;
 
 const Button = styled.a`
@@ -62,7 +65,7 @@ const Button = styled.a`
     font-size: 16px;
     align-self: center;
     text-align: center;
-    text-decorations: none;
+    text-decoration: none;
 
     &:hover {
         background-color: #0056b3;
@@ -89,7 +92,7 @@ const InputColor = styled.input`
 
 const InputDiv = styled.div`
     padding: 4px;
-    width: 550px;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;

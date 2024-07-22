@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 570px;
-    height: 750px;
+    width: 30%;
+    height: 75%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,17 +12,16 @@ const FormContainer = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 220px;
+    width: 200px;
     align-self: center;
-    margin-bottom: 55px;
+    margin-bottom: 30px;
 `;
 
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px; 
-    width: 100%;
-    max-width: 400px;
+    gap: 10px; 
+    width: 78%;
 `;
 
 const FormGroup = styled.p`
@@ -46,7 +45,7 @@ const Label = styled.label`
 const Button = styled.button`
     margin-top: 20px;
     padding: 12px;
-    width: 150px;
+    width: 35%;
     background-color: #007bff;
     color: #fff;
     border: none;

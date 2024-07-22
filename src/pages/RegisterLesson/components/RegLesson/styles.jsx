@@ -20,12 +20,12 @@ const Forms = styled.form`
     display: flex;
     flex-direction: column;
     gap: 20px; 
-    width: 100%;
-    max-width: 400px;
+    width: 86.3%;
 `;
 
 const FormGroup = styled.div`
     display: flex;
+    width: 100%;
     flex-direction: column;
     gap: 10px; 
     padding-bottom: 20px;
@@ -33,7 +33,7 @@ const FormGroup = styled.div`
 
 const Input = styled.input`
     padding: 11px;
-    width: 25vw;
+    width: 100%;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -72,7 +72,6 @@ const ColoredText = styled.div`
 
 const TextArea = styled.textarea `
     padding: 11px;
-    width: 25vw;
     border: 1px solid #ccc;
     border-radius: 10px;
     resize: none;

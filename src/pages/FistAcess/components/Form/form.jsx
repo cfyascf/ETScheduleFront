@@ -23,7 +23,7 @@ const Form = () => {
                         <Label htmlFor="cpwd">Password Confirm:</Label>
                         <Input id="cpwd" type="password" name="cpassword"></Input>
                     </FormGroup>
-                    <Button type="submit">Enter</Button>
+                    <Button type="submit">Submit</Button>
                 </Forms>
             </FormContainer>
          </>

@@ -20,9 +20,9 @@ const Imgs = styled.img`
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 20px; 
     width: 100%;
-    max-width: 400px;
 `;
 
 const FormGroup = styled.p`
