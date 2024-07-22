@@ -64,7 +64,17 @@ const Form = () => {
             if(firstAccess)
                 navigate('/fistacess');
             else
-                navigate('/home');
+                switch(role) {
+                    case "admin":
+                        navigate("/adm-home")
+                        break
+                    case "instructor":
+                        navigate("/instructor-home")
+                        break
+                    case "student":
+                        navigate("/home")
+                        break
+                }
             
             
         } catch (error) {

@@ -4,7 +4,7 @@ const ClassCard = (props) => {
     return (
         <CardContainer>
             <CardColor></CardColor>
-            <CardP>{props.class}</CardP>
+            <CardP>{props.name}</CardP>
         </CardContainer>
     );
 };

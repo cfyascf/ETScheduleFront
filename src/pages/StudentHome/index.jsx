@@ -11,7 +11,7 @@ import CalendarDate from "../../components/CalendarDate"
 import Welcome from "../../components/Welcome"
 
 
-const Home = () => {
+const StudentHome = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
 
     const toggleProfile = () => {
@@ -42,5 +42,5 @@ const Home = () => {
         </>
     )
 }
-
-export default Home
+    
+export default StudentHome

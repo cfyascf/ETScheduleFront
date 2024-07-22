@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import SideProfileClose from "../../components/SideProfileClose";
@@ -10,19 +10,37 @@ import { CardsContainer, Information, MainContainer, PageContent, PageContentIte
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
+import { getHeaders } from "../../services/headers";
+import api from "../../services/api";
 
-const subjectData = [
-    { class: 'Python' },
-    { class: 'Power BI' },
-    { class: 'IA' },
-    { class: 'IoT' },
-    { class: 'Web' },
-    { class: 'SQL' },
-    { class: 'Java' }
-]
+const getAllCourses = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/course",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
 
 const AdmSubject = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
+    const [courses, setCourses] = useState([]);
+
+    useEffect(() => {
+        async function fetchCourses() {
+            try {
+                const response = await getAllCourses();
+                setCourses(response.data); 
+            } catch (error) {
+                console.error("Error fetching courses:", error);
+            }
+        }
+
+        fetchCourses();
+    }, []); 
 
     const toggleProfile = () => {
         setProfileOpen(prevState => !prevState);
@@ -43,29 +61,24 @@ const AdmSubject = () => {
                             <AdmMenu />
                             <PageContentItems>
                                 <CardsContainer>
-                                    {subjectData.map((subjectData, index) => (
-                                        <Link style={{
-                                            textDecoration: "none",
-                                            color: "black"
-                                        }}
-                                            to={"/subjects"}>
+                                    {courses.map(course => (
+                                        <Link key={course.id} to={`/subjects/${course.id}`} style={{ textDecoration: "none", color: "black" }}>
                                             <ClassCard
-                                                key={index}
-                                                class={subjectData.class}
+                                                key={course.id}
+                                                name={course.name}
+                                                
                                             />
                                         </Link>
                                     ))}
                                 </CardsContainer>
                             </PageContentItems>
                         </TopContent>
-
                     </Information>
                 </PageContent>
-
                 <Footer />
             </MainContainer>
         </>
-    )
+    );
 }
 
 export default AdmSubject
