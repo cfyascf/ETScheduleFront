@@ -4,6 +4,7 @@ import teacher from "/presentation-speaker.svg";
 import boss from "/wholesaler.svg";
 import { useLocation, useNavigate } from 'react-router-dom';
 import api from "../../../../services/api"
+import { getHeaders } from "../../../../services/headers";
 
 
 const Buttons = ( ) => {
@@ -47,7 +48,14 @@ const Buttons = ( ) => {
             })
             localStorage.setItem('@AUTH', response.data.token);
 
-            const users = await api.get(`/user`);
+            const headers = getHeaders();
+            const users = await api.get(
+                `/user`,
+                {
+                    headers: headers
+                }
+            );
+
             let firstAccess = false;
             const userInfo = parseJwt();
             
@@ -62,7 +70,17 @@ const Buttons = ( ) => {
             if(firstAccess)
                 navigate('/fistacess');
             else
-                navigate('/home');
+                switch(role) {
+                    case "admin":
+                        navigate("/adm-home")
+                        break
+                    case "instructor":
+                        navigate("/instructor-home")
+                        break
+                    case "student":
+                        navigate("/home")
+                        break
+                }
 
         } catch (error) {
             // console.log(error);

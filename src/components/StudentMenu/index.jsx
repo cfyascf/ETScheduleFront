@@ -8,10 +8,10 @@ const StudentMenu = () => {
                 <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/home'>CALENDAR</Link> | <Link style={{
+                }}to='/student-home'>CALENDAR</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
-                }}to='/courses'>COURSERS</Link> | <Link style={{
+                }}to='/courses'>COURSES</Link> | <Link style={{
                     textDecoration: "none",
                     color: "black"
                 }}to='/personal-report'>PERSONAL REPORT</Link>
