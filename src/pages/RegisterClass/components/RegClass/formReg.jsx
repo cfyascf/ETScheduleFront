@@ -17,7 +17,35 @@ const Reg = () => {
         event.preventDefault()
 
         if(nameClass == ''){
-            toast.error("Name Class is required", { 
+            toast.error("Class Name is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(startDate == ''){
+            toast.error("Start date is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        
+        if(endDate == ''){
+            toast.error("End date is required", { 
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -50,7 +78,17 @@ const Reg = () => {
             //     toast.success("Class created with sucess!")
 
         } catch (error) {
-            console.error('Erro ao fazer requisição:', error);
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
         }
     };
 

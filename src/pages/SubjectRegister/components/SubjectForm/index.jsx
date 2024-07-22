@@ -24,9 +24,39 @@ const SubjectForm = () => {
     const [description, setDescription] = useState('');
 
     const handleSubmit = async (event) => {
+
+        if(subjectName == ''){
+            toast.error("Name is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(description == ''){
+            toast.error("Description is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        
+    
+
         event.preventDefault()
 
-        console.log("oi",subjectName, description)
 
         try {
             const response = await api.post('/course', {
@@ -44,7 +74,17 @@ const SubjectForm = () => {
             //     toast.success("Class created with sucess!")
 
         } catch (error) {
-            console.error('Erro ao fazer requisição:', error);
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
         }
     };
 

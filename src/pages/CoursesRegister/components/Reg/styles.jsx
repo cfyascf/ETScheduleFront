@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 852px;
-    height: 620px;
+    width: 35vw;
+    height: 670px;
     display: flex;
     justify-content: center;
     align-items: center;

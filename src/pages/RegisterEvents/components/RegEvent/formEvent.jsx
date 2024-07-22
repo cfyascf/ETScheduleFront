@@ -60,6 +60,76 @@ const Reg = () => {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
+        if(eventName == ''){
+            toast.error("Event Name is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(startDate == ''){
+            toast.error("Start date is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        
+        if(endDate == ''){
+            toast.error("End date is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(groupsId == []){
+            toast.error("Group is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(eventDescription == ''){
+            toast.error("Event descripton is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+
         console.log(startDate, endDate)
 
         // converts data to desired format
@@ -69,12 +139,20 @@ const Reg = () => {
         console.log(formattedStartDate, formattedEndDate)
 
         if (!selectedOption) {
-            console.error('Nenhuma opção selecionada.');
+            toast.error("No option selected", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
             return;
         }
 
         try {
-            console.log("aqui")
 
             const response = await api.post('/event', {
                 "groupId": groupsId[selectedIndex].value,
@@ -93,6 +171,17 @@ const Reg = () => {
             //     toast.success("Event registered successfully!");
 
         } catch (error) {
+            toast.error("Error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
             console.error('Erro ao fazer requisição:', error);
         }
     };
