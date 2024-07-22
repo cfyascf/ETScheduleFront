@@ -61,7 +61,7 @@ const InstructorHome = () => {
                                         textDecoration: "none",
                                         color: "black"
                                     }}
-                                        to={"/"}>
+                                        to={"/course-skills-register"}>
                                         <Card
                                             key={index}
                                             course={courseData.course}
