@@ -10,34 +10,35 @@ import SkillTableHeader from "./components/SkillTableHeader"
 import SkillTable from "./components/SkillTable"
 
 const studentsData = [
-    { name: 'André Luis'},
-    { name: 'Andrey Koch'},
-    { name: 'Dayne Pacheco'},
-    { name: 'Gabriela Laureano'},
-    { name: 'Yasmim da Cunha'},
-    { name: 'Nilton Meira'},
-    { name: 'Jéssica Federal'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'}
-]
+    { name: 'André Luis' },
+    { name: 'Andrey Koch' },
+    { name: 'Dayne Pacheco' },
+    { name: 'Gabriela Laureano' },
+    { name: 'Yasmim da Cunha' },
+    { name: 'Nilton Meira' },
+    { name: 'Jéssica Federal' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' },
+    { name: 'Maria Carolina B.' }
+];
 
 const bannerData = [
-    { name: 'Java Avançado', instructor: 'Leonardo Trevisan', color: 'orange' }
-]
+    { name: 'Java Avançado', instructor: 'Leonardo Trevisan', color: '#f38a00', opacity: 0.2 } 
+];
 
 const CourseSkillsRegister = () => {
     const [showModal, setShowModal] = useState(false);
     const [skills, setSkills] = useState([]);
-    
+    const [bannerOpacity, setBannerOpacity] = useState(bannerData[0].opacity); // Inicializa com a opacidade definida no bannerData
+
     const openModal = () => {
         setShowModal(true);
     };
@@ -56,20 +57,25 @@ const CourseSkillsRegister = () => {
         setSkills(updatedSkills);
     };
 
-    return(
+    const handleOpacityChange = (value) => {
+        setBannerOpacity(value);
+    };
+
+    return (
         <>
-        <MainContainer>
-            <Navbar />
+            <MainContainer>
+                <Navbar />
                 <PageContent>
                     {bannerData.map((bannerDt, indexBn) => (
-                        <Banner 
+                        <Banner
                             key={indexBn}
                             name={bannerDt.name}
                             instructor={bannerDt.instructor}
                             color={bannerDt.color}
-                        />    
+                            opacity={bannerOpacity} 
+                        />
                     ))}
-                    
+
                     <LineDiv>
                         <div style={{
                             display: 'flex',
@@ -81,15 +87,15 @@ const CourseSkillsRegister = () => {
                             borderRadius: '10px',
                             cursor: 'pointer'
                         }}
-                        onClick={openModal}
+                            onClick={openModal}
                         >
                             <ImgsIcon src={icon}></ImgsIcon>
                             <p style={{ fontWeight: '600', paddingTop: '1px' }}>Add Skill</p>
                         </div>
-                        <Line/>
+                        <Line />
                     </LineDiv>
 
-                    {showModal && <EventModal event={{ title: 'Add a Skill', desc: 'Skill successfully added!', start: new Date(), end: new Date() }} onClose={closeModal} onAddSkill={addSkill}/>}
+                    {showModal && <EventModal event={{ title: 'Add a Skill', desc: 'Skill successfully added!', start: new Date(), end: new Date() }} onClose={closeModal} onAddSkill={addSkill} />}
                     <SkillTableHeader />
                     {skills.map((skill, index) => (
                         <SkillTable
@@ -100,10 +106,10 @@ const CourseSkillsRegister = () => {
                             onDelete={deleteSkill}
                         />
                     ))}
-                    
+
                     <LineDiv>
                         <SectionTitle>Students</SectionTitle>
-                        <Line/>
+                        <Line />
                     </LineDiv>
                     <CardsOutside>
                         <CardsContainer>
@@ -116,12 +122,12 @@ const CourseSkillsRegister = () => {
                             ))}
                         </CardsContainer>
                     </CardsOutside>
-                    
+
                 </PageContent>
-            <Footer />
-        </MainContainer>
+                <Footer />
+            </MainContainer>
         </>
-    ) 
+    )
 }
 
 export default CourseSkillsRegister;
