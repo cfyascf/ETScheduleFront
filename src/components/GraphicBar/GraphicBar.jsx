@@ -20,9 +20,8 @@ const GraphicBar = () => {
         const userInfo = parseJwt()
 
         const response = await api.get(`/report/profile/${userInfo['profileId']}`)
-
+        console.log(response);
         const performances = response.data['performances'];
-
 
         const data_b_dict = performances.map(u => {
           return { discipline: u['discipline'], grade: u['average'] };
@@ -37,6 +36,8 @@ const GraphicBar = () => {
     getData();
   }, [])
 
+
+
   function parseJwt() {
     var base64Url = localStorage.getItem('@AUTH').split('.')[1];
     var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
@@ -50,7 +51,7 @@ const GraphicBar = () => {
   return (
     <>
       <GraphicContainer>
-        <Title>Average of Subject</Title>
+        <Title>Average of Disciplines</Title>
         <BarChart width={600} height={300} data={data} margin={{ top: 5, right: 20, bottom: 5, left: 0 }}>
           <Bar dataKey="grade" fill="#1adb00" />
           <CartesianGrid stroke="#ccc" strokeDasharray="5 5" />

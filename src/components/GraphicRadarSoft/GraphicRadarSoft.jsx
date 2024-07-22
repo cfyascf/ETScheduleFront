@@ -1,6 +1,6 @@
 import { Title, GraphicContainer } from "./styles";
 import { useEffect, useState } from "react"
-import { RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
+import { Tooltip, RadarChart, PolarGrid, PolarAngleAxis, PolarRadiusAxis, Radar, Legend } from 'recharts';
 import api from "../../services/api"
 
 
@@ -23,7 +23,7 @@ const GraphicRadarSoft = () => {
       try {
         const userInfo = parseJwt()
 
-        const response = await api.get(`/report/profile/${userInfo['profileId']}`)
+        // const response = await api.get(`/report/profile/${userInfo['profileId']}`)
 
         const hard_skill = response.data['softSkills'];
 
@@ -52,16 +52,30 @@ const GraphicRadarSoft = () => {
     return JSON.parse(jsonPayload);
   }
 
+  const CustomTooltip = ({ active, payload }) => {
+    if (active && payload && payload.length) {
+      const data = payload[0].payload;
+      return (
+        <div style={{ backgroundColor: 'white', padding: '10px', border: '1px solid #ccc' }}>
+          <p><strong>{data.subject}</strong></p>
+          <p>Score: {data.A}</p>
+        </div>
+      );
+    }
+    return null;
+  };
+
   return (
     <>
       <GraphicContainer>
         <Title>Soft Skills</Title>
-        <RadarChart outerRadius={90} width={730} height={250} data={data} >
+        <RadarChart outerRadius={100} width={730} height={300} data={data} >
           <Legend ></Legend>
           <PolarGrid />
           <PolarAngleAxis dataKey="subject" />
           <PolarRadiusAxis angle={30} domain={[-20, 20]} />
           <Radar name="Soft Skills" dataKey="A" stroke="#321cf5" fill="#321cf5" fillOpacity={0.3} />
+          <Tooltip content={<CustomTooltip />} />
         </RadarChart>
       </GraphicContainer>
     </>
