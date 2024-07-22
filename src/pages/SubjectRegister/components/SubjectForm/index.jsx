@@ -3,6 +3,8 @@ import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, Color
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css';
 
 const createCourse = async (body) => {
     const headers = getHeaders();
