@@ -2,7 +2,7 @@ import { createBrowserRouter } from "react-router-dom";
 import Login from "../pages/Login";
 import Courses from "../pages/Courses";
 import CoursesReg from "../pages/CoursesRegister"
-import Home from "../pages/Home"
+import StudentHome from "../pages/StudentHome"
 import FistAcess from "../pages/FistAcess";
 import Skills from "../pages/Skills";
 import InstructorHome from "../pages/InstructorHome";
@@ -31,9 +31,9 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-        path: '/home',
+        path: '/student-home',
         element: (
-            <Home/>
+            <StudentHome/>
         )
     },
     {
