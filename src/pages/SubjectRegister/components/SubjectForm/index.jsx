@@ -17,16 +17,34 @@ const createCourse = async(body) => {
 }
 
 const SubjectForm = () => {
-    const [name, setName] = useState("");
-    const [description, setDescription] = useState("");
+    const navigate = useNavigate();
 
-    const postCourse = async() => {
-        const response = await createCourse({
-            name: name,
-            description: description
-        });
+    const [subjectName, setSubjectName] = useState('');
+    const [description, setDescription] = useState('');
 
-        console.log(response);
+    const handleSubmit = async (event) => {
+        event.preventDefault()
+
+        console.log("oi",subjectName, description)
+
+        try {
+            const response = await api.post('/course', {
+                "name": subjectName,
+                "description": description
+            });
+
+            // console.log(response)
+
+            navigate('/instructor-home')
+
+            // if(!response.ok)
+            //     toast.error("Error posting data.")
+            // else
+            //     toast.success("Class created with sucess!")
+
+        } catch (error) {
+            console.error('Erro ao fazer requisição:', error);
+        }
     };
 
     return (
@@ -37,12 +55,12 @@ const SubjectForm = () => {
                         <ColoredText>REGISTER A NEW SUBJECT</ColoredText>
                         <FormGroup>
                             <Label htmlFor="name">Name:</Label>
-                            <Input id="subject-name" type="text" name="name" value={name} onChange={e => setName(e.target.value)}></Input>
+                            <Input id="subject-name" type="text" name="name" value={subjectName} onChange={e => setSubjectName(e.target.value)}></Input>
                             <Label htmlFor="description">Description:</Label>
                             <TextArea id="subject-description" name="description" value={description} onChange={e => setDescription(e.target.value)}></TextArea>
                         </FormGroup>
                     </FormItems>
-                    <Button onClick={postCourse}>Submit</Button>
+                    <Button onClick={handleSubmit}>Submit</Button>
                 </Forms>
             </FormContainer>
         </>

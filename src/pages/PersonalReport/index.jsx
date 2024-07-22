@@ -4,6 +4,7 @@ import Navbar from "../../components/Navbar"
 import SideProfileClose from "../../components/SideProfileClose"
 import SideProfileOpen from "../../components/SideProfileOpen"
 import StudentMenu from "../../components/StudentMenu"
+import Welcome from '../../components/Welcome';
 import GraphicBar from "../../components/GraphicBar/GraphicBar"
 import { MainContainer, PageContent, TopContent, Information,AllGraphics, RadarContainer } from "./styles"
 import GraphicRadarSoft from '../../components/GraphicRadarSoft/GraphicRadarSoft';
@@ -30,6 +31,7 @@ const PersonalReport = () => {
                     )}
                     <Information>
                         <TopContent>
+                            <Welcome/>
                             <StudentMenu />
                         </TopContent>
                         <AllGraphics>
