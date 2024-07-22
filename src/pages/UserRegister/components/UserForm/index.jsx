@@ -84,7 +84,7 @@ const RegisterForm = () => {
         event.preventDefault();
 
         if (userName === "") {
-            toast.error("Username is required", { 
+            toast.error("Username is required", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -98,7 +98,7 @@ const RegisterForm = () => {
         }
 
         if (!(isAdminChecked || isInstruChecked || isStudentChecked)) {
-            toast.error("At least one role must be selected", { 
+            toast.error("At least one role must be selected", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -112,7 +112,7 @@ const RegisterForm = () => {
         }
 
         if (isStudentChecked && groupsId.length === 0) {
-            toast.error("Student class must be selected", { 
+            toast.error("Student class must be selected", {
                 position: "top-center",
                 autoClose: 5000,
                 hideProgressBar: false,
@@ -145,27 +145,41 @@ const RegisterForm = () => {
                 headers: headers,
             });
 
-            console.log(response);
-            
-            toast.success("user created successfully", { 
-                position: "top-center",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                theme: "light"
-            });
-
-
-
-            navigate('/instructor-home');
-
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Event registered successfully!");
+            const userInfo = parseJwt();
+            if (response.status == 201) {
+                toast.success("User created with sucess!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+                setTimeout(() => {
+                    switch (userInfo['role']) {
+                        case "admin":
+                            navigate("/adm-home")
+                            break
+                        case "instructor":
+                            navigate("/instructor-home")
+                            break
+                    }
+                }, 2000);
+            }
+            else {
+                toast.error("Error posting data.", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            }
 
         } catch (error) {
             toast.error("Error when registering", { 
@@ -182,9 +196,19 @@ const RegisterForm = () => {
         }
     };
 
+    function parseJwt() {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
+
     return (
         <>
-            <ToastContainer/>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>

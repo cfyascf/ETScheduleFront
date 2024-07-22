@@ -162,7 +162,8 @@ const Reg = () => {
                 "endsAt": formattedEndDate,
                 "description": eventDescription
             });
-
+            
+            const userInfo = parseJwt();
             if (!response.ok)
                 toast.error("Error posting data.", {
                     position: "top-center",
@@ -174,7 +175,7 @@ const Reg = () => {
                     progress: undefined,
                     theme: "light"
                 });
-            else
+            else{
                 toast.success("Event registered successfully!", {
                     position: "top-center",
                     autoClose: 2000,
@@ -185,19 +186,17 @@ const Reg = () => {
                     progress: undefined,
                     theme: "light"
                 });
-
-            const userInfo = parseJwt();
-
-            setTimeout(() => {
-                switch (userInfo['role']) {
-                    case "admin":
-                        navigate("/adm-home")
-                        break
-                    case "instructor":
-                        navigate("/instructor-home")
-                        break
-                }
-            }, 2000);
+                setTimeout(() => {
+                    switch (userInfo['role']) {
+                        case "admin":
+                            navigate("/adm-home")
+                            break
+                        case "instructor":
+                            navigate("/instructor-home")
+                            break
+                    }
+                }, 2000);
+            }
 
         } catch (error) {
             toast.error("Error when registering", { 
