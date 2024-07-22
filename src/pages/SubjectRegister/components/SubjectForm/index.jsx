@@ -1,8 +1,20 @@
 import { useState } from "react";
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea } from "./styles"
-import { createCourse } from "../../../../services/courseService";
-import { useNavigate } from "react-router-dom";
-import api from '../../../../services/api'
+import { getHeaders } from "../../../../services/headers";
+import api from "../../../../services/api";
+
+const createCourse = async(body) => {
+    const headers = getHeaders();
+    const response = await api.post(
+        "/course",
+        {
+            headers: headers,
+            body: body
+        }
+    );
+
+    return response;
+}
 
 const SubjectForm = () => {
     const navigate = useNavigate();
