@@ -3,6 +3,9 @@ import { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItem
 import { useEffect, useState } from "react";
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 const getAllGroups = async() => {
     const headers = getHeaders();
@@ -82,6 +85,60 @@ const Reg = () => {
     }
 
     const postDiscipline = async() => {
+
+        if(instructorId == null){
+            toast.error("Instructor is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(courseId == null){
+            toast.error("Course is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(groupId == null){
+            toast.error("Group is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(semester == null){
+            toast.error("Semester is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
         const response = await createDiscipline({
             "groupId": Number(groupId),
             "instructorId": Number(instructorId),
@@ -120,6 +177,7 @@ const Reg = () => {
 
     return (
         <>
+            <ToastContainer />
             <FormContainer>
                 <Forms>
                     <FormItems>
