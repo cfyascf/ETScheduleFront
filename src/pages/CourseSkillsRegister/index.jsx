@@ -1,4 +1,5 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useParams } from 'react-router-dom';
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle, ImgsIcon } from './styles';
@@ -8,6 +9,8 @@ import EventModal from './components/Modal/index';
 import icon from '/plus_circle.svg'
 import SkillTableHeader from "./components/SkillTableHeader"
 import SkillTable from "./components/SkillTable"
+import { getHeaders } from "../../services/headers";
+import api from "../../services/api";
 
 const studentsData = [
     { name: 'André Luis' },
@@ -31,13 +34,39 @@ const studentsData = [
 ];
 
 const bannerData = [
-    { name: 'Java Avançado', instructor: 'Leonardo Trevisan', color: '#f38a00', opacity: 0.2 } 
+    { opacity: 0.2 }
 ];
+
+const getDisciplineById = async (id) => {
+    try {
+        const headers = getHeaders();
+        const response = await api.get(`/discipline/${id}`, { headers });
+        return response.data; // Retorna apenas os dados da disciplina
+    } catch (error) {
+        console.error("Error fetching discipline:", error);
+        throw error; // Trate o erro conforme necessário
+    }
+};
 
 const CourseSkillsRegister = () => {
     const [showModal, setShowModal] = useState(false);
     const [skills, setSkills] = useState([]);
-    const [bannerOpacity, setBannerOpacity] = useState(bannerData[0].opacity); // Inicializa com a opacidade definida no bannerData
+    const [bannerOpacity, setBannerOpacity] = useState(bannerData[0].opacity); 
+    const [discipline, setDiscipline] = useState(null); 
+    const { id } = useParams();
+
+    useEffect(() => {
+        const fetchDiscipline = async () => {
+            try {
+                const disciplineData = await getDisciplineById(id); 
+                setDiscipline(disciplineData);
+            } catch (error) {
+                console.error("Error fetching discipline:", error);
+            }
+        };
+
+        fetchDiscipline();
+    }, []);
 
     const openModal = () => {
         setShowModal(true);
@@ -66,15 +95,14 @@ const CourseSkillsRegister = () => {
             <MainContainer>
                 <Navbar />
                 <PageContent>
-                    {bannerData.map((bannerDt, indexBn) => (
+                    {discipline && (
                         <Banner
-                            key={indexBn}
-                            name={bannerDt.name}
-                            instructor={bannerDt.instructor}
-                            color={bannerDt.color}
-                            opacity={bannerOpacity} 
+                            name={discipline.name}
+                            instructor={discipline.instructor}
+                            color={discipline.color}
+                            opacity={bannerOpacity}
                         />
-                    ))}
+                    )}
 
                     <LineDiv>
                         <div style={{
