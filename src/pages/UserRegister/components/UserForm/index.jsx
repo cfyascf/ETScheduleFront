@@ -160,7 +160,7 @@ const RegisterForm = () => {
 
 
 
-            // navigate('/instructor-home');
+            navigate('/instructor-home');
 
             // if(!response.ok)
             //     toast.error("Error posting data.")
