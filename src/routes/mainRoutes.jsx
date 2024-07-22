@@ -122,7 +122,6 @@ const mainRoutes = createBrowserRouter([
         )
     },
     {
-
         path: '/profiles',
         element: (
             <Profiles/>

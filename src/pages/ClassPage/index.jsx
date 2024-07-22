@@ -5,26 +5,16 @@ import Banner from './components/Banner';
 import CalendarDate from "../../components/CalendarDate"
 import CardStudents from './components/CardsStudents';
 
-const studentsData = [
-    { name: 'André Luis'},
-    { name: 'Andrey Koch'},
-    { name: 'Dayne Pacheco'},
-    { name: 'Gabriela Laureano'},
-    { name: 'Yasmim da Cunha'},
-    { name: 'Nilton Meira'},
-    { name: 'Jéssica Federal'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'},
-    { name: 'Maria Carolina B.'}
-]
+// const studentsData = [
+//     { name: 'André Luis'},
+//     { name: 'Andrey Koch'},
+//     { name: 'Dayne Pacheco'},
+//     { name: 'Gabriela Laureano'},
+//     { name: 'Yasmim da Cunha'},
+//     { name: 'Nilton Meira'},
+//     { name: 'Jéssica Federal'},
+//     { name: 'Maria Carolina B.'}
+// ]
 
 const Class = () => {
     return(
