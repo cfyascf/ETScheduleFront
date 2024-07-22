@@ -3,18 +3,17 @@ import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, Color
 import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
 
-const createCourse = async(body) => {
-    const headers = getHeaders();
-    const response = await api.post(
-        "/course",
-        {
-            headers: headers,
-            body: body
-        }
-    );
-
-    return response;
-}
+// const createCourse = async(body) => {
+//     const headers = getHeaders();
+//     const response = await api.post(
+//         "/course",
+//         {
+//             headers: headers,
+//             body: body
+//         }
+//     );
+//     return response;
+// }
 
 const SubjectForm = () => {
     const navigate = useNavigate();
