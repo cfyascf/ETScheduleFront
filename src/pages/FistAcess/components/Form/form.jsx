@@ -124,7 +124,7 @@ const Form = () => {
                 theme: "light"
             });
             return;
-            console.error('Erro ao fazer requisição:', error);
+
         }
     };
 
