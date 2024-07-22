@@ -1,11 +1,59 @@
 
 import { FormContainer, Forms, FormGroup, Input, Select, Label, Button, FormItems, ColoredText, InputColor, InputDiv } from "./styles"
 import { useEffect, useState } from "react";
+import { getHeaders } from "../../../../services/headers";
+import api from "../../../../services/api";
 
-import { getAllCourses } from "../../../../services/courseService";
-import { getAllInstructors } from "../../../../services/instructorService";
-import { getAllGroups } from "../../../../services/groupService";
-import { createDiscipline } from "../../../../services/disciplineService";
+const getAllGroups = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/group",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
+
+const getAllCourses = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/course",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
+
+const createDiscipline = async(body) => {
+    const headers = getHeaders();
+    const response = await api.post(
+        "/discipline",
+        {
+            headers: headers,
+            body: body
+        }
+    );
+
+    return response;
+};
+
+const getAllInstructors = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/instructor",
+        {
+            headers: headers
+        }
+    );
+
+    console.log(response);
+
+    return response;
+}
 
 const Reg = () => {
     const [instructors, setInstructors] = useState([]);
@@ -15,49 +63,60 @@ const Reg = () => {
     const [instructorId, setInstructorId] = useState(null);
     const [courseId, setCourseId] = useState(null);
     const [groupId, setGroupId] = useState(null);
-    const [semester, setSemester] = useState("");
+    const [semester, setSemester] = useState(null);
     const [colorPick, setColorPick] = useState("");
 
     const getInstructorsAsync = async() => {
         const response = await getAllInstructors();
         setInstructors(response.data);
-
-        if (instructors.length != 0)
-            setInstructorId(instructors[0].profileId);
     };
 
     const getCoursesAsync = async() => {
         const response = await getAllCourses();
         setCourses(response.data);
-
-        if (courses.length != 0)
-            setCourseId(courses[0].id);
     };
 
     const getGroupsAsync = async() => {
         const response = await getAllGroups();
         setGroups(response.data);
-
-        if (groups.length != 0)
-            setGroupId(groups[0].id);
     }
 
     const postDiscipline = async() => {
         const response = await createDiscipline({
-            groupId: groupId,
-            instructorId: instructorId,
-            courseId: courseId,
-            semester: semester,
-            color: colorPick
+            "groupId": Number(groupId),
+            "instructorId": Number(instructorId),
+            "courseId": Number(courseId),
+            "semester": Number(semester),
+            "colorCode": colorPick
         });
-        console.log(response);
+
+        if (response.status == 201) {
+            Navigate("/home");
+        }
     };
 
     useEffect(() => {
         getInstructorsAsync();
         getCoursesAsync();
         getGroupsAsync();
+
+        setColorPick("#000000");
     }, []);
+    
+    useEffect(() => {
+        if (instructors.length > 0)
+            setInstructorId(instructors[0].profileId);
+    }, [instructors]);
+    
+    useEffect(() => {
+        if (courses.length > 0)
+            setCourseId(courses[0].id);
+    }, [courses])
+    
+    useEffect(() => {
+        if (groups.length > 0)
+            setGroupId(groups[0].id);
+    }, [groups])
 
     return (
         <>
@@ -67,7 +126,7 @@ const Reg = () => {
                         <ColoredText>REGISTER A COURSE</ColoredText>
                         <FormGroup>
                             <Label htmlFor="instructor">Instructor:</Label>
-                            <Select value={instructorId} onChange={e => setInstructorId(e.target.value)}>
+                            <Select onChange={e => setInstructorId(e.target.value)}>
                                 {
                                     instructors.map((i, index) => <option key={index} value={i.profileId}>{i.name}</option>)
                                 }
@@ -75,7 +134,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="course">Course:</Label>
-                            <Select value={courseId} onChange={e => setCourseId(e.target.value)}>
+                            <Select onChange={e => setCourseId(e.target.value)}>
                                 {
                                     courses.map((c, index) => <option key={index} value={c.id}>{c.name}</option>)
                                 }
@@ -83,7 +142,7 @@ const Reg = () => {
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="group">Group:</Label>
-                            <Select value={groupId} onChange={e => setGroupId(e.target.value)}>
+                            <Select onChange={e => setGroupId(e.target.value)}>
                                 {
                                     groups.map((g, index) => <option key={index} value={g.id}>{g.name}</option>)
                                 }

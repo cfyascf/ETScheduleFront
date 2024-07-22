@@ -4,8 +4,6 @@ const getHeaders = () => {
         'Authorization': `Bearer ${localStorage.getItem('@AUTH')}`
     }
 
-    console.log(headers);
-
     return headers;
 }
 

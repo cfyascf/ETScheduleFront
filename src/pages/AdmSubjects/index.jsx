@@ -10,17 +10,20 @@ import { CardsContainer, Information, MainContainer, PageContent, PageContentIte
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
-import { getAllCourses } from "../../services/courseService";
+import { getHeaders } from "../../services/headers";
+import api from "../../services/api";
 
-// const subjectData = [
-//     { class: 'Python' },
-//     { class: 'Power BI' },
-//     { class: 'IA' },
-//     { class: 'IoT' },
-//     { class: 'Web' },
-//     { class: 'SQL' },
-//     { class: 'Java' }
-// ]
+const getAllCourses = async() => {
+    const headers = getHeaders();
+    const response = await api.get(
+        "/course",
+        {
+            headers: headers
+        }
+    );
+
+    return response;
+}
 
 const AdmSubject = () => {
     const [isProfileOpen, setProfileOpen] = useState(false);
@@ -63,7 +66,6 @@ const AdmSubject = () => {
                                             <ClassCard
                                                 key={course.id}
                                                 name={course.name}
-                                                
                                             />
                                         </Link>
                                     ))}
