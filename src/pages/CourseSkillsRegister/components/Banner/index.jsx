@@ -1,19 +1,19 @@
+import React from "react";
 import { BannerDiv, Imgs, Title, P } from "./style";
 import bannerImage from "/board-funnel.svg";
 
 const Banner = (props) => {
-    return(
-        <BannerDiv style={{
-            backgroundColor: props.color
-        }}>
+    const { name, instructor, color, opacity } = props;
+
+    return (
+        <BannerDiv style={{ backgroundColor: `${color}${Math.floor(opacity * 255).toString(16)}` }}>
             <div>
-                <Title>{props.name}</Title>
-                <P>{props.instructor}</P>
+                <Title>{name}</Title>
+                <P>{instructor}</P>
             </div>
-            
-            <Imgs src={bannerImage}/>
+            <Imgs src={bannerImage} />
         </BannerDiv>
-    )
-}
+    );
+};
 
 export default Banner;
