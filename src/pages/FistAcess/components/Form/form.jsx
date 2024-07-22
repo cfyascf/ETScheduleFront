@@ -17,8 +17,72 @@ const Form = () => {
     const handleSubmit = async (event) => {
         event.preventDefault()
 
-        if(passwordInput != confimPasswordInput)
-            return console.log("As senhas são diferentes");
+        if(fullnameInput == ''){
+            toast.error("Full Name is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(birthInput == ''){
+            toast.error("Your Birthday is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        if(passwordInput == ""){
+            toast.error("Password is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(confimPasswordInput == ''){
+            toast.error("Password confirmation is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(passwordInput != confimPasswordInput){
+            toast.error("Passwords don't match", { 
+                position: "top-center",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"})
+        }
 
         try {
             const headers = getHeaders();
@@ -45,6 +109,18 @@ const Form = () => {
             }
 
         } catch (error) {
+
+            toast.error("error when registering", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
             console.error('Erro ao fazer requisição:', error);
         }
     };

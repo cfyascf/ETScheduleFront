@@ -4,7 +4,7 @@ import { getHeaders } from "../../../../services/headers";
 import api from "../../../../services/api";
 import { useNavigate } from "react-router-dom";
 
-const createCourse = async(body) => {
+const createCourse = async (body) => {
     const headers = getHeaders();
     const response = await api.post(
         "/course",
@@ -24,9 +24,39 @@ const SubjectForm = () => {
     const [description, setDescription] = useState('');
 
     const handleSubmit = async (event) => {
+
+        if(subjectName == ''){
+            toast.error("Name is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+
+        if(description == ''){
+            toast.error("Description is required", { 
+                position: "top-center",
+                autoClose: 5000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+                progress: undefined,
+                theme: "light"
+            });
+            return;
+        }
+        
+    
+
         event.preventDefault()
 
-        console.log("oi",subjectName, description)
 
         try {
             const response = await api.post('/course', {
@@ -34,19 +64,56 @@ const SubjectForm = () => {
                 "description": description
             });
 
-            // console.log(response)
-
-            navigate('/instructor-home')
-
-            // if(!response.ok)
-            //     toast.error("Error posting data.")
-            // else
-            //     toast.success("Class created with sucess!")
+            const userInfo = parseJwt();
+            if (response.status == 201) {
+                toast.success("Subject created with sucess!", {
+                    position: "top-center",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+                setTimeout(() => {
+                    switch (userInfo['role']) {
+                        case "admin":
+                            navigate("/adm-home")
+                            break
+                        case "instructor":
+                            navigate("/instructor-home")
+                            break
+                    }
+                }, 2000);
+            }
+            else {
+                toast.error("Error posting data.", {
+                    position: "top-center",
+                    autoClose: 5000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: true,
+                    draggable: true,
+                    progress: undefined,
+                    theme: "light"
+                });
+            }
 
         } catch (error) {
             console.error('Erro ao fazer requisição:', error);
         }
     };
+
+    function parseJwt() {
+        var base64Url = localStorage.getItem('@AUTH').split('.')[1];
+        var base64 = base64Url.replace(/-/g, '+').replace(/_/g, '/');
+        var jsonPayload = decodeURIComponent(window.atob(base64).split('').map(function (c) {
+            return '%' + ('00' + c.charCodeAt(0).toString(16)).slice(-2);
+        }).join(''));
+
+        return JSON.parse(jsonPayload);
+    }
 
     return (
         <>
