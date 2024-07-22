@@ -78,7 +78,7 @@ const Buttons = ( ) => {
                         navigate("/instructor-home")
                         break
                     case "student":
-                        navigate("/home")
+                        navigate("/student-home")
                         break
                 }
 

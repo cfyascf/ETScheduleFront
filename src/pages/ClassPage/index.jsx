@@ -5,32 +5,35 @@ import Banner from './components/Banner';
 import CalendarDate from "../../components/CalendarDate"
 import CardStudents from './components/CardsStudents';
 
-// const studentsData = [
-//     { name: 'André Luis'},
-//     { name: 'Andrey Koch'},
-//     { name: 'Dayne Pacheco'},
-//     { name: 'Gabriela Laureano'},
-//     { name: 'Yasmim da Cunha'},
-//     { name: 'Nilton Meira'},
-//     { name: 'Jéssica Federal'},
-//     { name: 'Maria Carolina B.'}
-// ]
+
+const studentsData = [
+    { name: 'André Luis' },
+    { name: 'Andrey Koch' },
+    { name: 'Dayne Pacheco' },
+    { name: 'Gabriela Laureano' },
+    { name: 'Yasmim da Cunha' },
+    { name: 'Nilton Meira' },
+    { name: 'Jéssica Federal' },
+    { name: 'Maria Carolina B.' }
+]
 
 const Class = () => {
-    return(
+
+    return (
         <>
-        <MainContainer>
-            <Navbar />
+            <MainContainer>
+                <Navbar />
                 <PageContent>
+
                     <Banner />
                     <LineDiv>
                         <SectionTitle>Class Schedule</SectionTitle>
-                        <Line/>
+                        <Line />
                     </LineDiv>
-                    <CalendarDate/>
+                    <CalendarDate />
                     <LineDiv>
                         <SectionTitle>Students</SectionTitle>
-                        <Line/>
+                        <Line />
                     </LineDiv>
                     <CardsOutside>
                         <CardsContainer>
@@ -43,12 +46,11 @@ const Class = () => {
                             ))}
                         </CardsContainer>
                     </CardsOutside>
-                    
                 </PageContent>
-            <Footer />
-        </MainContainer>
+                <Footer />
+            </MainContainer>
         </>
-    ) 
+    )
 }
 
 export default Class;
