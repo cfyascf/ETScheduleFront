@@ -20,6 +20,7 @@ const Form = () => {
                 password: passwordValue
             }
 
+            console.log(usernameValue, passwordValue)
             const response = await api.post(`/login/confirm`, formData)
 
             console.log('>>>>>>>>>>>', response)
