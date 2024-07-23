@@ -7,17 +7,18 @@ import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-// const createCourse = async(body) => {
-//     const headers = getHeaders();
-//     const response = await api.post(
-//         "/course",
-//         {
-//             headers: headers,
-//             body: body
-//         }
-//     );
-//     return response;
-// }
+const createCourse = async (body) => {
+    const headers = getHeaders();
+    const response = await api.post(
+        "/course",
+        {
+            headers: headers,
+            body: body
+        }
+    );
+
+    return response;
+}
 
 const SubjectForm = () => {
     const navigate = useNavigate();
