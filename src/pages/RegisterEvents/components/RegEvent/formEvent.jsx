@@ -3,6 +3,10 @@ import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
 import 'react-dropdown/style.css';
+import "./styles";
+import { ToastContainer, toast } from 'react-toastify';
+
+import 'react-toastify/dist/ReactToastify.css';
 
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText} from "./styles"
 
