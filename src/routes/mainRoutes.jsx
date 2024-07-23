@@ -103,7 +103,7 @@ const mainRoutes = createBrowserRouter([
         )
     }, 
     {
-        path: '/class/:id',
+        path: '/classes/:id',
         element: (
             <Class/>
         )

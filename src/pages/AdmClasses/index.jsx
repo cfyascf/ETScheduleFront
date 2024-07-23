@@ -1,15 +1,15 @@
-import { Link } from "react-router-dom";
 import React, { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
+
 import Footer from "../../components/Footer";
 import Navbar from "../../components/Navbar";
 import SideProfileClose from "../../components/SideProfileClose";
-import SideProfileOpen from "../../components/SideProfileOpen";
-import StudentMenu from "../../components/StudentMenu";
-import Welcome from "../../components/Welcome";
-import { CardsContainer, Information, MainContainer, PageContent, PageContentItems, TopContent } from "./styles";
 import SideProfileADMOpen from '../../components/SideProfileADMOpen';
 import AdmMenu from '../../components/AdmMenu';
 import ClassCard from "../../components/ClassCard/cards";
+
+import { CardsContainer, Information, MainContainer, PageContent, PageContentItems, TopContent } from "./styles";
+
 import { getHeaders } from "../../services/headers";
 import api from "../../services/api";
 

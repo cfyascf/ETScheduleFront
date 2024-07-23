@@ -1,3 +1,5 @@
+import { useEffect, useState } from 'react';
+
 import Navbar from '../../components/Navbar';
 import Footer from '../../components/Footer';
 import { PageContent, MainContainer, Line, CardsContainer, CardsOutside, LineDiv, SectionTitle } from './styles';
@@ -5,19 +7,38 @@ import Banner from './components/Banner';
 import CalendarDate from "../../components/CalendarDate"
 import CardStudents from './components/CardsStudents';
 
+import api from '../../services/api';
+import { getHeaders } from '../../services/headers';
+import { useParams } from 'react-router-dom';
 
-const studentsData = [
-    { name: 'André Luis' },
-    { name: 'Andrey Koch' },
-    { name: 'Dayne Pacheco' },
-    { name: 'Gabriela Laureano' },
-    { name: 'Yasmim da Cunha' },
-    { name: 'Nilton Meira' },
-    { name: 'Jéssica Federal' },
-    { name: 'Maria Carolina B.' }
-]
+const studentsData = []
 
 const Class = () => {
+    // const [group, setGroup] = useState(null);
+    // const [studentsData, setStudents] = useState([]);
+
+    // const fetchAllCourses = async() => {
+    //     const headers = getHeaders();
+    //     const id = useParams().id;
+    
+    //     console.log(id);
+    
+    //     const response = await api.get(
+    //         `/group/${id}`,
+    //         {
+    //             headers: headers
+    //         }
+    //     );
+
+    //     console.log(response);
+    //     return response;
+    // }
+    
+    // useEffect(() => {
+    //     const groupResponse = fetchAllCourses();
+    //     setGroup(groupResponse.data);
+    //     setStudents(groupResponse.data.students);
+    // }, [])
 
     return (
         <>

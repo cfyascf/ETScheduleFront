@@ -5,10 +5,10 @@ const EventModal = ({event, onClose}) => {
     return(
         <Modal>
             <ModalContainer>
-                <Title>{event.title}</Title>
-                <p>{event.desc}</p>
-                <p>Inicio: {event.start.toLocaleString()}</p>
-                <p>Fim: {event.end.toLocaleString()}</p>
+                <Title>{event.desc}</Title>
+                <p>{event.title}</p>
+                <p>Inicio: {event.start.toLocaleDateString()}</p>
+                <p>Fim: {event.end.toLocaleDateString()}</p>
                 <button onClick={onClose}>Fechar</button>
             </ModalContainer>
         </Modal>
