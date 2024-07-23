@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 710px;
-    height: 570px;
+    width: 35vw;
+    height: 65VH;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,7 @@ const FormItems = styled.div`
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px; 
+    gap: 10px; 
     width: 100%;
     max-width: 400px;
 `;
@@ -28,7 +28,7 @@ const FormGroup = styled.p`
     display: flex;
     flex-direction: column;
     gap: 10px; 
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 `;
 
 const Input = styled.input`

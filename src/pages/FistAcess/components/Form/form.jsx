@@ -1,4 +1,4 @@
-import {FormContainer, Imgs, Forms, FormGroup, Input, Label, Button} from "./styles"
+import {FormContainer, Imgs, Forms, FormGroup, Input, Label, Button,FormDivCompac} from "./styles"
 import logo from "/Bosch_symbol_logo_black_red_1.svg";
 import { useState } from "react";
 import api from "../../../../services/api";
@@ -146,6 +146,7 @@ const Form = () => {
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo"/> 
+                    <FormDivCompac>
                     <FormGroup>
                         <Label htmlFor="username">Full Name:</Label>
                         <Input id="username" type="text" value={fullnameInput} onChange={(e) => { setFullnameInput(e.target.value) }} name="user"></Input>
@@ -162,6 +163,7 @@ const Form = () => {
                         <Label htmlFor="cpwd">Password Confirm:</Label>
                         <Input id="cpwd" type="password" value={confimPasswordInput} onChange={(e) => { setconfimPasswordInput(e.target.value) }} name="cpassword"></Input>
                     </FormGroup>
+                    </FormDivCompac>
                     <Button type="submit" onClick={handleSubmit}>Enter</Button>
                 </Forms>
             </FormContainer>

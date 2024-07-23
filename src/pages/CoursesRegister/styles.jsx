@@ -20,7 +20,7 @@ const PageContentItems = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 1000px;
+    width: 50vw;
     align-self: center;
     margin-bottom: 55px;
 `;

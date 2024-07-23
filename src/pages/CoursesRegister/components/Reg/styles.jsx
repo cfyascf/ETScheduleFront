@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 35vw;
-    height: 670px;
+    height: 78vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -18,8 +18,7 @@ const FormItems = styled.div`
 
 const Forms = styled.form`
     display: flex;
-    flex-direction: column;
-    gap: 20px; 
+    flex-direction: column; 
     width: 100%;
     max-width: 400px;
 `;
@@ -28,19 +27,21 @@ const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     gap: 8px; 
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 `;
 
 const Input = styled.input`
-    padding: 11px;
+    height: 42px;
+    padding: 5px;
     width: 28vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
 
 const Select = styled.select`
-    padding: 11px;
+    padding: 5px;
     width: 28vw;
+    height: 42px;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -52,7 +53,7 @@ const Label = styled.label`
 
 const Button = styled.a`
     margin-top: 3px;
-    padding: 12px;
+    padding: 7px;
     width: 150px;
     background-color: #007bff;
     color: #fff;
@@ -74,22 +75,22 @@ const ColoredText = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding-bottom: 20px;
+    padding-bottom: 10px;
     font-weight: bold;
     font-size: 20px;
 `;
 
 const InputColor = styled.input`
     padding: 2px;
-    width: 50px;
+    width: 3vw;
     height: 40px;
     border: 1px solid #ccc;
     border-radius: 2px;
 `;
 
 const InputDiv = styled.div`
-    padding: 4px;
-    width: 550px;
+    padding: 2px;
+    width: 28vw;
     border: 1px solid #ccc;
     border-radius: 10px;
 `;

@@ -1,8 +1,8 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
-    width: 600px;
-    height: 70%;
+    width: 31vw;
+    height: 70vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -14,7 +14,7 @@ const FormItems = styled.div`
     display: flex;
     align-items: center;
     flex-direction: column;
-    gap: 10px;
+
 `;
 
 const Forms = styled.form`
@@ -22,7 +22,6 @@ const Forms = styled.form`
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    gap: 20px; 
     width: 100%;
     max-width: 300px;
 `;
@@ -46,8 +45,8 @@ const Label = styled.label`
 `;
 
 const Button = styled.a`
-    margin-top: 20px;
-    padding: 12px;
+    margin-top: 10px;
+    padding: 7px;
     width: 150px;
     background-color: #007bff;
     color: #fff;
@@ -68,9 +67,8 @@ const ColoredText = styled.div`
     background: linear-gradient(to right, #ED0007, #9E2896, #513B84, #345299, #007BC0, #18837e, #00884A);
     -webkit-background-clip: text;
     background-clip: text;
+    padding: 20px;
     color: transparent;
-    padding-bottom: 30px;
-    padding-left: 2vw;
     font-weight: bold;
     font-size: 20px;
     width: 28vw;

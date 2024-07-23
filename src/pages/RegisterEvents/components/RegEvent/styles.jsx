@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 const FormContainer = styled.div`
     width: 30vw;
-    height: 670px;
+    height: 75vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,7 +19,6 @@ const FormItems = styled.div`
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
-    gap: 20px; 
     width: 100%;
     max-width: 400px;
 `;
@@ -28,13 +27,12 @@ const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    gap: 10px; 
-    padding-bottom: 20px;
+    padding-bottom: 10px;
 `;
 
 const Input = styled.input`
     height: 42px;
-    padding: 11px;
+    padding: 5px;
     width: 25vw;
     border: 1px solid #ccc;
     border-radius: 10px;
@@ -46,8 +44,8 @@ const Label = styled.label`
 `;
 
 const Button = styled.button`
-    margin-top: 20px;
-    padding: 12px;
+    margin-top: 10px;
+    padding: 7px;
     width: 150px;
     background-color: #007bff;
     color: #fff;
@@ -67,7 +65,7 @@ const ColoredText = styled.div`
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent;
-    padding-bottom: 30px;
+    padding-bottom: 10px;
     font-weight: bold;
     font-size: 20px;
 `;

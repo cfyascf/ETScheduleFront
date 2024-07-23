@@ -21,8 +21,8 @@ const ProfileIcons = styled.div`
 `
 
 const UserImg = styled.img`
-    margin-top: 70px;
-    width: 200px;
+    margin-top: 30px;
+    width: 100px;
 `
 
 const BigTitle = styled.h2`
