@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
+<<<<<<< HEAD
     width: 35vw;
     height: 78vh;
+=======
+    width: 36%;
+    height: 78%;
+>>>>>>> feat-gabi
     display: flex;
     justify-content: center;
     align-items: center;
@@ -13,35 +18,52 @@ const FormContainer = styled.div`
 const FormItems = styled.div`
     display: flex;
     align-items: center;
+    width: 85%;
     flex-direction: column;
 `;
 
 const Forms = styled.form`
     display: flex;
+<<<<<<< HEAD
     flex-direction: column; 
+=======
+    flex-direction: column;
+>>>>>>> feat-gabi
     width: 100%;
-    max-width: 400px;
+    align-items: center;
 `;
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
+    width: 90%;
+    align-items: center;
     gap: 8px; 
     padding-bottom: 10px;
 `;
 
 const Input = styled.input`
+<<<<<<< HEAD
     height: 42px;
     padding: 5px;
     width: 28vw;
+=======
+    padding: 11px;
+    width: 100%;
+>>>>>>> feat-gabi
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
 
 const Select = styled.select`
+<<<<<<< HEAD
     padding: 5px;
     width: 28vw;
     height: 42px;
+=======
+    padding: 11px;
+    width: 100%;
+>>>>>>> feat-gabi
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -49,6 +71,7 @@ const Select = styled.select`
 const Label = styled.label`
     font-size: 16px;
     color: #333;
+    align-self: flex-start;
 `;
 
 const Button = styled.a`
@@ -63,7 +86,7 @@ const Button = styled.a`
     font-size: 16px;
     align-self: center;
     text-align: center;
-    text-decorations: none;
+    text-decoration: none;
 
     &:hover {
         background-color: #0056b3;
@@ -89,8 +112,13 @@ const InputColor = styled.input`
 `;
 
 const InputDiv = styled.div`
+<<<<<<< HEAD
     padding: 2px;
     width: 28vw;
+=======
+    padding: 4px;
+    width: 100%;
+>>>>>>> feat-gabi
     border: 1px solid #ccc;
     border-radius: 10px;
 `;

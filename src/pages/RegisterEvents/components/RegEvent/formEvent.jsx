@@ -3,12 +3,15 @@ import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
 import 'react-dropdown/style.css';
+<<<<<<< HEAD
 import './style.css';
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
+=======
+>>>>>>> feat-gabi
 
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText} from "./styles"
 
 const Reg = () => {
 
@@ -236,8 +239,13 @@ const Reg = () => {
                             <Input type="text" value={eventName} onChange={(e) => { setEventName(e.target.value) }}></Input>
                         </FormGroup>
                         <FormGroup>
+<<<<<<< HEAD
                             <Label htmlFor="nameclass">Class:</Label>
                             <Dropdown className='Dropdown' options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
+=======
+                            <Label htmlFor="nameclass">Group name:</Label>
+                            <Dropdown options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
+>>>>>>> feat-gabi
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start date and time:</Label>
