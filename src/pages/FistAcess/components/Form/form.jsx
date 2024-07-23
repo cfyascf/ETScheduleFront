@@ -84,7 +84,8 @@ const Form = () => {
                 pauseOnHover: true,
                 draggable: true,
                 progress: undefined,
-                theme: "light"})
+                theme: "light"});
+            return;
         }
 
         try {
