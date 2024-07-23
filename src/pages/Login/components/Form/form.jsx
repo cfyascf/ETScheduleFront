@@ -1,21 +1,22 @@
 import { FormContainer, Imgs, Forms, FormGroup, Input, Label, Button, FormInput } from "./styles"
 import logo from "/Bosch_symbol_logo_black_red_1.svg";
-import { useState } from "react"
+import { useState, useContext } from "react"
 import { useNavigate } from 'react-router-dom'
 import api from "../../../../services/api"
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { UserContext } from '../../../../services/userContext';
 
 const Form = () => {
 
-    const [usernameValue, setUsername] = useState('')
-    const [passwordValue, setPassword] = useState('')
+    const [usernameValue, setUsername] = useState('');
+    const [passwordValue, setPassword] = useState('');
+    const { currentUser, setCurrentUser } = useContext(UserContext);
 
-    const navigate = useNavigate()
+    const navigate = useNavigate();
 
     const doLogin = async () => {
 
-        console.log('doLogin called');
         if (usernameValue == "") {
             toast.error("Username is required", {
                 position: "top-center",
@@ -49,10 +50,7 @@ const Form = () => {
                 password: passwordValue
             }
 
-            console.log(usernameValue, passwordValue)
             const response = await api.post(`/login/confirm`, formData)
-
-            console.log('>>>>>>>>>>>', response)
 
             if (response.data['canLogin'] == true) {
                 toast.success("Sucess login", {
@@ -97,7 +95,6 @@ const Form = () => {
                 theme: "light"
             })
             // console.log(error);
-            // toast.error("Deu erro", {theme: "dark"})
         }
     }
 
@@ -117,6 +114,8 @@ const Form = () => {
 
             users.data.forEach((user) => {
                 if (user.id == userInfo.userId) {
+                    setCurrentUser(user);
+                    console.log(currentUser.username)
                     if (user.fullName === null) {
                         firstAccess = true;
                     }

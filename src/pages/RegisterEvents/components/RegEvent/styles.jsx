@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
+<<<<<<< HEAD
     width: 30vw;
     height: 75vh;
+=======
+    width: 34%;
+    height: 78%;
+>>>>>>> feat-gabi
     display: flex;
     justify-content: center;
     align-items: center;
@@ -19,21 +24,37 @@ const FormItems = styled.div`
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
+=======
+    gap: 10px; 
+>>>>>>> feat-gabi
     width: 100%;
-    max-width: 400px;
+    padding: 50px;
+
 `;
 
 const FormGroup = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
+<<<<<<< HEAD
     padding-bottom: 10px;
+=======
+    width: 100%;
+    gap: 10px; 
+    padding-bottom: 15px;
+>>>>>>> feat-gabi
 `;
 
 const Input = styled.input`
     height: 42px;
+<<<<<<< HEAD
     padding: 5px;
     width: 25vw;
+=======
+    padding: 11px;
+    width: 537px;
+>>>>>>> feat-gabi
     border: 1px solid #ccc;
     border-radius: 10px;
 `;
@@ -45,7 +66,11 @@ const Label = styled.label`
 
 const Button = styled.button`
     margin-top: 10px;
+<<<<<<< HEAD
     padding: 7px;
+=======
+    padding: 12px;
+>>>>>>> feat-gabi
     width: 150px;
     background-color: #007bff;
     color: #fff;
@@ -70,4 +95,5 @@ const ColoredText = styled.div`
     font-size: 20px;
 `;
 
-export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText };
+
+export { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText};

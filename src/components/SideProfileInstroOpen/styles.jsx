@@ -24,10 +24,12 @@ const UserImg = styled.img`
     margin-top: 30px;
     width: 100px;
 `
-
 const BigTitle = styled.h2`
     font-weight: 600;
-    font-size: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
 `
 const UserTitle = styled.h3`
     font-size: 1rem;

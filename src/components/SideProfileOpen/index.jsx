@@ -3,8 +3,12 @@ import user from "/userProfile.png"
 import logout from "/icon_logout.png"
 import arrow from "/icon_arrow_left.png"
 import { Link } from "react-router-dom";
+import { useContext } from 'react';
+import { UserContext } from '../../services/userContext';
 
 const SideProfileOpen = ({ toggleProfile}) => {
+
+    const { currentUser } = useContext(UserContext);
     return (
         <>
             <ProfileContainer>
@@ -17,14 +21,11 @@ const SideProfileOpen = ({ toggleProfile}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        Andre Luis
+                    {currentUser.fullName}
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>
-                            Date of Birth: 09/06/2003
-                        </UserTitle>
-                        <UserTitle>
-                            Class: DTA1
+                            Date of Birth: {currentUser.birthDate}
                         </UserTitle>
                     </LitleInfo>
                 </UserInfo>

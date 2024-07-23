@@ -21,7 +21,6 @@ const Forms = styled.form`
     display: flex;
     flex-direction: column; 
     width: 100%;
-    max-width: 400px;
 `;
 
 const FormInput = styled.div`

@@ -3,12 +3,12 @@ import Dropdown from 'react-dropdown';
 import { useNavigate } from 'react-router-dom';
 import api from '../../../../services/api'
 import 'react-dropdown/style.css';
-import './style.css';
+import "./styles";
 import { ToastContainer, toast } from 'react-toastify';
 
 import 'react-toastify/dist/ReactToastify.css';
 
-import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText } from "./styles"
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText} from "./styles"
 
 const Reg = () => {
 
@@ -236,8 +236,8 @@ const Reg = () => {
                             <Input type="text" value={eventName} onChange={(e) => { setEventName(e.target.value) }}></Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="nameclass">Class:</Label>
-                            <Dropdown className='Dropdown' options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
+                            <Label htmlFor="nameclass">Group name:</Label>
+                            <Dropdown options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start date and time:</Label>
