@@ -1,8 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import Dropdown from 'react-dropdown';
 import 'react-dropdown/style.css';
+<<<<<<< HEAD
 import './style.css';
 import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea } from "./styles"
+=======
+import { FormContainer, Forms, FormGroup, Input, Label, Button, FormItems, ColoredText, TextArea} from "./styles"
+>>>>>>> feat-gabi
 import api from '../../../../services/api'
 import { ToastContainer, toast } from 'react-toastify';
 

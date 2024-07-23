@@ -19,9 +19,14 @@ const Imgs = styled.img`
 
 const Forms = styled.form`
     display: flex;
+<<<<<<< HEAD
     flex-direction: column; 
+=======
+    flex-direction: column;
+    align-items: center;
+    gap: 20px; 
+>>>>>>> feat-gabi
     width: 100%;
-    max-width: 400px;
 `;
 
 const FormInput = styled.div`

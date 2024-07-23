@@ -5,6 +5,7 @@ import api from "../../../../services/api";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from 'react-toastify';
 
+<<<<<<< HEAD
 import 'react-toastify/dist/ReactToastify.css';
 
 const createCourse = async (body) => {
@@ -19,6 +20,19 @@ const createCourse = async (body) => {
 
     return response;
 }
+=======
+// const createCourse = async(body) => {
+//     const headers = getHeaders();
+//     const response = await api.post(
+//         "/course",
+//         {
+//             headers: headers,
+//             body: body
+//         }
+//     );
+//     return response;
+// }
+>>>>>>> feat-gabi
 
 const SubjectForm = () => {
     const navigate = useNavigate();

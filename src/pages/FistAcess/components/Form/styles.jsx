@@ -1,8 +1,13 @@
 import styled from 'styled-components';
 
 const FormContainer = styled.div`
+<<<<<<< HEAD
     width: 31vw;
     height: 70vh;
+=======
+    width: 30%;
+    height: 75%;
+>>>>>>> feat-gabi
     display: flex;
     justify-content: center;
     align-items: center;
@@ -12,16 +17,25 @@ const FormContainer = styled.div`
 `;
 
 const Imgs = styled.img`
-    width: 220px;
+    width: 200px;
     align-self: center;
+<<<<<<< HEAD
     margin-bottom:10px;
+=======
+    margin-bottom: 10px;
+>>>>>>> feat-gabi
 `;
 
 const Forms = styled.form`
     display: flex;
     flex-direction: column;
+<<<<<<< HEAD
     width: 100%;
     max-width: 400px;
+=======
+    gap: 10px; 
+    width: 78%;
+>>>>>>> feat-gabi
 `;
 
 const FormGroup = styled.div`
@@ -52,9 +66,15 @@ align-items: center;
 `;
 
 const Button = styled.button`
+<<<<<<< HEAD
     margin-top: 10px;
     padding: 7px;
     width: 150px;
+=======
+    margin-top: 20px;
+    padding: 12px;
+    width: 35%;
+>>>>>>> feat-gabi
     background-color: #007bff;
     color: #fff;
     border: none;

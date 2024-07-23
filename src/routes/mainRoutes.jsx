@@ -71,7 +71,6 @@ const mainRoutes = createBrowserRouter([
             <RegisterClass/>
         )
     },
-
     {
         path: '/register-event',
         element: (
