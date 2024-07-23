@@ -13,6 +13,17 @@ import { useParams } from 'react-router-dom';
 
 const studentsData = []
 
+const getCourseById = async (id) => {
+    try {
+        const headers = getHeaders();
+        const response = await api.get(`/group/${id}`, { headers });
+        return response.data; // Retorna apenas os dados da disciplina
+    } catch (error) {
+        console.error("Error fetching group:", error);
+        throw error; // Trate o erro conforme necessário
+    }
+};
+
 const Class = () => {
     // const [group, setGroup] = useState(null);
     // const [studentsData, setStudents] = useState([]);
@@ -20,9 +31,9 @@ const Class = () => {
     // const fetchAllCourses = async() => {
     //     const headers = getHeaders();
     //     const id = useParams().id;
-    
+
     //     console.log(id);
-    
+
     //     const response = await api.get(
     //         `/group/${id}`,
     //         {
@@ -33,12 +44,27 @@ const Class = () => {
     //     console.log(response);
     //     return response;
     // }
-    
+
     // useEffect(() => {
     //     const groupResponse = fetchAllCourses();
     //     setGroup(groupResponse.data);
     //     setStudents(groupResponse.data.students);
     // }, [])
+    const [group, setGroup] = useState(null);
+    const { id } = useParams();
+
+    useEffect(() => {
+        const fetchGroup = async () => {
+            try {
+                const groupData = await getCourseById(id);
+                setGroup(groupData);
+            } catch (error) {
+                console.error("Error fetching group:", error);
+            }
+        };
+
+        fetchGroup();
+    }, []);
 
     return (
         <>
@@ -46,7 +72,14 @@ const Class = () => {
                 <Navbar />
                 <PageContent>
 
-                    <Banner />
+                    {group && (
+                        <Banner
+                            name={group.name}
+                            instructor={group.instructor}
+                            color={group.color}
+                        />
+                    )}
+
                     <LineDiv>
                         <SectionTitle>Class Schedule</SectionTitle>
                         <Line />
