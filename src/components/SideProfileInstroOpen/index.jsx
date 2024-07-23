@@ -6,13 +6,13 @@ import event from "/calendar.png"
 import books from "/books.png"
 import lesson from "/teacher.png"
 import { Link } from "react-router-dom";
-import { useLocation } from "react-router-dom"
-import React, { useContext } from 'react';
+import { useContext } from 'react';
 import { UserContext } from '../../services/userContext';
 
 const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
-    const location = useLocation();
 
+    const { currentUser } = useContext(UserContext);
+    
     return (
         <>
             <ProfileContainer>
@@ -25,11 +25,11 @@ const SideProfileOpenInstro = ({ toggleProfileInstro}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        Andre Luis
+                        {currentUser.fullName}
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>
-                        Date of Birth: 09/06/2003
+                        Date of Birth: {currentUser.birthDate}
                         </UserTitle>
                     </LitleInfo>
                     <CreateContainer>
