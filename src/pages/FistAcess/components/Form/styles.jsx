@@ -14,7 +14,7 @@ const FormContainer = styled.div`
 const Imgs = styled.img`
     width: 200px;
     align-self: center;
-    margin-bottom: 30px;
+    margin-bottom: 10px;
 `;
 
 const Forms = styled.form`

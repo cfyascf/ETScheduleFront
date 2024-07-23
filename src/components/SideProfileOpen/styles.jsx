@@ -13,6 +13,7 @@ const UserInfo = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
+    padding: 15px;
 `
 
 const ProfileIcons = styled.div`
@@ -21,13 +22,16 @@ const ProfileIcons = styled.div`
 `
 
 const UserImg = styled.img`
-    margin-top: 100px;
+    margin-top: 60px;
     width: 200px;
 `
 
 const BigTitle = styled.h2`
     font-weight: 600;
-    font-size: 2rem;
+    text-align: center;
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+    margin-top: 20px;
 `
 const UserTitle = styled.h3`
     font-size: 1rem;
