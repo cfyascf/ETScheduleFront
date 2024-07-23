@@ -147,10 +147,6 @@ const Form = () => {
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo"/> 
-                    <h3 style={{
-                        textAlign: 'center',
-                        paddingBottom: '10px'
-                    }}>This is your first acess, please update your information</h3>
                     <FormDivCompac>
                     <FormGroup>
                         <Label htmlFor="username">Full Name:</Label>

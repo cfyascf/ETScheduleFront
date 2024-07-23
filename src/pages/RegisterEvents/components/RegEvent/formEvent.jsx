@@ -236,8 +236,8 @@ const Reg = () => {
                             <Input type="text" value={eventName} onChange={(e) => { setEventName(e.target.value) }}></Input>
                         </FormGroup>
                         <FormGroup>
-                            <Label htmlFor="nameclass">Class:</Label>
-                            <Dropdown className='Dropdown' options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
+                            <Label htmlFor="nameclass">Group name:</Label>
+                            <Dropdown options={options} value={selectedOption} onChange={handleSelect} placeholder="Select an option" />
                         </FormGroup>
                         <FormGroup>
                             <Label htmlFor="startdate">Start date and time:</Label>
