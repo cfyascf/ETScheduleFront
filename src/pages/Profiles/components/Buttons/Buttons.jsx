@@ -65,7 +65,6 @@ const Buttons = ( ) => {
             users.data.forEach((user) => {
                 if (user.id == userInfo.userId) {
                     setCurrentUser(user);
-                    console.log(user);
                     if (user.fullName === null) {
                         firstAccess = true;
                     }

@@ -23,7 +23,7 @@ const GraphicRadarSoft = () => {
       try {
         const userInfo = parseJwt()
 
-        // const response = await api.get(`/report/profile/${userInfo['profileId']}`)
+        const response = await api.get(`/report/profile/${userInfo['profileId']}`)
 
         const hard_skill = response.data['softSkills'];
 
