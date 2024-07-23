@@ -147,14 +147,7 @@ const Form = () => {
             <FormContainer>
                 <Forms>
                     <Imgs src={logo} alt="Bosch Logo"/> 
-<<<<<<< HEAD
                     <FormDivCompac>
-=======
-                    <h3 style={{
-                        textAlign: 'center',
-                        paddingBottom: '10px'
-                    }}>This is your first acess, please update your information</h3>
->>>>>>> feat-gabi
                     <FormGroup>
                         <Label htmlFor="username">Full Name:</Label>
                         <Input id="username" type="text" value={fullnameInput} onChange={(e) => { setFullnameInput(e.target.value) }} name="user"></Input>
