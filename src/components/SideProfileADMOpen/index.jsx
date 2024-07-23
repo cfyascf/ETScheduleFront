@@ -9,10 +9,12 @@ import arrow from "/icon_arrow_left.png"
 import event from "/calendar.png"
 import books from "/books.png"
 import lesson from "/teacher.png"
-import { useLocation } from 'react-router-dom';
+import { useContext } from 'react';
+import { UserContext } from '../../services/userContext';
 
 const SideProfileADMOpen = ({ toggleProfileADM}) => {
-    const location = useLocation();
+
+    const { currentUser } = useContext(UserContext);
 
     return (
         <>
@@ -26,11 +28,11 @@ const SideProfileADMOpen = ({ toggleProfileADM}) => {
                 <UserInfo>
                     <UserImg src={user}></UserImg>
                     <BigTitle>
-                        Andre Luis
+                        {currentUser.fullName}
                     </BigTitle>
                     <LitleInfo>
                         <UserTitle>
-                        Date of Birth: 09/06/2003
+                        Date of Birth: {currentUser.birthDate}
                         </UserTitle>
                     </LitleInfo>
                     <CreateContainer>
